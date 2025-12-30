@@ -1,0 +1,587 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+// SEO Data
+const seoTitle = 'Szkółka piłkarska Toruń – szkolenia dzieci - chłopców z piłki nożnej';
+const seoDescription = 'Unia Toruń – profesjonalna szkółka piłkarska dla dzieci w Toruniu. Treningi piłki nożnej dla grup wiekowych 3-13 lat. Wykwalifikowana kadra, nowoczesne metody szkolenia. Zapisz dziecko na bezpłatny trening próbny!';
+const seoKeywords = [
+  'szkółka piłkarska Toruń',
+  'treningi piłkarskie dla dzieci Toruń',
+  'piłka nożna dla dzieci Toruń',
+  'akademia piłkarska Toruń',
+  'zajęcia piłkarskie dla dzieci',
+  'nauka gry w piłkę Toruń',
+  'klub piłkarski dla dzieci Toruń',
+  'treningi piłki nożnej Toruń',
+];
+
+// Age groups data
+const ageGroups = [
+  {
+    name: 'Przedszkole piłkarskie',
+    ages: '3-6 lat',
+    category: 'Roczniki 2019-2022',
+    description: 'Zabawa z piłką, podstawy koordynacji ruchowej i pierwsze kroki w świecie futbolu dla najmłodszych.',
+    icon: '👶',
+    color: 'from-emerald-500 to-teal-500',
+    href: '/treningi-pilkarskie-dla-dzieci/3-6-lat',
+  },
+  {
+    name: 'Żak U-9',
+    ages: '7-9 lat',
+    category: 'Roczniki 2016-2018',
+    description: 'Nauka podstaw techniki piłkarskiej, gry zespołowej i rozwój umiejętności motorycznych.',
+    icon: '⚽',
+    color: 'from-blue-500 to-cyan-500',
+    href: '/treningi-pilkarskie-dla-dzieci/7-9-lat',
+  },
+  {
+    name: 'Orlik U-11',
+    ages: '9-11 lat',
+    category: 'Roczniki 2014-2016',
+    description: 'Doskonalenie techniki, taktyki indywidualnej i udział w turniejach i rozgrywkach ligowych.',
+    icon: '🏆',
+    color: 'from-violet-500 to-purple-500',
+    href: '/treningi-pilkarskie-dla-dzieci/9-11-lat',
+  },
+  {
+    name: 'Młodzik U-13',
+    ages: '11-13 lat',
+    category: 'Roczniki 2012-2014',
+    description: 'Zaawansowane szkolenie taktyczne, przygotowanie do gry w seniorskiej piłce nożnej.',
+    icon: '🎯',
+    color: 'from-orange-500 to-red-500',
+    href: '/treningi-pilkarskie-dla-dzieci/11-13-lat',
+  },
+];
+
+// Features/benefits
+const benefits = [
+  {
+    title: 'Wykwalifikowana kadra',
+    description: 'Nasi trenerzy posiadają licencje PZPN i wieloletnie doświadczenie w pracy z dziećmi.',
+    icon: '👨‍🏫',
+  },
+  {
+    title: 'Nowoczesne metody',
+    description: 'Szkolenie oparte na najnowszych metodach treningowych stosowanych w europejskich akademiach.',
+    icon: '📊',
+  },
+  {
+    title: 'Indywidualne podejście',
+    description: 'Małe grupy treningowe pozwalają na indywidualną pracę z każdym zawodnikiem.',
+    icon: '🎯',
+  },
+  {
+    title: 'Rozwój przez zabawę',
+    description: 'Treningi prowadzone w formie zabawy, która motywuje i rozwija pasję do piłki nożnej.',
+    icon: '🎮',
+  },
+  {
+    title: 'Turnieje i mecze',
+    description: 'Regularne sparingi, turnieje i rozgrywki ligowe dla wszystkich grup wiekowych.',
+    icon: '🏅',
+  },
+  {
+    title: 'Profesjonalna infrastruktura',
+    description: 'Treningi na nowoczesnych boiskach ze sztuczną nawierzchnią i w halach sportowych.',
+    icon: '🏟️',
+  },
+];
+
+// Stats
+const stats = [
+  { value: '30+', label: 'Młodych zawodników' },
+  { value: '5+', label: 'Lat doświadczenia' },
+  { value: '4+', label: 'Wykwalifikowanych trenerów' },
+  { value: '6', label: 'Grup wiekowych' },
+];
+
+// Testimonials
+const testimonials = [
+  {
+    content: 'Polecam bardzo drużynę jak prawdziwa rodzina - w końcu Unia 🤍💙 zaangażowanie trenerów, podejście do dzieci mega.',
+    author: 'Magdalena Z.',
+    role: 'Mama 8-latka',
+  },
+  {
+    content: 'Polecam, super podejście i atmosfera!!! Zachęcam każdego rodzica do zapisania swojego dziecka',
+    author: 'Michał N.',
+    role: 'Tata 6-latka',
+  },
+  {
+    content: 'Najlepsza szkółka piłkarska w Toruniu. Trenerzy naprawdę wiedzą, jak pracować z dziećmi i rozwijać ich talent.',
+    author: 'Michał G.',
+    role: 'Tata 10-latka',
+  },
+];
+---
+
+<Layout 
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+>
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    
+    <!-- Decorative Elements -->
+    <div class="absolute top-20 right-10 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"></div>
+    
+    <!-- Floating football icons -->
+    <div class="absolute top-1/4 right-1/4 text-6xl opacity-10 animate-float">⚽</div>
+    <div class="absolute bottom-1/4 left-1/5 text-4xl opacity-10 animate-float animation-delay-500">⚽</div>
+    
+    <div class="container-custom relative z-10 py-20">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Content -->
+        <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-sm font-medium mb-6 animate-fade-in">
+            <span class="w-2 h-2 rounded-full bg-primary-400 animate-pulse"></span>
+            Zapisy na sezon 2026/2027 otwarte
+          </div>
+          
+          <h1 class="text-white mb-6 animate-fade-in-up text-balance">
+            <span class="block">Szkółka piłkarska</span>
+            <span class="gradient-text">dla dzieci w Toruniu</span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200 max-w-xl mx-auto lg:mx-0">
+            <strong class="text-white">Unia Toruń</strong> – profesjonalne <strong class="text-primary-400">szkolenie z piłki nożnej dla dzieci</strong> w wieku od 3 do 13 lat. Rozwijaj talent i pasję swojego malucha z cenioną szkółką piłkarską!
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-300">
+            <a href="/zapisy" class="btn-primary text-lg">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+              Zapisz dziecko
+            </a>
+            <a href="/treningi-pilkarskie-dla-dzieci" class="btn-secondary !border-white/20 !text-dark-900 dark:!text-white hover:!bg-white/10">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Poznaj grupy wiekowe
+            </a>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 mt-10 animate-fade-in-up animation-delay-400">
+            <div class="flex items-center gap-2 text-dark-400 text-sm">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Pierwszy trening gratis
+            </div>
+            <div class="flex items-center gap-2 text-dark-400 text-sm">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Licencjonowani trenerzy PZPN
+            </div>
+            <div class="flex items-center gap-2 text-dark-400 text-sm">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Ubezpieczenie zawodników
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image Placeholder -->
+        <div class="relative hidden lg:block animate-fade-in-up animation-delay-300">
+          <div class="relative aspect-square max-w-lg mx-auto">
+            <!-- Decorative ring -->
+            <div class="absolute inset-0 rounded-full border-2 border-dashed border-primary-500/30 animate-spin" style="animation-duration: 20s;"></div>
+            <div class="absolute inset-4 rounded-full border-2 border-primary-500/20"></div>
+            
+            <!-- Image container -->
+            <div class="absolute inset-8 rounded-full overflow-hidden bg-gradient-to-br from-primary-500/20 to-primary-700/20 flex items-center justify-center">
+              <!-- Replace with actual image -->
+              <div class="text-center p-8">
+                <div class="text-8xl mb-4">⚽</div>
+                <p class="text-dark-400 text-sm">Miejsce na zdjęcie</p>
+              </div>
+            </div>
+
+            <!-- Floating badges -->
+            
+            
+            <div class="absolute -bottom-4 left-10 bg-white dark:bg-dark-800 rounded-xl shadow-xl px-4 py-3 animate-bounce-subtle animation-delay-300">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">⭐</span>
+                <div>
+                  <p class="text-xs text-dark-500 dark:text-dark-400">Ocena rodziców</p>
+                  <p class="font-bold text-dark-900 dark:text-white text-sm">5.0/5.0</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-dark-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-12 bg-primary-500 dark:bg-primary-600">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map((stat, index) => (
+          <div class={`text-center reveal animation-delay-${index}00`}>
+            <div class="text-4xl md:text-5xl font-display font-bold text-white mb-2">
+              {stat.value}
+            </div>
+            <div class="text-primary-100 text-sm md:text-base">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section (SEO-rich content) -->
+  <section class="section-padding bg-white dark:bg-dark-900 football-pattern">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+            O naszej akademii
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Zaufana <span class="gradient-text">akademia piłkarska</span> w Toruniu
+          </h2>
+          <div class="space-y-4 text-dark-600 dark:text-dark-300">
+            <p>
+              <strong class="text-dark-900 dark:text-white">Unia Toruń</strong> to wiodąca <strong>szkółka piłkarska dla dzieci</strong> działająca w Toruniu od ponad 5 lat. Nasza misja to rozwijanie pasji do <strong>piłki nożnej</strong> wśród najmłodszych zawodników poprzez profesjonalne szkolenie połączone z dobrą zabawą.
+            </p>
+            <p>
+              Prowadzimy <strong>szkolenia piłkarskie dla dzieci</strong> w grupach wiekowych od 3 do 13 lat. Nasz program szkoleniowy opiera się na najnowszych metodach treningowych stosowanych w najlepszych europejskich akademiach piłkarskich, dostosowanych do możliwości i potrzeb rozwojowych dzieci.
+            </p>
+            <p>
+              Jako <strong>toruńska szkółka piłkarska</strong> stawiamy na wszechstronny rozwój młodych zawodników – nie tylko ich umiejętności technicznych i taktycznych, ale również kondycji fizycznej, mentalnej oraz wartości takich jak praca zespołowa, dyscyplina i szacunek dla rywali.
+            </p>
+          </div>
+          <a href="/akademia-pilkarska-torun" class="btn-primary mt-8 inline-flex">
+            Poznaj naszą historię
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+        
+        <div class="reveal-right">
+          <div class="relative">
+            <!-- Image placeholder -->
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900/50 dark:to-primary-800/50 flex items-center justify-center">
+              <div class="text-center p-8">
+                <div class="text-7xl mb-4">🏟️</div>
+                <p class="text-dark-500 dark:text-dark-400">Zdjęcie akademii</p>
+              </div>
+            </div>
+            
+            <!-- Floating card -->
+            <div class="absolute -bottom-6 -left-6 bg-white dark:bg-dark-800 rounded-xl shadow-2xl p-5 max-w-[200px]">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white text-xl">
+                  🎓
+                </div>
+                <div>
+                  <p class="text-xs text-dark-500 dark:text-dark-400">Certyfikat</p>
+                  <p class="font-bold text-dark-900 dark:text-white text-sm">PZPN</p>
+                </div>
+              </div>
+              <p class="text-xs text-dark-500 dark:text-dark-400">
+                Certyfikowana szkółka piłkarska
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Age Groups Section -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+          Grupy wiekowe
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          Szkółka piłki nożnej dla chłopców w różnym wieku
+        </h2>
+        <p class="text-dark-600 dark:text-dark-300 text-lg">
+          Oferujemy <strong>szkolenie piłkarskie dla chłopców w Toruniu</strong> w 4 grupach wiekowych. Każda grupa ma program dostosowany do możliwości rozwojowych i umiejętności zawodników.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {ageGroups.map((group, index) => (
+          <a 
+            href={group.href}
+            class={`card-hover p-6 group reveal animation-delay-${index}00`}
+          >
+            <div class={`w-14 h-14 rounded-xl bg-gradient-to-br ${group.color} flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform`}>
+              {group.icon}
+            </div>
+            <h3 class="text-xl font-display font-bold text-dark-900 dark:text-white mb-2">
+              {group.name}
+            </h3>
+            <p class="text-primary-600 dark:text-primary-400 font-semibold text-sm mb-1">
+              {group.ages}
+            </p>
+            <p class="text-dark-500 dark:text-dark-400 text-xs mb-4">
+              {group.category}
+            </p>
+            <p class="text-dark-600 dark:text-dark-300 text-sm mb-4">
+              {group.description}
+            </p>
+            <span class="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-semibold text-sm group-hover:gap-3 transition-all">
+              Dowiedz się więcej
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center mt-12 reveal">
+        <a href="/treningi-pilkarskie-dla-dzieci" class="btn-secondary">
+          Zobacz wszystkie grupy
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+          Dlaczego my?
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          Dlaczego warto wybrać <span class="gradient-text">Unię Toruń</span>?
+        </h2>
+        <p class="text-dark-600 dark:text-dark-300 text-lg">
+          Nasza <strong>szkółka piłkarska</strong> wyróżnia się profesjonalnym podejściem do szkolenia młodych piłkarzy. Oto co oferujemy:
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {benefits.map((benefit, index) => (
+          <div class={`flex gap-5 reveal animation-delay-${(index % 3) * 100}`}>
+            <div class="flex-shrink-0">
+              <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-2xl">
+                {benefit.icon}
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
+                {benefit.title}
+              </h3>
+              <p class="text-dark-600 dark:text-dark-300 text-sm">
+                {benefit.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding gradient-bg relative overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 football-pattern opacity-20"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <h2 class="text-white mb-6">
+          Zapisz dziecko na <span class="text-primary-200">bezpłatny trening próbny</span>!
+        </h2>
+        <p class="text-primary-100 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+          Dołącz do najlepszej <strong class="text-white">szkółki piłkarskiej w Toruniu</strong>. Pierwszy trening jest całkowicie bezpłatny – przekonaj się, że treningi piłkarskie dla dzieci mogą być świetną zabawą!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/zapisy" class="btn bg-white text-primary-600 hover:bg-primary-50 hover:shadow-xl hover:-translate-y-0.5">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+            Wypełnij formularz zapisów
+          </a>
+          <a href="tel:+48123456789" class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            Zadzwoń: +48 123 456 789
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+          Opinie rodziców
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          Co mówią o nas rodzice?
+        </h2>
+        <p class="text-dark-600 dark:text-dark-300 text-lg">
+          Zaufało nam już ponad 500 rodzin z Torunia i okolic. Przeczytaj, co mówią o naszej <strong>akademii piłkarskiej</strong>.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div class={`card p-8 reveal animation-delay-${index}00`}>
+            <!-- Stars -->
+            <div class="flex gap-1 mb-4">
+              {[1, 2, 3, 4, 5].map(() => (
+                <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            
+            <blockquote class="text-dark-600 dark:text-dark-300 mb-6 italic">
+              „{testimonial.content}"
+            </blockquote>
+            
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold">
+                {testimonial.author.charAt(0)}
+              </div>
+              <div>
+                <p class="font-semibold text-dark-900 dark:text-white">
+                  {testimonial.author}
+                </p>
+                <p class="text-sm text-dark-500 dark:text-dark-400">
+                  {testimonial.role}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (SEO boost) -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+            FAQ
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Najczęściej zadawane pytania
+          </h2>
+        </div>
+
+        <div class="space-y-4 reveal">
+          <details class="group card p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
+              Od jakiego wieku można zapisać dziecko na szkolenie piłkarskie?
+              <svg class="w-5 h-5 text-primary-500 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="mt-4 text-dark-600 dark:text-dark-300">
+              W naszej <strong>szkółce piłkarskiej w Toruniu</strong> przyjmujemy dzieci już od 3. roku życia. Dla najmłodszych (3-6 lat) prowadzimy zajęcia w ramach Przedszkola Piłkarskiego, gdzie nauka odbywa się poprzez zabawę. Starsze dzieci (od 7 lat) mogą dołączyć do grup według kategorii wiekowych PZPN: Żak U-9, Orlik U-11 i Młodzik U-13.
+            </p>
+          </details>
+
+          <details class="group card p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
+              Ile kosztują treningi piłkarskie dla dzieci w Unii Toruń?
+              <svg class="w-5 h-5 text-primary-500 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="mt-4 text-dark-600 dark:text-dark-300">
+              Szczegółowy cennik znajdziesz na stronie <a href="/cennik" class="text-primary-600 dark:text-primary-400 hover:underline">Cennik</a>. Cena zależy od grupy wiekowej i obejmuje 2 treningi tygodniowo, ubezpieczenie zawodnika, strój treningowy oraz udział w turniejach. <strong>Pierwszy trening próbny jest bezpłatny</strong> – zapraszamy do sprawdzenia naszej akademii!
+            </p>
+          </details>
+
+          <details class="group card p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
+              Gdzie odbywają się zajęcia?
+              <svg class="w-5 h-5 text-primary-500 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="mt-4 text-dark-600 dark:text-dark-300">
+              <strong>Szkolenia piłkarskie w Toruniu</strong> prowadzimy na nowoczesnych obiektach sportowych ze sztuczną nawierzchnią. W sezonie jesienno-zimowym zajęcia odbywają się w halach sportowych. Szczegółowe lokalizacje i harmonogram treningów znajdziesz na stronie <a href="/lokalizacja" class="text-primary-600 dark:text-primary-400 hover:underline">Lokalizacja</a>.
+            </p>
+          </details>
+
+          <details class="group card p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
+              Czy dziecko musi mieć doświadczenie w grze w piłkę nożną?
+              <svg class="w-5 h-5 text-primary-500 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="mt-4 text-dark-600 dark:text-dark-300">
+              Nie! Nasza <strong>szkółka piłki nożnej dla chłopców</strong> przyjmuje zarówno początkujących, jak i bardziej zaawansowanych młodych piłkarzy. Program szkoleniowy jest dostosowany do poziomu umiejętności każdego dziecka. Nasi wykwalifikowani trenerzy pomogą rozwinąć talent i pasję do <strong>piłki nożnej</strong> niezależnie od punktu startowego.
+            </p>
+          </details>
+
+          <details class="group card p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
+              Jak zapisać dziecko do szkółki piłkarskiej?
+              <svg class="w-5 h-5 text-primary-500 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="mt-4 text-dark-600 dark:text-dark-300">
+              <strong>Zapisy do akademii piłkarskiej</strong> Unia Toruń można dokonać przez formularz online na stronie <a href="/zapisy" class="text-primary-600 dark:text-primary-400 hover:underline">Zapisy</a> lub kontaktując się z nami telefonicznie. Po zapisaniu umówimy termin bezpłatnego treningu próbnego, aby dziecko mogło poznać trenerów i grupę przed podjęciem ostatecznej decyzji.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-16 bg-dark-900 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 reveal">
+        <div>
+          <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-2">
+            Zapisz chłopca do szkółki piłkarskiej!
+          </h3>
+          <p class="text-dark-400">
+            Wraz ze swoim dzieckiem dołącz do <strong class="text-dark-300">Unii Toruń</strong> – zaufanej szkółki piłkarskiej w regionie!
+          </p>
+        </div>
+        <a href="/zapisy" class="btn-primary flex-shrink-0">
+          Zapisz dziecko teraz
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

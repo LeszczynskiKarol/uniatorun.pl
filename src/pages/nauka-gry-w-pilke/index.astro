@@ -1,0 +1,492 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+// SEO Data - optymalizacja pod "nauka gry w piłkę Toruń"
+const seoTitle = 'Nauka gry w piłkę Toruń – Nauka piłki nożnej dla dzieci';
+const seoDescription = 'Nauka gry w piłkę nożną dla dzieci w Toruniu. Profesjonalna nauka piłki nożnej od podstaw. Metodyczne szkolenie, etapy rozwoju, doświadczeni trenerzy. Zapisz dziecko!';
+const seoKeywords = [
+  'nauka gry w piłkę Toruń',
+  'nauka piłki nożnej dla dzieci',
+  'jak nauczyć dziecko gry w piłkę',
+  'nauka gry w piłkę nożną',
+  'szkoła piłki nożnej Toruń',
+  'nauka piłki nożnej od podstaw',
+  'kurs piłki nożnej dla dzieci',
+  'nauka futbolu dla dzieci',
+  'podstawy piłki nożnej dla dzieci',
+];
+
+// Etapy nauki
+const learningStages = [
+  {
+    stage: 1,
+    title: 'Poznanie piłki',
+    age: '3-5 lat',
+    description: 'Pierwszy kontakt z piłką. Dziecko uczy się podstawowych ruchów z piłką poprzez zabawę.',
+    skills: ['Toczenie piłki', 'Rzuty i łapanie', 'Kopanie piłki', 'Bieganie z piłką'],
+    focus: 'Radość z ruchu i zabawy z piłką',
+  },
+  {
+    stage: 2,
+    title: 'Podstawy techniczne',
+    age: '6-8 lat',
+    description: 'Nauka fundamentalnych elementów techniki piłkarskiej w przyjaznej atmosferze.',
+    skills: ['Prowadzenie piłki', 'Podania wewnętrzną częścią stopy', 'Przyjęcia piłki', 'Strzały na bramkę'],
+    focus: 'Budowanie fundamentów technicznych',
+  },
+  {
+    stage: 3,
+    title: 'Doskonalenie techniki',
+    age: '9-11 lat',
+    description: 'Intensywna praca nad techniką indywidualną i wprowadzenie elementów taktycznych.',
+    skills: ['Drybling i zwody', 'Podania różnymi częściami stopy', 'Gra głową', 'Gra 1v1'],
+    focus: 'Doskonalenie umiejętności w grze',
+  },
+  {
+    stage: 4,
+    title: 'Gra zespołowa',
+    age: '11-13 lat',
+    description: 'Zaawansowana taktyka, gra na pozycjach i przygotowanie do profesjonalnej piłki.',
+    skills: ['Taktyka zespołowa', 'Gra kombinacyjna', 'Pozycjonowanie', 'Analiza gry'],
+    focus: 'Inteligencja piłkarska i gra w drużynie',
+  },
+];
+
+// Czego uczymy
+const skillsWeTeach = [
+  {
+    category: 'Technika indywidualna',
+    skills: [
+      'Prowadzenie piłki różnymi częściami stopy',
+      'Podania krótkie i długie',
+      'Przyjęcia piłki (stopa, udo, klatka)',
+      'Strzały z różnych pozycji',
+      'Drybling i zwody',
+      'Gra głową',
+    ],
+    icon: '⚽',
+  },
+  {
+    category: 'Koordynacja i motoryka',
+    skills: [
+      'Koordynacja ruchowa',
+      'Szybkość i zwinność',
+      'Równowaga i stabilność',
+      'Wytrzymałość',
+      'Orientacja przestrzenna',
+      'Refleks i reakcja',
+    ],
+    icon: '🏃',
+  },
+  {
+    category: 'Taktyka i gra',
+    skills: [
+      'Ustawianie się na boisku',
+      'Gra w ataku i obronie',
+      'Współpraca z partnerami',
+      'Podejmowanie decyzji',
+      'Czytanie gry',
+      'Pressing i odbiór piłki',
+    ],
+    icon: '🧠',
+  },
+];
+
+// Metody nauki
+const teachingMethods = [
+  {
+    title: 'Nauka przez zabawę',
+    description: 'Dla najmłodszych dzieci nauka piłki nożnej odbywa się w formie gier i zabaw. Dziecko uczy się, nawet nie wiedząc, że ćwiczy!',
+    icon: '🎮',
+  },
+  {
+    title: 'Metoda analityczna',
+    description: 'Rozkładamy złożone ruchy na prostsze elementy. Ćwiczymy każdy element osobno, a potem łączymy w całość.',
+    icon: '🔍',
+  },
+  {
+    title: 'Metoda całościowa',
+    description: 'Uczymy techniki w sytuacjach zbliżonych do gry. Dziecko od razu widzi zastosowanie umiejętności w praktyce.',
+    icon: '🎯',
+  },
+  {
+    title: 'Small-sided games',
+    description: 'Gry na małych boiskach (3v3, 4v4, 5v5) to najlepszy sposób na naukę. Więcej kontaktów z piłką, więcej decyzji.',
+    icon: '🏟️',
+  },
+  {
+    title: 'Indywidualne podejście',
+    description: 'Każde dziecko rozwija się we własnym tempie. Trenerzy dostosowują ćwiczenia do poziomu i potrzeb zawodnika.',
+    icon: '👤',
+  },
+  {
+    title: 'Pozytywne wzmocnienie',
+    description: 'Chwalimy postępy, wspieramy przy błędach. Budujemy pewność siebie i motywację do dalszej nauki.',
+    icon: '⭐',
+  },
+];
+
+// FAQ
+const faqItems = [
+  {
+    question: 'Od jakiego wieku można rozpocząć naukę gry w piłkę?',
+    answer: 'Naukę gry w piłkę nożną można rozpocząć już od 3 roku życia. W tym wieku zajęcia mają formę zabawy i skupiają się na rozwoju koordynacji ruchowej oraz pierwszych kontaktach z piłką.',
+  },
+  {
+    question: 'Czy dziecko bez doświadczenia może się nauczyć grać w piłkę?',
+    answer: 'Oczywiście! Nasze programy nauki piłki nożnej są zaprojektowane tak, żeby każde dziecko mogło zacząć od podstaw. Nie wymagamy wcześniejszego doświadczenia – uczymy od zera.',
+  },
+  {
+    question: 'Jak długo trwa nauka podstaw piłki nożnej?',
+    answer: 'Podstawowe umiejętności piłkarskie dziecko przyswaja w ciągu 6-12 miesięcy regularnych treningów. Jednak nauka piłki nożnej to proces ciągły – nawet profesjonaliści cały czas się rozwijają.',
+  },
+  {
+    question: 'Czy można nauczyć się grać w piłkę w domu?',
+    answer: 'Podstawowe ćwiczenia można wykonywać w domu lub w ogródku. Jednak profesjonalna nauka gry w piłkę wymaga regularnych treningów z trenerem i rówieśnikami – to niezbędne dla rozwoju umiejętności społecznych i taktycznych.',
+  },
+  {
+    question: 'Jak rodzic może wspierać naukę piłki nożnej dziecka?',
+    answer: 'Najważniejsze to regularnie dowozić dziecko na treningi, zachęcać do ćwiczeń w domu, uczestniczyć w meczach jako kibic i nigdy nie krytykować błędów. Pozytywne wsparcie rodziców jest kluczowe dla rozwoju młodego piłkarza.',
+  },
+];
+
+// Porady dla rodziców
+const parentTips = [
+  {
+    tip: 'Bądź cierpliwy',
+    description: 'Nauka gry w piłkę wymaga czasu. Każde dziecko rozwija się we własnym tempie.',
+  },
+  {
+    tip: 'Chwal postępy',
+    description: 'Zauważaj i chwal nawet małe sukcesy. To buduje motywację do dalszej nauki.',
+  },
+  {
+    tip: 'Nie porównuj',
+    description: 'Każde dziecko jest inne. Porównywanie z innymi może zniechęcić do sportu.',
+  },
+  {
+    tip: 'Graj razem',
+    description: 'Wspólna gra w piłkę to świetny sposób na spędzanie czasu i wspieranie nauki.',
+  },
+];
+---
+
+<Layout 
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+>
+  <!-- Hero Section -->
+  <section class="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950">
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div class="absolute top-20 right-10 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Content -->
+        <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-sm font-medium mb-6">
+            <span>📚</span>
+            Od podstaw do zaawansowanego poziomu
+          </div>
+
+          <h1 class="text-white mb-6 animate-fade-in-up">
+            <span class="gradient-text">Nauka gry w piłkę</span> w Toruniu
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200">
+            Profesjonalna <strong class="text-white">nauka piłki nożnej dla dzieci</strong> od podstaw. Metodyczne podejście, doświadczeni trenerzy i radość z gry!
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-300">
+            <a href="/zapisy" class="btn-primary text-lg">
+              Rozpocznij naukę
+            </a>
+            <a href="#etapy" class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20">
+              Zobacz etapy nauki
+            </a>
+          </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="relative animate-fade-in-up animation-delay-400">
+          <div class="aspect-square max-w-md mx-auto">
+            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary-500/20 to-primary-600/10 animate-pulse-glow"></div>
+            <div class="absolute inset-8 rounded-full bg-gradient-to-br from-primary-500/30 to-primary-600/20"></div>
+            <div class="absolute inset-16 rounded-full bg-white/5 backdrop-blur-sm flex items-center justify-center">
+              <div class="text-center">
+                <div class="text-8xl mb-4">⚽</div>
+                <p class="text-white font-display font-bold text-xl">Od podstaw</p>
+                <p class="text-dark-400">do mistrzostwa</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+            O nauce piłki nożnej
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Jak uczymy <span class="gradient-text">gry w piłkę nożną</span>?
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-center reveal">
+          <div class="space-y-4 text-dark-600 dark:text-dark-300">
+            <p>
+              <strong class="text-dark-900 dark:text-white">Nauka gry w piłkę</strong> w Unii Toruń opiera się na sprawdzonych metodach szkolenia młodzieży. Nasz program <strong>nauki piłki nożnej dla dzieci</strong> jest zgodny z wytycznymi PZPN i najlepszymi europejskimi akademiami.
+            </p>
+            <p>
+              Wierzymy, że każde dziecko może nauczyć się grać w piłkę nożną. Kluczem jest odpowiednie podejście, cierpliwość i systematyczna praca. Nasze <strong>kursy piłki nożnej dla dzieci</strong> są dostosowane do wieku i poziomu umiejętności.
+            </p>
+            <p>
+              <strong>Nauka piłki nożnej od podstaw</strong> to nie tylko technika – to również rozwój koordynacji, umiejętności społecznych i miłości do sportu, która zostanie z dzieckiem na całe życie.
+            </p>
+          </div>
+          <div class="relative">
+            <div class="aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900/50 dark:to-primary-800/50 flex items-center justify-center">
+              <div class="text-center p-8">
+                <div class="text-7xl mb-4">📚</div>
+                <p class="text-dark-500 dark:text-dark-400 text-sm">Zdjęcie z nauki</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Stages -->
+  <section id="etapy" class="section-padding bg-dark-50 dark:bg-dark-950 scroll-mt-20">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+          Etapy nauki
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          4 etapy <span class="gradient-text">nauki gry w piłkę</span>
+        </h2>
+        <p class="text-dark-600 dark:text-dark-300 text-lg">
+          <strong>Nauka piłki nożnej dla dzieci</strong> przebiega etapami – od prostych zabaw po zaawansowaną taktykę.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {learningStages.map((stage, index) => (
+          <div class={`card p-8 reveal animation-delay-${index % 2 * 2}00`}>
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0">
+                <div class="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center text-white font-display font-bold text-2xl">
+                  {stage.stage}
+                </div>
+              </div>
+              <div class="flex-grow">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                  <h3 class="text-xl font-display font-bold text-dark-900 dark:text-white">
+                    {stage.title}
+                  </h3>
+                  <span class="px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+                    {stage.age}
+                  </span>
+                </div>
+                <p class="text-dark-600 dark:text-dark-300 mb-4">
+                  {stage.description}
+                </p>
+                <div class="mb-3">
+                  <span class="text-sm font-semibold text-dark-900 dark:text-white">Czego uczymy:</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {stage.skills.map((skill) => (
+                    <span class="px-3 py-1 rounded-full bg-dark-100 dark:bg-dark-800 text-dark-600 dark:text-dark-300 text-xs">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+                <div class="flex items-center gap-2 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  {stage.focus}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Teach -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+          Program nauki
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          Czego nauczy się Twoje dziecko?
+        </h2>
+        <p class="text-dark-600 dark:text-dark-300 text-lg">
+          Nasza <strong>nauka gry w piłkę nożną</strong> obejmuje wszystkie aspekty – od techniki po taktykę.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {skillsWeTeach.map((category, index) => (
+          <div class={`card p-6 reveal animation-delay-${index}00`}>
+            <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-3xl mb-4">
+              {category.icon}
+            </div>
+            <h3 class="text-xl font-display font-bold text-dark-900 dark:text-white mb-4">
+              {category.category}
+            </h3>
+            <ul class="space-y-2">
+              {category.skills.map((skill) => (
+                <li class="flex items-start gap-2 text-dark-600 dark:text-dark-300 text-sm">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaching Methods -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+          Metodyka
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          Jak prowadzimy <span class="gradient-text">naukę piłki nożnej</span>?
+        </h2>
+        <p class="text-dark-600 dark:text-dark-300 text-lg">
+          Stosujemy sprawdzone metody, które sprawiają, że <strong>nauka gry w piłkę</strong> jest efektywna i przyjemna.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {teachingMethods.map((method, index) => (
+          <div class={`card p-6 reveal animation-delay-${index % 3}00`}>
+            <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-3xl mb-4">
+              {method.icon}
+            </div>
+            <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
+              {method.title}
+            </h3>
+            <p class="text-dark-600 dark:text-dark-300 text-sm">
+              {method.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips for Parents -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+            Dla rodziców
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Jak wspierać dziecko w <span class="gradient-text">nauce piłki nożnej</span>?
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6 reveal">
+          {parentTips.map((tip, index) => (
+            <div class="flex items-start gap-4 p-6 bg-dark-50 dark:bg-dark-800 rounded-xl">
+              <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold flex-shrink-0">
+                {index + 1}
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-dark-900 dark:text-white mb-1">
+                  {tip.tip}
+                </h3>
+                <p class="text-dark-600 dark:text-dark-300 text-sm">
+                  {tip.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950 relative overflow-hidden">
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <h2 class="text-white mb-6">
+          Rozpocznij <span class="gradient-text">naukę gry w piłkę</span>!
+        </h2>
+        <p class="text-dark-300 text-lg md:text-xl mb-8">
+          Pierwszy trening jest bezpłatny! Przekonaj się, że <strong class="text-white">nauka piłki nożnej</strong> w Unii Toruń to świetny sposób na rozwój Twojego dziecka.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/zapisy" class="btn-primary text-lg">
+            Zapisz na naukę
+          </a>
+          <a href="/treningi-pilkarskie-dla-dzieci" class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20">
+            Zobacz grupy wiekowe
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+            FAQ
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Pytania o naukę piłki nożnej
+          </h2>
+        </div>
+
+        <div class="space-y-4 reveal">
+          {faqItems.map((item) => (
+            <details class="group card p-6 cursor-pointer">
+              <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
+                {item.question}
+                <svg class="w-5 h-5 text-primary-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-4 text-dark-600 dark:text-dark-300">
+                {item.answer}
+              </p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

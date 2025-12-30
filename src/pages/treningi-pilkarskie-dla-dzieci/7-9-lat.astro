@@ -1,0 +1,388 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+// SEO Data - optymalizacja pod "treningi piłkarskie 7-9 lat / Żak U-9 Toruń"
+const seoTitle = 'Treningi piłkarskie dla dzieci 7-9 lat Toruń – Żak U-9';
+const seoDescription = 'Treningi piłki nożnej dla dzieci 7-9 lat w Toruniu. Grupa Żak U-9 – nauka techniki piłkarskiej, prowadzenia piłki, podań i strzałów. Zapisz dziecko na profesjonalne treningi w Unii Toruń!';
+const seoKeywords = [
+  'treningi piłkarskie 7-9 lat Toruń',
+  'piłka nożna dla 7 latka',
+  'piłka nożna dla 8 latka',
+  'piłka nożna dla 9 latka',
+  'żak U-9 Toruń',
+  'szkółka piłkarska 7-9 lat',
+  'treningi piłki nożnej dla dzieci',
+  'nauka piłki nożnej Toruń',
+];
+
+// Program szczegółowy
+const programDetails = [
+  {
+    title: 'Prowadzenie piłki',
+    description: 'Nauka prowadzenia piłki różnymi częściami stopy – wewnętrzną, zewnętrzną, podbiciem. Slalomy i tory przeszkód.',
+    icon: '👟',
+  },
+  {
+    title: 'Podania i przyjęcia',
+    description: 'Technika podań na krótkie i średnie dystanse. Przyjęcia piłki podeszwą, wewnętrzną częścią stopy.',
+    icon: '🎯',
+  },
+  {
+    title: 'Strzały na bramkę',
+    description: 'Nauka strzałów z miejsca i po prowadzeniu. Technika uderzenia wewnętrzną częścią stopy i podbiciem.',
+    icon: '⚽',
+  },
+  {
+    title: 'Drybling i zwody',
+    description: 'Podstawowe zwody i dryblingi. Nauka mijania przeciwnika w sytuacjach 1v1.',
+    icon: '🌀',
+  },
+  {
+    title: 'Gry małe (small-sided)',
+    description: 'Gry 3v3, 4v4 – idealne do nauki podejmowania decyzji i pracy zespołowej.',
+    icon: '👥',
+  },
+  {
+    title: 'Koordynacja i szybkość',
+    description: 'Ćwiczenia koordynacyjne z drabinką, pachołkami. Rozwój szybkości i zwinności.',
+    icon: '⚡',
+  },
+];
+
+// Typowy trening
+const trainingStructure = [
+  { time: '10 min', activity: 'Rozgrzewka dynamiczna', description: 'Bieg, ćwiczenia koordynacyjne, rozciąganie z piłką' },
+  { time: '20 min', activity: 'Część techniczna', description: 'Ćwiczenia prowadzenia, podań lub strzałów wg tematu' },
+  { time: '15 min', activity: 'Gra szkoleniowa', description: 'Small-sided games, gry w przewagach, zadania taktyczne' },
+  { time: '15 min', activity: 'Mecz / gra właściwa', description: 'Gra na małe bramki z zastosowaniem nabytych umiejętności' },
+];
+
+// FAQ
+const faqItems = [
+  {
+    question: 'Czym różnią się treningi Żaków od grupy przedszkolnej?',
+    answer: 'W grupie Żak U-9 (7-9 lat) przechodzimy od zabaw do systematycznej nauki techniki piłkarskiej. Treningi są dłuższe (60 min), bardziej ustrukturyzowane i skupiają się na konkretnych elementach: prowadzeniu, podaniach, strzałach. Dzieci uczestniczą już w pierwszych turniejach i sparingach.',
+  },
+  {
+    question: 'Czy dziecko bez doświadczenia może dołączyć do grupy?',
+    answer: 'Tak! Przyjmujemy dzieci zarówno z doświadczeniem piłkarskim, jak i zupełnie początkujące. Nasi trenerzy potrafią dostosować ćwiczenia do poziomu każdego zawodnika. Najważniejsza jest chęć do nauki i regularne uczęszczanie na treningi.',
+  },
+  {
+    question: 'Czy dzieci w tym wieku grają już mecze?',
+    answer: 'Tak, organizujemy sparingi z innymi klubami oraz turnieje dla kategorii Żak. Mecze gramy w formule 5v5 lub 7v7 na zmniejszonych boiskach. To doskonała okazja do sprawdzenia umiejętności w praktyce i nauki rywalizacji sportowej.',
+  },
+  {
+    question: 'Ile razy w tygodniu odbywają się treningi?',
+    answer: 'Grupa Żak U-9 trenuje 2 razy w tygodniu. Każdy trening trwa 60 minut. Do tego dochodzą weekendowe mecze lub turnieje (średnio 1-2 razy w miesiącu).',
+  },
+  {
+    question: 'Co dziecko powinno mieć na trening?',
+    answer: 'Strój sportowy, ochraniacze na golenie (obowiązkowo!), buty piłkarskie – korki na trawę naturalną/sztuczną lub turfy. Bidon z wodą. Po zapisie dziecko otrzymuje strój treningowy Unii Toruń.',
+  },
+];
+
+// Umiejętności do opanowania
+const skillsToLearn = [
+  { skill: 'Prowadzenie piłki', level: 'Podstawowe + średnie' },
+  { skill: 'Podania krótkie', level: 'Podstawowe' },
+  { skill: 'Przyjęcia piłki', level: 'Podstawowe' },
+  { skill: 'Strzały', level: 'Podstawowe' },
+  { skill: 'Drybling 1v1', level: 'Wprowadzenie' },
+  { skill: 'Gra głową', level: 'Wprowadzenie' },
+];
+---
+
+<Layout 
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+>
+  <!-- Hero Section -->
+  <section class="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-blue-950">
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div class="absolute top-20 right-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center justify-center gap-2 text-dark-400 text-sm mb-6 flex-wrap">
+          <a href="/" class="hover:text-white transition-colors">Strona główna</a>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <a href="/treningi-pilkarskie-dla-dzieci" class="hover:text-white transition-colors">Treningi</a>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-white">7-9 lat</span>
+        </nav>
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
+          <span class="text-2xl">⚽</span>
+          Żak U-9 • Roczniki 2016-2018
+        </div>
+
+        <h1 class="text-white mb-6 animate-fade-in-up">
+          Treningi piłkarskie <span class="text-blue-400">7-9 lat</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto">
+          Grupa <strong class="text-white">Żak U-9</strong> – czas na naukę prawdziwej techniki piłkarskiej! Prowadzenie, podania, strzały i pierwsze mecze w Toruniu.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300">
+          <a href="/zapisy" class="btn bg-blue-500 text-white hover:bg-blue-600 hover:shadow-xl hover:-translate-y-0.5">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+            Zapisz dziecko
+          </a>
+          <a href="/kontakt" class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20">
+            Umów trening próbny
+          </a>
+        </div>
+
+        <!-- Quick info -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 animate-fade-in-up animation-delay-400">
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">🎂</div>
+            <div class="text-white font-bold">7-9 lat</div>
+            <div class="text-dark-400 text-xs">Wiek uczestników</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">📅</div>
+            <div class="text-white font-bold">2x / tydzień</div>
+            <div class="text-dark-400 text-xs">Treningi</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">⏱️</div>
+            <div class="text-white font-bold">60 minut</div>
+            <div class="text-dark-400 text-xs">Czas treningu</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">🏆</div>
+            <div class="text-white font-bold">Turnieje</div>
+            <div class="text-dark-400 text-xs">1-2x / miesiąc</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-4">
+            Żak U-9
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Czas na prawdziwą <span class="text-blue-500">naukę techniki</span>
+          </h2>
+          <div class="space-y-4 text-dark-600 dark:text-dark-300">
+            <p>
+              <strong class="text-dark-900 dark:text-white">Treningi piłkarskie dla dzieci 7-9 lat</strong> w Unii Toruń to etap intensywnej nauki techniki piłkarskiej. W grupie <strong>Żak U-9</strong> przechodzimy od zabaw z piłką do systematycznego szkolenia.
+            </p>
+            <p>
+              Na tym etapie dzieci uczą się prawidłowej techniki prowadzenia piłki, podań i przyjęć, a także podstaw strzałów na bramkę. Wprowadzamy pierwsze elementy gry 1v1 i podstawy pracy zespołowej.
+            </p>
+            <p>
+              <strong>Treningi piłki nożnej dla 7-9 latków</strong> obejmują również udział w sparingach i turniejach. To ważne doświadczenie, które uczy rywalizacji sportowej i pozwala sprawdzić nabyte umiejętności w praktyce.
+            </p>
+          </div>
+        </div>
+        
+        <div class="reveal-right">
+          <div class="relative">
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/50 dark:to-cyan-900/50 flex items-center justify-center">
+              <div class="text-center p-8">
+                <div class="text-7xl mb-4">🏃</div>
+                <p class="text-dark-500 dark:text-dark-400">Zdjęcie z treningu</p>
+              </div>
+            </div>
+            
+            <div class="absolute -bottom-6 -right-6 bg-white dark:bg-dark-800 rounded-xl shadow-2xl p-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-2xl">
+                  📈
+                </div>
+                <div>
+                  <p class="font-bold text-dark-900 dark:text-white text-sm">Złoty wiek</p>
+                  <p class="text-xs text-dark-500 dark:text-dark-400">Najlepszy czas na naukę!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-4">
+          Umiejętności
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          Czego uczymy na <span class="text-blue-500">treningach piłkarskich</span>?
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {programDetails.map((item, index) => (
+          <div class={`card p-6 reveal animation-delay-${(index % 3) * 100}`}>
+            <div class="w-14 h-14 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-2xl mb-4">
+              {item.icon}
+            </div>
+            <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
+              {item.title}
+            </h3>
+            <p class="text-dark-600 dark:text-dark-300 text-sm">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Structure -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-4">
+            Przebieg zajęć
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            60 minut treningu piłkarskiego
+          </h2>
+        </div>
+
+        <div class="space-y-4 reveal">
+          {trainingStructure.map((phase, index) => (
+            <div class="card p-6 flex gap-6 items-start">
+              <div class="flex-shrink-0 w-20 text-center">
+                <div class="text-2xl font-display font-bold text-blue-500">{phase.time}</div>
+              </div>
+              <div class="flex-grow">
+                <h3 class="font-display font-bold text-dark-900 dark:text-white mb-1">
+                  {phase.activity}
+                </h3>
+                <p class="text-dark-600 dark:text-dark-300 text-sm">
+                  {phase.description}
+                </p>
+              </div>
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold">
+                {index + 1}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Golden Age Info -->
+  <section class="section-padding bg-blue-50 dark:bg-blue-950/30">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="card p-8 md:p-12 text-center reveal">
+          <div class="text-5xl mb-6">🌟</div>
+          <h2 class="text-2xl md:text-3xl font-display font-bold text-dark-900 dark:text-white mb-4">
+            Wiek 7-9 lat = "Złoty wiek" nauki techniki
+          </h2>
+          <p class="text-dark-600 dark:text-dark-300 text-lg mb-6 max-w-2xl mx-auto">
+            Naukowcy nazywają wiek 7-12 lat <strong>"złotym wiekiem"</strong> nauki motorycznej. To najlepszy czas na przyswajanie techniki piłkarskiej! Dzieci w tym wieku szybko uczą się nowych ruchów, a nabyte umiejętności zostają z nimi na całe życie.
+          </p>
+          <p class="text-dark-500 dark:text-dark-400 text-sm">
+            Dlatego tak ważne jest, aby <strong>treningi piłkarskie dla 7-9 latków</strong> były prowadzone przez doświadczonych trenerów z odpowiednią metodologią.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-4">
+            FAQ
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Pytania o grupę Żak U-9
+          </h2>
+        </div>
+
+        <div class="space-y-4 reveal">
+          {faqItems.map((item) => (
+            <details class="group card p-6 cursor-pointer">
+              <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
+                {item.question}
+                <svg class="w-5 h-5 text-blue-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-4 text-dark-600 dark:text-dark-300">
+                {item.answer}
+              </p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-blue-950 relative overflow-hidden">
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <h2 class="text-white mb-6">
+          Dołącz do grupy <span class="text-blue-400">Żak U-9</span>!
+        </h2>
+        <p class="text-dark-300 text-lg md:text-xl mb-8">
+          <strong class="text-white">Treningi piłkarskie dla dzieci 7-9 lat</strong> – to najlepszy moment na naukę techniki. Nie trać czasu, zapisz dziecko już dziś!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/zapisy" class="btn bg-blue-500 text-white hover:bg-blue-600 hover:shadow-xl hover:-translate-y-0.5">
+            Zapisz dziecko
+          </a>
+          <a href="/treningi-pilkarskie-dla-dzieci" class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20">
+            Zobacz inne grupy
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="py-8 bg-dark-50 dark:bg-dark-950 border-t border-dark-100 dark:border-dark-800">
+    <div class="container-custom">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <a href="/treningi-pilkarskie-dla-dzieci/3-6-lat" class="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Poprzednia: Przedszkole (3-6 lat)
+        </a>
+        <a href="/treningi-pilkarskie-dla-dzieci/9-11-lat" class="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          Następna: Orlik U-11 (9-11 lat)
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,415 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+// SEO Data - optymalizacja pod "piłka nożna 9-11 lat / Orlik U-11 Toruń"
+const seoTitle = 'Piłka nożna dla dzieci 9-11 lat Toruń – Orlik U-11';
+const seoDescription = 'Treningi piłkarskie dla dzieci 9-11 lat w Toruniu. Grupa Orlik U-11 – doskonalenie techniki, taktyka indywidualna, rozgrywki ligowe KPZPN. Profesjonalne szkolenie piłkarskie w Unii Toruń!';
+const seoKeywords = [
+  'piłka nożna dla dzieci 9-11 lat Toruń',
+  'treningi piłkarskie dla 9 latka',
+  'treningi piłkarskie dla 10 latka',
+  'treningi piłkarskie dla 11 latka',
+  'orlik U-11 Toruń',
+  'rozgrywki ligowe młodzik',
+  'szkółka piłkarska 9-11 lat',
+  'liga orlików Toruń',
+];
+
+// Program szczegółowy
+const programDetails = [
+  {
+    title: 'Doskonalenie techniki',
+    description: 'Zaawansowane ćwiczenia prowadzenia, podań i przyjęć. Praca nad słabszą nogą. Strzały z różnych pozycji.',
+    icon: '⚽',
+  },
+  {
+    title: 'Gra 1v1 i 2v2',
+    description: 'Intensywna praca nad sytuacjami pojedynkowymi. Dryblingi, zwody, atakowanie i bronienie.',
+    icon: '🆚',
+  },
+  {
+    title: 'Taktyka indywidualna',
+    description: 'Wprowadzenie do gry na pozycjach. Nauka odpowiedniego ustawiania się i poruszania na boisku.',
+    icon: '🧠',
+  },
+  {
+    title: 'Small-sided games',
+    description: 'Gry 4v4, 5v5, 6v6 z różnymi wariantami taktycznymi. Nauka podejmowania decyzji pod presją.',
+    icon: '👥',
+  },
+  {
+    title: 'Przygotowanie motoryczne',
+    description: 'Rozwój szybkości, zwinności, koordynacji. Ćwiczenia wzmacniające i stabilizacyjne.',
+    icon: '💪',
+  },
+  {
+    title: 'Gra w ataku i obronie',
+    description: 'Podstawy gry ofensywnej i defensywnej. Pressing, wyprowadzanie piłki, kontrowanie.',
+    icon: '🎯',
+  },
+];
+
+// Typowy trening
+const trainingStructure = [
+  { time: '10 min', activity: 'Rozgrzewka z piłką', description: 'Dynamiczne rozgrzewanie, rondo, gra w utrzymanie' },
+  { time: '25 min', activity: 'Część techniczno-taktyczna', description: 'Ćwiczenia główne wg tematu jednostki treningowej' },
+  { time: '20 min', activity: 'Gry szkoleniowe', description: 'Small-sided games z konkretnymi zadaniami' },
+  { time: '20 min', activity: 'Gra właściwa', description: 'Mecz 7v7 lub 9v9 z zastosowaniem nauki' },
+];
+
+// FAQ
+const faqItems = [
+  {
+    question: 'Czy Orliki grają w rozgrywkach ligowych?',
+    answer: 'Tak! Grupa Orlik U-11 uczestniczy w oficjalnych rozgrywkach organizowanych przez Kujawsko-Pomorski Związek Piłki Nożnej. Mecze ligowe odbywają się w weekendy, zazwyczaj co 1-2 tygodnie. To doskonałe doświadczenie dla młodych zawodników.',
+  },
+  {
+    question: 'Ile razy w tygodniu trenują Orliki?',
+    answer: 'Grupa Orlik U-11 trenuje 3 razy w tygodniu. Każdy trening trwa 75 minut. Do tego dochodzą weekendowe mecze ligowe lub turnieje. To intensywniejszy program niż w młodszych grupach.',
+  },
+  {
+    question: 'Czy dziecko musi mieć doświadczenie piłkarskie?',
+    answer: 'Preferujemy dzieci z pewnym doświadczeniem piłkarskim, ale nie jest to wymóg bezwzględny. Jeśli dziecko jest zmotywowane i ma predyspozycje, możemy je przyjąć. Na treningu próbnym oceniamy poziom i dopasowujemy do odpowiedniej grupy.',
+  },
+  {
+    question: 'Na jakim formacie boiska grają Orliki?',
+    answer: 'Orliki U-11 grają na boisku 7v7 (7 zawodników na boisku) lub 9v9 w zależności od turnieju. Bramki są mniejsze niż w piłce dorosłych. Ten format pozwala na więcej kontaktów z piłką i lepszą naukę gry.',
+  },
+  {
+    question: 'Co z meczami wyjazdowymi?',
+    answer: 'W ramach rozgrywek ligowych odbywają się mecze wyjazdowe do innych klubów w regionie. Rodzice organizują transport we własnym zakresie lub wspólnie. Informacje o meczach przekazywane są z odpowiednim wyprzedzeniem.',
+  },
+];
+
+// Achievements
+const achievements = [
+  'Udział w rozgrywkach KPZPN',
+  'Turnieje regionalne i ogólnopolskie',
+  'Sparingi z klubami z całej Polski',
+  'Obozy szkoleniowe',
+];
+---
+
+<Layout 
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+>
+  <!-- Hero Section -->
+  <section class="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-violet-950">
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div class="absolute top-20 right-10 w-72 h-72 bg-violet-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center justify-center gap-2 text-dark-400 text-sm mb-6 flex-wrap">
+          <a href="/" class="hover:text-white transition-colors">Strona główna</a>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <a href="/treningi-pilkarskie-dla-dzieci" class="hover:text-white transition-colors">Treningi</a>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-white">9-11 lat</span>
+        </nav>
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/20 border border-violet-500/30 text-violet-300 text-sm font-medium mb-6">
+          <span class="text-2xl">🏆</span>
+          Orlik U-11 • Roczniki 2014-2016
+        </div>
+
+        <h1 class="text-white mb-6 animate-fade-in-up">
+          Piłka nożna dla dzieci <span class="text-violet-400">9-11 lat</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto">
+          Grupa <strong class="text-white">Orlik U-11</strong> – doskonalenie techniki, taktyka i <strong class="text-white">rozgrywki ligowe</strong> w Toruniu. Czas na poważniejszą piłkę!
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300">
+          <a href="/zapisy" class="btn bg-violet-500 text-white hover:bg-violet-600 hover:shadow-xl hover:-translate-y-0.5">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+            Zapisz dziecko
+          </a>
+          <a href="/kontakt" class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20">
+            Umów trening próbny
+          </a>
+        </div>
+
+        <!-- Quick info -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 animate-fade-in-up animation-delay-400">
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">🎂</div>
+            <div class="text-white font-bold">9-11 lat</div>
+            <div class="text-dark-400 text-xs">Wiek uczestników</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">📅</div>
+            <div class="text-white font-bold">3x / tydzień</div>
+            <div class="text-dark-400 text-xs">Treningi</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">⏱️</div>
+            <div class="text-white font-bold">75 minut</div>
+            <div class="text-dark-400 text-xs">Czas treningu</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">🏟️</div>
+            <div class="text-white font-bold">Liga KPZPN</div>
+            <div class="text-dark-400 text-xs">Rozgrywki</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-violet-100 dark:bg-violet-900/50 text-violet-600 dark:text-violet-400 text-sm font-semibold mb-4">
+            Orlik U-11
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Doskonalenie umiejętności i <span class="text-violet-500">pierwsze poważne mecze</span>
+          </h2>
+          <div class="space-y-4 text-dark-600 dark:text-dark-300">
+            <p>
+              <strong class="text-dark-900 dark:text-white">Treningi piłkarskie dla dzieci 9-11 lat</strong> w Unii Toruń to etap intensywnego doskonalenia techniki i wprowadzenia taktyki. Grupa <strong>Orlik U-11</strong> to już poważna piłka!
+            </p>
+            <p>
+              Na tym etapie zawodnicy uczestniczą w oficjalnych rozgrywkach ligowych organizowanych przez KPZPN. Regularne mecze to nie tylko sprawdzian umiejętności, ale również nauka rywalizacji sportowej i radzenia sobie z presją.
+            </p>
+            <p>
+              <strong>Piłka nożna dla 9-11 latków</strong> w naszej akademii to trzy treningi w tygodniu plus weekendowe mecze. Program szkoleniowy jest ukierunkowany na rozwój indywidualnych umiejętności i wprowadzenie elementów gry zespołowej.
+            </p>
+          </div>
+        </div>
+        
+        <div class="reveal-right">
+          <div class="relative">
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-violet-100 to-purple-100 dark:from-violet-900/50 dark:to-purple-900/50 flex items-center justify-center">
+              <div class="text-center p-8">
+                <div class="text-7xl mb-4">🎯</div>
+                <p class="text-dark-500 dark:text-dark-400">Zdjęcie z meczu</p>
+              </div>
+            </div>
+            
+            <div class="absolute -bottom-6 -right-6 bg-white dark:bg-dark-800 rounded-xl shadow-2xl p-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-violet-100 dark:bg-violet-900/50 flex items-center justify-center text-2xl">
+                  🏆
+                </div>
+                <div>
+                  <p class="font-bold text-dark-900 dark:text-white text-sm">Liga KPZPN</p>
+                  <p class="text-xs text-dark-500 dark:text-dark-400">Oficjalne rozgrywki!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Section -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-violet-100 dark:bg-violet-900/50 text-violet-600 dark:text-violet-400 text-sm font-semibold mb-4">
+          Program szkolenia
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          Co ćwiczymy w grupie <span class="text-violet-500">Orlik U-11</span>?
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {programDetails.map((item, index) => (
+          <div class={`card p-6 reveal animation-delay-${(index % 3) * 100}`}>
+            <div class="w-14 h-14 rounded-xl bg-violet-100 dark:bg-violet-900/50 flex items-center justify-center text-2xl mb-4">
+              {item.icon}
+            </div>
+            <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
+              {item.title}
+            </h3>
+            <p class="text-dark-600 dark:text-dark-300 text-sm">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Structure -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-violet-100 dark:bg-violet-900/50 text-violet-600 dark:text-violet-400 text-sm font-semibold mb-4">
+            Przebieg zajęć
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            75 minut intensywnego treningu
+          </h2>
+        </div>
+
+        <div class="space-y-4 reveal">
+          {trainingStructure.map((phase, index) => (
+            <div class="card p-6 flex gap-6 items-start">
+              <div class="flex-shrink-0 w-20 text-center">
+                <div class="text-2xl font-display font-bold text-violet-500">{phase.time}</div>
+              </div>
+              <div class="flex-grow">
+                <h3 class="font-display font-bold text-dark-900 dark:text-white mb-1">
+                  {phase.activity}
+                </h3>
+                <p class="text-dark-600 dark:text-dark-300 text-sm">
+                  {phase.description}
+                </p>
+              </div>
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-violet-100 dark:bg-violet-900/50 flex items-center justify-center text-violet-600 dark:text-violet-400 font-bold">
+                {index + 1}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competitions Section -->
+  <section class="section-padding bg-violet-50 dark:bg-violet-950/30">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-violet-100 dark:bg-violet-900/50 text-violet-600 dark:text-violet-400 text-sm font-semibold mb-4">
+            Rywalizacja sportowa
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Rozgrywki ligowe i turnieje
+          </h2>
+          <p class="text-dark-600 dark:text-dark-300 mb-6">
+            Grupa <strong class="text-dark-900 dark:text-white">Orlik U-11</strong> uczestniczy w oficjalnych rozgrywkach ligowych KPZPN oraz licznych turniejach. To bezcenne doświadczenie dla młodych piłkarzy!
+          </p>
+          
+          <div class="space-y-3">
+            {achievements.map((item) => (
+              <div class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-violet-500 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <span class="text-dark-700 dark:text-dark-200">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <div class="card p-8 bg-white dark:bg-dark-800">
+            <div class="text-center mb-6">
+              <div class="text-5xl mb-4">🏅</div>
+              <h3 class="text-xl font-display font-bold text-dark-900 dark:text-white">
+                Sezon ligowy 2025/2026
+              </h3>
+            </div>
+            <p class="text-dark-600 dark:text-dark-300 text-center mb-6">
+              Zapisz dziecko teraz i dołącz do drużyny na nadchodzący sezon rozgrywek ligowych Orlików!
+            </p>
+            <a href="/zapisy" class="btn-primary w-full justify-center bg-violet-500 hover:bg-violet-600">
+              Zapisz do drużyny
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-violet-100 dark:bg-violet-900/50 text-violet-600 dark:text-violet-400 text-sm font-semibold mb-4">
+            FAQ
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Pytania o grupę Orlik U-11
+          </h2>
+        </div>
+
+        <div class="space-y-4 reveal">
+          {faqItems.map((item) => (
+            <details class="group card p-6 cursor-pointer">
+              <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
+                {item.question}
+                <svg class="w-5 h-5 text-violet-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-4 text-dark-600 dark:text-dark-300">
+                {item.answer}
+              </p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-violet-950 relative overflow-hidden">
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <h2 class="text-white mb-6">
+          Dołącz do <span class="text-violet-400">Orlików U-11</span>!
+        </h2>
+        <p class="text-dark-300 text-lg md:text-xl mb-8">
+          <strong class="text-white">Piłka nożna dla dzieci 9-11 lat</strong> w Unii Toruń – treningi, mecze ligowe, turnieje. Rozwijaj talent na poważnie!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/zapisy" class="btn bg-violet-500 text-white hover:bg-violet-600 hover:shadow-xl hover:-translate-y-0.5">
+            Zapisz dziecko
+          </a>
+          <a href="/treningi-pilkarskie-dla-dzieci" class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20">
+            Zobacz inne grupy
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="py-8 bg-dark-50 dark:bg-dark-950 border-t border-dark-100 dark:border-dark-800">
+    <div class="container-custom">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <a href="/treningi-pilkarskie-dla-dzieci/7-9-lat" class="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Poprzednia: Żak U-9 (7-9 lat)
+        </a>
+        <a href="/treningi-pilkarskie-dla-dzieci/11-13-lat" class="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
+          Następna: Młodzik U-13 (11-13 lat)
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
