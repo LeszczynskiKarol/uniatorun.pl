@@ -1,0 +1,373 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+// SEO Data
+const seoTitle = 'Nasi trenerzy – Akademia Piłkarska Unia Toruń';
+const seoDescription = 'Poznaj wykwalifikowanych trenerów Akademii Piłkarskiej Unia Toruń. Doświadczeni szkoleniowcy z licencjami UEFA i pasją do pracy z młodzieżą.';
+const seoKeywords = [
+  'trenerzy piłkarscy Toruń',
+  'szkoleniowcy Unia Toruń',
+  'trener piłki nożnej dzieci',
+  'kadra szkoleniowa akademia piłkarska',
+];
+
+// =============================================
+// TRENERZY - EDYTUJ TĘ SEKCJĘ
+// =============================================
+const trainers = [
+  {
+    id: 'trener-1',
+    name: 'Michał Kowalski',
+    role: 'Trener koordynator',
+    photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
+    groups: ['Przedszkole piłkarskie', 'Żak U-9'],
+    experience: '12 lat',
+    license: 'UEFA B',
+    education: 'AWF Gdańsk – Wychowanie Fizyczne',
+    bio: 'Michał to doświadczony szkoleniowiec z pasją do pracy z najmłodszymi adeptami futbolu. Przez 12 lat pracy z dziećmi wypracował unikalne metody nauki poprzez zabawę, które sprawiają, że każdy trening to przygoda.',
+    achievements: [
+      'Wychowanek Akademii Legii Warszawa',
+      'Były zawodnik III ligi',
+      'Przeszkolił ponad 500 dzieci',
+      'Organizator obozów piłkarskich',
+    ],
+    philosophy: 'Wierzę, że każde dziecko ma talent – trzeba go tylko odkryć i rozwinąć. Najważniejsza jest radość z gry.',
+    contact: {
+      phone: '+48 500 100 200',
+      email: 'michal@uniatorun.pl',
+    },
+  },
+  {
+    id: 'trener-2',
+    name: 'Paweł Nowak',
+    role: 'Trener grup młodzieżowych',
+    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
+    groups: ['Orlik U-11', 'Młodzik U-13'],
+    experience: '8 lat',
+    license: 'UEFA B',
+    education: 'AWF Poznań – Trenerstwo Sportowe',
+    bio: 'Paweł specjalizuje się w szkoleniu starszych grup młodzieżowych. Kładzie nacisk na technikę indywidualną i taktykę zespołową, przygotowując zawodników do gry na wyższym poziomie.',
+    achievements: [
+      'Były zawodnik Lecha Poznań (juniorzy)',
+      'Trener roku 2022 w regionie',
+      'Awans drużyny do finałów wojewódzkich',
+      'Certyfikowany analityk gry',
+    ],
+    philosophy: 'Futbol to gra zespołowa, ale budowana na indywidualnych umiejętnościach. Uczę obu rzeczy równocześnie.',
+    contact: {
+      phone: '+48 500 200 300',
+      email: 'pawel@uniatorun.pl',
+    },
+  },
+  {
+    id: 'trener-3',
+    name: 'Adam Wiśniewski',
+    role: 'Trener bramkarzy / Asystent',
+    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
+    groups: ['Wszystkie grupy – bramkarze'],
+    experience: '6 lat',
+    license: 'UEFA Goalkeeper B',
+    education: 'AWF Wrocław – Trenerstwo Piłki Nożnej',
+    bio: 'Adam jako były bramkarz II-ligowy doskonale rozumie specyfikę tej pozycji. Prowadzi specjalistyczne treningi dla bramkarzy ze wszystkich grup wiekowych, rozwijając ich umiejętności i pewność siebie.',
+    achievements: [
+      'Były bramkarz Olimpii Grudziądz (II liga)',
+      '150+ meczów na poziomie seniorskim',
+      'Specjalista od pracy z młodymi bramkarzami',
+      'Autor programu szkolenia bramkarzy',
+    ],
+    philosophy: 'Bramkarz to ostatnia linia obrony i pierwszy atakujący. Uczę moich podopiecznych obu ról.',
+    contact: {
+      phone: '+48 500 300 400',
+      email: 'adam@uniatorun.pl',
+    },
+  },
+];
+
+// Statystyki kadry
+const stats = [
+  { value: '3', label: 'Trenerów' },
+  { value: '26', label: 'Lat doświadczenia łącznie' },
+  { value: '100%', label: 'Z licencjami UEFA' },
+  { value: '500+', label: 'Przeszkolonych dzieci' },
+];
+---
+
+<Layout 
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+>
+  <!-- Hero Section -->
+  <section class="relative py-16 md:py-20 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950">
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div class="absolute top-20 right-10 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <nav class="flex items-center justify-center gap-2 text-dark-400 text-sm mb-6">
+          <a href="/" class="hover:text-white transition-colors">Strona główna</a>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-white">Trenerzy</span>
+        </nav>
+
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+          </svg>
+          Licencjonowani trenerzy UEFA
+        </div>
+
+        <h1 class="text-white mb-6 animate-fade-in-up">
+          Nasi <span class="gradient-text">trenerzy</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto">
+          Poznaj wykwalifikowaną kadrę szkoleniową Akademii Piłkarskiej Unia Toruń. <strong class="text-white">Doświadczenie, pasja i indywidualne podejście</strong> do każdego zawodnika.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-8 bg-white dark:bg-dark-900 border-b border-dark-100 dark:border-dark-800">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {stats.map((stat) => (
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-display font-bold gradient-text mb-1">
+              {stat.value}
+            </div>
+            <div class="text-dark-600 dark:text-dark-400 text-sm">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trainers Grid -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="space-y-12">
+        {trainers.map((trainer, index) => (
+          <div 
+            id={trainer.id}
+            class={`card overflow-hidden reveal ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+          >
+            <div class="grid lg:grid-cols-3 gap-0">
+              <!-- Photo -->
+              <div class={`relative aspect-square lg:aspect-auto ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                <img 
+                  src={trainer.photo} 
+                  alt={trainer.name}
+                  class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-900/60 via-transparent to-transparent lg:hidden"></div>
+                <div class="absolute bottom-4 left-4 lg:hidden">
+                  <span class="px-3 py-1 rounded-full bg-primary-500 text-white text-sm font-semibold">
+                    {trainer.license}
+                  </span>
+                </div>
+              </div>
+              
+              <!-- Content -->
+              <div class={`lg:col-span-2 p-6 md:p-8 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                  <div>
+                    <h2 class="text-2xl md:text-3xl font-display font-bold text-dark-900 dark:text-white">
+                      {trainer.name}
+                    </h2>
+                    <p class="text-primary-600 dark:text-primary-400 font-semibold">
+                      {trainer.role}
+                    </p>
+                  </div>
+                  <span class="hidden lg:inline-flex px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 font-bold">
+                    {trainer.license}
+                  </span>
+                </div>
+                
+                <!-- Quick Info -->
+                <div class="grid sm:grid-cols-3 gap-4 mb-6">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-dark-100 dark:bg-dark-800 flex items-center justify-center">
+                      <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="text-xs text-dark-500 dark:text-dark-400">Doświadczenie</p>
+                      <p class="font-semibold text-dark-900 dark:text-white">{trainer.experience}</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-dark-100 dark:bg-dark-800 flex items-center justify-center">
+                      <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="text-xs text-dark-500 dark:text-dark-400">Wykształcenie</p>
+                      <p class="font-semibold text-dark-900 dark:text-white text-sm">{trainer.education}</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-dark-100 dark:bg-dark-800 flex items-center justify-center">
+                      <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="text-xs text-dark-500 dark:text-dark-400">Grupy</p>
+                      <p class="font-semibold text-dark-900 dark:text-white text-sm">{trainer.groups.join(', ')}</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Bio -->
+                <p class="text-dark-600 dark:text-dark-300 mb-6">
+                  {trainer.bio}
+                </p>
+                
+                <!-- Achievements -->
+                <div class="mb-6">
+                  <h3 class="font-display font-bold text-dark-900 dark:text-white mb-3">Osiągnięcia</h3>
+                  <ul class="grid sm:grid-cols-2 gap-2">
+                    {trainer.achievements.map((achievement) => (
+                      <li class="flex items-center gap-2 text-sm text-dark-600 dark:text-dark-300">
+                        <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        {achievement}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <!-- Philosophy Quote -->
+                <blockquote class="relative pl-4 border-l-4 border-primary-500 italic text-dark-500 dark:text-dark-400 mb-6">
+                  "{trainer.philosophy}"
+                </blockquote>
+                
+                <!-- Contact -->
+                <div class="flex flex-wrap gap-4">
+                  <a 
+                    href={`tel:${trainer.contact.phone.replace(/\s/g, '')}`}
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-dark-100 dark:bg-dark-800 text-dark-700 dark:text-dark-300 hover:bg-primary-500 hover:text-white transition-all text-sm font-medium"
+                  >
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    {trainer.contact.phone}
+                  </a>
+                  <a 
+                    href={`mailto:${trainer.contact.email}`}
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-dark-100 dark:bg-dark-800 text-dark-700 dark:text-dark-300 hover:bg-primary-500 hover:text-white transition-all text-sm font-medium"
+                  >
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    Napisz
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Our Trainers -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+          Dlaczego my?
+        </span>
+        <h2 class="text-dark-900 dark:text-white mb-4">
+          Co wyróżnia naszych <span class="gradient-text">trenerów</span>?
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card p-6 text-center">
+          <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-3xl mx-auto mb-4">
+            🎓
+          </div>
+          <h3 class="font-display font-bold text-dark-900 dark:text-white mb-2">
+            Wykształcenie kierunkowe
+          </h3>
+          <p class="text-dark-600 dark:text-dark-300 text-sm">
+            Wszyscy trenerzy ukończyli studia na AWF ze specjalizacją w piłce nożnej lub trenerstwa sportowego.
+          </p>
+        </div>
+
+        <div class="card p-6 text-center">
+          <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-3xl mx-auto mb-4">
+            📜
+          </div>
+          <h3 class="font-display font-bold text-dark-900 dark:text-white mb-2">
+            Licencje UEFA
+          </h3>
+          <p class="text-dark-600 dark:text-dark-300 text-sm">
+            Posiadamy licencje UEFA B i specjalistyczne uprawnienia do szkolenia bramkarzy.
+          </p>
+        </div>
+
+        <div class="card p-6 text-center">
+          <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-3xl mx-auto mb-4">
+            ⚽
+          </div>
+          <h3 class="font-display font-bold text-dark-900 dark:text-white mb-2">
+            Doświadczenie piłkarskie
+          </h3>
+          <p class="text-dark-600 dark:text-dark-300 text-sm">
+            Nasi trenerzy to byli zawodnicy z doświadczeniem na poziomie II i III ligi.
+          </p>
+        </div>
+
+        <div class="card p-6 text-center">
+          <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-3xl mx-auto mb-4">
+            ❤️
+          </div>
+          <h3 class="font-display font-bold text-dark-900 dark:text-white mb-2">
+            Pasja do pracy z dziećmi
+          </h3>
+          <p class="text-dark-600 dark:text-dark-300 text-sm">
+            Szkolenie młodzieży to dla nas nie tylko praca, ale przede wszystkim pasja i powołanie.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950 relative overflow-hidden">
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-white mb-6">
+          Chcesz poznać naszych <span class="gradient-text">trenerów</span> osobiście?
+        </h2>
+        <p class="text-dark-300 text-lg md:text-xl mb-8">
+          Przyjdź z dzieckiem na <strong class="text-white">bezpłatny trening próbny</strong> i zobacz, jak pracujemy!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/zapisy" class="btn-primary text-lg">
+            Umów trening próbny
+          </a>
+          <a href="/kontakt" class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20">
+            Zadaj pytanie
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

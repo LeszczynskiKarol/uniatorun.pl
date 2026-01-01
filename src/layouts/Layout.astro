@@ -13,34 +13,41 @@ const {
   description,
   keywords = [],
   canonical,
-  ogImage = '/og-image.jpg',
+  ogImage = "/og-image.jpg",
   noindex = false,
 } = Astro.props;
 
-const siteName = 'Unia Toruń';
-const siteUrl = 'https://unia-torun.pl';
+const siteName = "Unia Toruń";
+const siteUrl = "https://www.uniatorun.pl";
 const fullTitle = `${title} | ${siteName}`;
 const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
 
-import '@/styles/global.css';
-import Header from '@/components/Header.astro';
-import Footer from '@/components/Footer.astro';
+import "@/styles/global.css";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    
+
     <!-- Primary Meta Tags -->
     <title>{fullTitle}</title>
     <meta name="title" content={fullTitle} />
     <meta name="description" content={description} />
-    {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+    {
+      keywords.length > 0 && (
+        <meta name="keywords" content={keywords.join(", ")} />
+      )
+    }
     <meta name="author" content={siteName} />
-    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <meta
+      name="robots"
+      content={noindex ? "noindex, nofollow" : "index, follow"}
+    />
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph / Facebook -->
@@ -73,102 +80,113 @@ import Footer from '@/components/Footer.astro';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "SportsOrganization",
-      "name": "Unia Toruń - Akademia Piłkarska",
-      "alternateName": "Szkółka Piłkarska Unia Toruń",
-      "url": siteUrl,
-      "logo": `${siteUrl}/logo.png`,
-      "description": "Akademia piłkarska dla dzieci i młodzieży w Toruniu. Profesjonalne treningi piłkarskie dla grup wiekowych od 3 do 13 lat.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Toruń",
-        "addressRegion": "kujawsko-pomorskie",
-        "addressCountry": "PL"
-      },
-      "sport": "Piłka nożna",
-      "areaServed": {
-        "@type": "City",
-        "name": "Toruń"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Treningi piłkarskie dla dzieci",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Treningi piłkarskie dla dzieci 3-6 lat"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Treningi piłkarskie Żak U-9"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Treningi piłkarskie Orlik U-11"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Treningi piłkarskie Młodzik U-13"
-            }
-          }
-        ]
-      }
-    })} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SportsOrganization",
+        name: "Unia Toruń - Akademia Piłkarska",
+        alternateName: "Szkółka Piłkarska Unia Toruń",
+        url: siteUrl,
+        logo: `${siteUrl}/logo.png`,
+        description:
+          "Akademia piłkarska dla dzieci i młodzieży w Toruniu. Profesjonalne treningi piłkarskie dla grup wiekowych od 3 do 13 lat.",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Toruń",
+          addressRegion: "kujawsko-pomorskie",
+          addressCountry: "PL",
+        },
+        sport: "Piłka nożna",
+        areaServed: {
+          "@type": "City",
+          name: "Toruń",
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Treningi piłkarskie dla dzieci",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Treningi piłkarskie dla dzieci 3-6 lat",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Treningi piłkarskie Żak U-9",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Treningi piłkarskie Orlik U-11",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Treningi piłkarskie Młodzik U-13",
+              },
+            },
+          ],
+        },
+      })}
+    />
 
     <!-- Dark mode script - runs before page render to prevent flash -->
     <script is:inline>
       const getThemePreference = () => {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          return localStorage.getItem('theme');
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
         }
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
       };
-      
+
       const theme = getThemePreference();
-      document.documentElement.classList.toggle('dark', theme === 'dark');
+      document.documentElement.classList.toggle("dark", theme === "dark");
     </script>
   </head>
   <body class="min-h-screen flex flex-col">
     <Header />
-    
+
     <main class="flex-grow">
       <slot />
     </main>
-    
+
     <Footer />
 
     <!-- Reveal on scroll script -->
     <script>
       const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.1
+        rootMargin: "0px",
+        threshold: 0.1,
       };
 
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('active');
+            entry.target.classList.add("active");
           }
         });
       }, observerOptions);
 
-      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
-        observer.observe(el);
-      });
+      document
+        .querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale")
+        .forEach((el) => {
+          observer.observe(el);
+        });
     </script>
   </body>
 </html>

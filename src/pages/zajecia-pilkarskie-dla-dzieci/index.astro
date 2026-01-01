@@ -1,194 +1,245 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
 
 // SEO Data - optymalizacja pod "zajęcia piłkarskie dla dzieci"
-const seoTitle = 'Zajęcia piłkarskie dla dzieci Toruń – Regularne zajęcia z piłki nożnej';
-const seoDescription = 'Zajęcia piłkarskie dla dzieci i chłopców w Toruniu. Regularne zajęcia z piłki nożnej 2-3x w tygodniu dla dzieci 3-13 lat. Profesjonalni trenerzy, nowoczesne boiska. Zapisz dziecko!';
+const seoTitle =
+  "Zajęcia piłkarskie dla dzieci Toruń – Regularne zajęcia z piłki nożnej";
+const seoDescription =
+  "Zajęcia piłkarskie dla dzieci i chłopców w Toruniu. Regularne zajęcia z piłki nożnej 2-3 x w tygodniu dla dzieci 3-13 lat. Profesjonalni trenerzy, nowoczesne boiska. Zapisz dziecko!";
 const seoKeywords = [
-  'zajęcia piłkarskie dla dzieci Toruń',
-  'zajęcia piłkarskie dla chłopców',
-  'zajęcia z piłki nożnej dla dzieci',
-  'zajęcia piłkarskie Toruń',
-  'piłka nożna zajęcia dla dzieci',
-  'zajęcia sportowe dla dzieci Toruń',
-  'zajęcia piłkarskie dla 5 latka',
-  'zajęcia piłkarskie dla 8 latka',
-  'regularne zajęcia piłkarskie',
+  "zajęcia piłkarskie dla dzieci Toruń",
+  "zajęcia piłkarskie dla chłopców",
+  "zajęcia z piłki nożnej dla dzieci",
+  "zajęcia piłkarskie Toruń",
+  "piłka nożna zajęcia dla dzieci",
+  "zajęcia sportowe dla dzieci Toruń",
+  "zajęcia piłkarskie dla 5 latka",
+  "zajęcia piłkarskie dla 8 latka",
+  "regularne zajęcia piłkarskie",
 ];
 
 // Harmonogram zajęć
 const schedule = [
   {
-    group: 'Przedszkole (3-6 lat)',
-    days: ['Poniedziałek', 'Środa'],
-    time: '16:00 - 16:45',
-    duration: '45 min',
-    color: 'emerald',
+    group: "Przedszkole (3-6 lat)",
+    days: ["Poniedziałek", "Środa"],
+    time: "16:00 - 16:45",
+    duration: "45 min",
+    color: "emerald",
   },
   {
-    group: 'Żak U-9 (7-9 lat)',
-    days: ['Wtorek', 'Czwartek'],
-    time: '16:30 - 17:30',
-    duration: '60 min',
-    color: 'blue',
+    group: "Żak U-9 (7-9 lat)",
+    days: ["Wtorek", "Czwartek"],
+    time: "16:30 - 17:30",
+    duration: "60 min",
+    color: "blue",
   },
   {
-    group: 'Orlik U-11 (9-11 lat)',
-    days: ['Poniedziałek', 'Środa', 'Piątek'],
-    time: '17:00 - 18:15',
-    duration: '75 min',
-    color: 'violet',
+    group: "Orlik U-11 (9-11 lat)",
+    days: ["Poniedziałek", "Środa", "Piątek"],
+    time: "17:00 - 18:15",
+    duration: "75 min",
+    color: "violet",
   },
   {
-    group: 'Młodzik U-13 (11-13 lat)',
-    days: ['Wtorek', 'Czwartek', 'Sobota'],
-    time: '17:30 - 19:00',
-    duration: '90 min',
-    color: 'orange',
+    group: "Młodzik U-13 (11-13 lat)",
+    days: ["Wtorek", "Czwartek", "Sobota"],
+    time: "17:30 - 19:00",
+    duration: "90 min",
+    color: "orange",
   },
 ];
 
 // Co zawierają zajęcia
 const sessionContent = [
   {
-    title: 'Rozgrzewka',
-    description: 'Dynamiczne ćwiczenia przygotowujące ciało do wysiłku, zabawy ruchowe dla najmłodszych',
-    duration: '10-15 min',
-    icon: '🏃',
+    title: "Rozgrzewka",
+    description:
+      "Dynamiczne ćwiczenia przygotowujące ciało do wysiłku, zabawy ruchowe dla najmłodszych",
+    duration: "10-15 min",
+    icon: "🏃",
   },
   {
-    title: 'Część techniczna',
-    description: 'Nauka i doskonalenie elementów technicznych: prowadzenie, podania, strzały',
-    duration: '15-25 min',
-    icon: '⚽',
+    title: "Część techniczna",
+    description:
+      "Nauka i doskonalenie elementów technicznych: prowadzenie, podania, strzały",
+    duration: "15-25 min",
+    icon: "⚽",
   },
   {
-    title: 'Gry i ćwiczenia',
-    description: 'Small-sided games, zabawy zespołowe, ćwiczenia w parach i grupach',
-    duration: '15-25 min',
-    icon: '🎯',
+    title: "Gry i ćwiczenia",
+    description:
+      "Small-sided games, zabawy zespołowe, ćwiczenia w parach i grupach",
+    duration: "15-25 min",
+    icon: "🎯",
   },
   {
-    title: 'Gra właściwa',
-    description: 'Mecz na małych bramkach, zastosowanie nabytych umiejętności w praktyce',
-    duration: '10-20 min',
-    icon: '🏆',
+    title: "Gra właściwa",
+    description:
+      "Mecz na małych bramkach, zastosowanie nabytych umiejętności w praktyce",
+    duration: "10-20 min",
+    icon: "🏆",
   },
 ];
 
 // Korzyści z regularnych zajęć
 const benefits = [
   {
-    title: 'Rozwój fizyczny',
-    description: 'Regularne zajęcia piłkarskie wspierają prawidłowy rozwój motoryczny dziecka – koordynację, szybkość, wytrzymałość i siłę.',
-    icon: '💪',
+    title: "Rozwój fizyczny",
+    description:
+      "Regularne zajęcia piłkarskie wspierają prawidłowy rozwój motoryczny dziecka – koordynację, szybkość, wytrzymałość i siłę.",
+    icon: "💪",
   },
   {
-    title: 'Umiejętności społeczne',
-    description: 'Zajęcia z piłki nożnej uczą współpracy, komunikacji i budowania relacji z rówieśnikami.',
-    icon: '🤝',
+    title: "Umiejętności społeczne",
+    description:
+      "Zajęcia z piłki nożnej uczą współpracy, komunikacji i budowania relacji z rówieśnikami.",
+    icon: "🤝",
   },
   {
-    title: 'Dyscyplina i systematyczność',
-    description: 'Regularne uczęszczanie na zajęcia piłkarskie buduje nawyk systematycznej pracy i odpowiedzialności.',
-    icon: '📅',
+    title: "Dyscyplina i systematyczność",
+    description:
+      "Regularne uczęszczanie na zajęcia piłkarskie buduje nawyk systematycznej pracy i odpowiedzialności.",
+    icon: "📅",
   },
   {
-    title: 'Pewność siebie',
-    description: 'Sukcesy na boisku i pokonywanie trudności wzmacniają wiarę dziecka we własne możliwości.',
-    icon: '⭐',
+    title: "Pewność siebie",
+    description:
+      "Sukcesy na boisku i pokonywanie trudności wzmacniają wiarę dziecka we własne możliwości.",
+    icon: "⭐",
   },
   {
-    title: 'Zdrowe nawyki',
-    description: 'Zajęcia sportowe dla dzieci kształtują pozytywny stosunek do aktywności fizycznej na całe życie.',
-    icon: '❤️',
+    title: "Zdrowe nawyki",
+    description:
+      "Zajęcia sportowe dla dzieci kształtują pozytywny stosunek do aktywności fizycznej na całe życie.",
+    icon: "❤️",
   },
   {
-    title: 'Oderwanie od ekranów',
-    description: 'Zajęcia piłkarskie to doskonała alternatywa dla gier i mediów społecznościowych.',
-    icon: '📵',
+    title: "Oderwanie od ekranów",
+    description:
+      "Zajęcia piłkarskie to doskonała alternatywa dla gier i mediów społecznościowych.",
+    icon: "📵",
   },
 ];
 
 // FAQ
 const faqItems = [
   {
-    question: 'Ile razy w tygodniu odbywają się zajęcia piłkarskie?',
-    answer: 'Zajęcia piłkarskie dla dzieci odbywają się 2-3 razy w tygodniu, w zależności od grupy wiekowej. Najmłodsi (3-6 lat) ćwiczą 2 razy w tygodniu, starsze grupy (9-13 lat) mają zajęcia 3 razy w tygodniu.',
+    question: "Ile razy w tygodniu odbywają się zajęcia piłkarskie?",
+    answer:
+      "Zajęcia piłkarskie dla dzieci odbywają się 2-3 razy w tygodniu, w zależności od grupy wiekowej. Najmłodsi (3-6 lat) ćwiczą 2 razy w tygodniu, starsze grupy (9-13 lat) mają zajęcia 3 razy w tygodniu.",
   },
   {
-    question: 'Czy zajęcia piłkarskie są tylko dla chłopców?',
-    answer: 'Nie! Nasze zajęcia piłkarskie są otwarte zarówno dla chłopców, jak i dziewczynek. Piłka nożna to sport dla wszystkich dzieci, niezależnie od płci.',
+    question: "Czy zajęcia piłkarskie są tylko dla chłopców?",
+    answer:
+      "Nie! Nasze zajęcia piłkarskie są otwarte zarówno dla chłopców, jak i dziewczynek. Piłka nożna to sport dla wszystkich dzieci, niezależnie od płci.",
   },
   {
-    question: 'Co dziecko powinno mieć na zajęcia z piłki nożnej?',
-    answer: 'Na zajęcia piłkarskie dziecko potrzebuje: stroju sportowego, butów piłkarskich (turfy lub korki), ochraniaczy na golenie i bidonu z wodą. Strój klubowy otrzymujesz przy zapisie.',
+    question: "Co dziecko powinno mieć na zajęcia z piłki nożnej?",
+    answer:
+      "Na zajęcia piłkarskie dziecko potrzebuje: stroju sportowego, butów piłkarskich (turfy lub korki), ochraniaczy na golenie i bidonu z wodą. Strój klubowy otrzymujesz przy zapisie.",
   },
   {
-    question: 'Czy można przyjść na próbne zajęcia piłkarskie?',
-    answer: 'Tak! Pierwsze zajęcia piłkarskie są całkowicie bezpłatne. To świetna okazja, żeby dziecko sprawdziło, czy mu się spodoba, a rodzice mogli poznać naszych trenerów i program.',
+    question: "Czy można przyjść na próbne zajęcia piłkarskie?",
+    answer:
+      "Tak! Pierwsze zajęcia piłkarskie są całkowicie bezpłatne. To świetna okazja, żeby dziecko sprawdziło, czy mu się spodoba, a rodzice mogli poznać naszych trenerów i program.",
   },
   {
-    question: 'Od jakiego wieku można zapisać dziecko na zajęcia?',
-    answer: 'Zajęcia piłkarskie dla dzieci prowadzimy od 3 roku życia. Dla najmłodszych mamy specjalny program "Przedszkole piłkarskie", gdzie nauka odbywa się przez zabawę.',
+    question: "Od jakiego wieku można zapisać dziecko na zajęcia?",
+    answer:
+      'Zajęcia piłkarskie dla dzieci prowadzimy od 3 roku życia. Dla najmłodszych mamy specjalny program "Przedszkole piłkarskie", gdzie nauka odbywa się przez zabawę.',
   },
 ];
 ---
 
-<Layout 
-  title={seoTitle}
-  description={seoDescription}
-  keywords={seoKeywords}
->
+<Layout title={seoTitle} description={seoDescription} keywords={seoKeywords}>
   <!-- Hero Section -->
-  <section class="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950">
+  <section
+    class="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950"
+  >
     <div class="absolute inset-0 football-pattern opacity-50"></div>
-    <div class="absolute top-20 right-10 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
-    <div class="absolute bottom-20 left-10 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"></div>
-    
+    <div
+      class="absolute top-20 right-10 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl animate-pulse-glow"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 left-10 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"
+    >
+    </div>
+
     <div class="container-custom relative z-10">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <!-- Content -->
         <div class="text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-sm font-medium mb-6">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-sm font-medium mb-6"
+          >
             <span>📅</span>
-            Regularne zajęcia 2-3x w tygodniu
+            Regularne zajęcia 2-3 x w tygodniu
           </div>
 
           <h1 class="text-white mb-6 animate-fade-in-up">
             Zajęcia piłkarskie <span class="gradient-text">dla dzieci</span> w Toruniu
           </h1>
-          
-          <p class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200">
-            Profesjonalne <strong class="text-white">zajęcia z piłki nożnej</strong> dla dzieci i chłopców w wieku 3-13 lat. Regularne treningi, doświadczeni trenerzy, nowoczesne boiska!
+
+          <p
+            class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200"
+          >
+            Profesjonalne <strong class="text-white"
+              >zajęcia z piłki nożnej</strong
+            > dla dzieci i chłopców w wieku 3-13 lat. Regularne treningi, doświadczeni
+            trenerzy, nowoczesne boiska!
           </p>
-          
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-300">
+
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-300"
+          >
             <a href="/zapisy" class="btn-primary text-lg">
               Zapisz dziecko na zajęcia
             </a>
-            <a href="#harmonogram" class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20">
+            <a
+              href="#harmonogram"
+              class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20"
+            >
               Zobacz harmonogram
             </a>
           </div>
         </div>
 
         <!-- Stats -->
-        <div class="grid grid-cols-2 gap-6 animate-fade-in-up animation-delay-400">
+        <div
+          class="grid grid-cols-2 gap-6 animate-fade-in-up animation-delay-400"
+        >
           <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center">
-            <div class="text-4xl md:text-5xl font-display font-bold text-white mb-2">150+</div>
+            <div
+              class="text-4xl md:text-5xl font-display font-bold text-white mb-2"
+            >
+              150+
+            </div>
             <div class="text-dark-400">Dzieci na zajęciach</div>
           </div>
           <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center">
-            <div class="text-4xl md:text-5xl font-display font-bold text-white mb-2">4</div>
+            <div
+              class="text-4xl md:text-5xl font-display font-bold text-white mb-2"
+            >
+              4
+            </div>
             <div class="text-dark-400">Grupy wiekowe</div>
           </div>
           <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center">
-            <div class="text-4xl md:text-5xl font-display font-bold text-white mb-2">2-3x</div>
+            <div
+              class="text-4xl md:text-5xl font-display font-bold text-white mb-2"
+            >
+              2-3 x
+            </div>
             <div class="text-dark-400">Zajęcia tygodniowo</div>
           </div>
           <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center">
-            <div class="text-4xl md:text-5xl font-display font-bold text-white mb-2">10+</div>
+            <div
+              class="text-4xl md:text-5xl font-display font-bold text-white mb-2"
+            >
+              10+
+            </div>
             <div class="text-dark-400">Lat doświadczenia</div>
           </div>
         </div>
@@ -201,7 +252,9 @@ const faqItems = [
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12 reveal">
-          <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4"
+          >
             O naszych zajęciach
           </span>
           <h2 class="mb-6 text-dark-900 dark:text-white">
@@ -212,20 +265,36 @@ const faqItems = [
         <div class="grid md:grid-cols-2 gap-8 items-center reveal">
           <div class="space-y-4 text-dark-600 dark:text-dark-300">
             <p>
-              <strong class="text-dark-900 dark:text-white">Zajęcia piłkarskie dla dzieci</strong> w Unii Toruń to regularne, zaplanowane spotkania treningowe prowadzone przez wykwalifikowanych trenerów. Nasze <strong>zajęcia z piłki nożnej</strong> odbywają się 2-3 razy w tygodniu i są dostosowane do wieku oraz umiejętności uczestników.
+              <strong class="text-dark-900 dark:text-white"
+                >Zajęcia piłkarskie dla dzieci</strong
+              > w Unii Toruń to regularne, zaplanowane spotkania treningowe prowadzone
+              przez wykwalifikowanych trenerów. Nasze <strong
+                >zajęcia z piłki nożnej</strong
+              > odbywają się 2-3 razy w tygodniu i są dostosowane do wieku oraz umiejętności
+              uczestników.
             </p>
             <p>
-              Każde zajęcia mają przemyślaną strukturę – od rozgrzewki, przez część techniczną i ćwiczenia, aż po grę właściwą. Dzięki temu <strong>zajęcia piłkarskie dla chłopców i dziewczynek</strong> są zarówno efektywne, jak i pełne radości z gry.
+              Każde zajęcia mają przemyślaną strukturę – od rozgrzewki, przez
+              część techniczną i ćwiczenia, aż po grę właściwą. Dzięki temu <strong
+                >zajęcia piłkarskie dla chłopców i dziewczynek</strong
+              > są zarówno efektywne, jak i pełne radości z gry.
             </p>
             <p>
-              W przeciwieństwie do jednorazowych wydarzeń, regularne <strong>zajęcia sportowe dla dzieci</strong> pozwalają na systematyczny rozwój umiejętności i budowanie relacji w grupie rówieśniczej.
+              W przeciwieństwie do jednorazowych wydarzeń, regularne <strong
+                >zajęcia sportowe dla dzieci</strong
+              > pozwalają na systematyczny rozwój umiejętności i budowanie relacji
+              w grupie rówieśniczej.
             </p>
           </div>
           <div class="relative">
-            <div class="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900/50 dark:to-primary-800/50 flex items-center justify-center">
+            <div
+              class="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900/50 dark:to-primary-800/50 flex items-center justify-center"
+            >
               <div class="text-center p-8">
                 <div class="text-8xl mb-4">⚽</div>
-                <p class="text-dark-500 dark:text-dark-400 text-sm">Zdjęcie z zajęć</p>
+                <p class="text-dark-500 dark:text-dark-400 text-sm">
+                  Zdjęcie z zajęć
+                </p>
               </div>
             </div>
           </div>
@@ -238,93 +307,145 @@ const faqItems = [
   <section class="section-padding bg-dark-50 dark:bg-dark-950">
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4"
+        >
           Struktura zajęć
         </span>
         <h2 class="mb-6 text-dark-900 dark:text-white">
           Jak wyglądają <span class="gradient-text">zajęcia piłkarskie</span>?
         </h2>
         <p class="text-dark-600 dark:text-dark-300 text-lg">
-          Każde <strong>zajęcia z piłki nożnej dla dzieci</strong> mają przemyślaną strukturę, która zapewnia efektywną naukę i świetną zabawę.
+          Każde <strong>zajęcia z piłki nożnej dla dzieci</strong> mają przemyślaną
+          strukturę, która zapewnia efektywną naukę i świetną zabawę.
         </p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {sessionContent.map((item, index) => (
-          <div class={`card p-6 reveal animation-delay-${index}00`}>
-            <div class="flex items-center justify-between mb-4">
-              <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-3xl">
-                {item.icon}
+        {
+          sessionContent.map((item, index) => (
+            <div class={`card p-6 reveal animation-delay-${index}00`}>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-3xl">
+                  {item.icon}
+                </div>
+                <span class="text-sm font-semibold text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-primary-900/50 px-3 py-1 rounded-full">
+                  {item.duration}
+                </span>
               </div>
-              <span class="text-sm font-semibold text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-primary-900/50 px-3 py-1 rounded-full">
-                {item.duration}
-              </span>
+              <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
+                {item.title}
+              </h3>
+              <p class="text-dark-600 dark:text-dark-300 text-sm">
+                {item.description}
+              </p>
             </div>
-            <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
-              {item.title}
-            </h3>
-            <p class="text-dark-600 dark:text-dark-300 text-sm">
-              {item.description}
-            </p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
 
   <!-- Schedule Section -->
-  <section id="harmonogram" class="section-padding bg-white dark:bg-dark-900 scroll-mt-20">
+  <section
+    id="harmonogram"
+    class="section-padding bg-white dark:bg-dark-900 scroll-mt-20"
+  >
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4"
+        >
           Harmonogram
         </span>
         <h2 class="mb-6 text-dark-900 dark:text-white">
-          Kiedy odbywają się <span class="gradient-text">zajęcia piłkarskie</span>?
+          Kiedy odbywają się <span class="gradient-text"
+            >zajęcia piłkarskie</span
+          >?
         </h2>
         <p class="text-dark-600 dark:text-dark-300 text-lg">
-          Sprawdź harmonogram <strong>zajęć piłkarskich dla dzieci</strong> i wybierz grupę odpowiednią dla Twojego dziecka.
+          Sprawdź harmonogram <strong>zajęć piłkarskich dla dzieci</strong> i wybierz
+          grupę odpowiednią dla Twojego dziecka.
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-        {schedule.map((item, index) => (
-          <div class={`card p-6 reveal animation-delay-${index}00 border-l-4 border-${item.color}-500`}>
-            <div class="flex items-start justify-between mb-4">
-              <div>
-                <h3 class="text-xl font-display font-bold text-dark-900 dark:text-white mb-1">
-                  {item.group}
-                </h3>
-                <p class="text-dark-500 dark:text-dark-400 text-sm">
-                  {item.duration} / zajęcia
-                </p>
+        {
+          schedule.map((item, index) => (
+            <div
+              class={`card p-6 reveal animation-delay-${index}00 border-l-4 border-${item.color}-500`}
+            >
+              <div class="flex items-start justify-between mb-4">
+                <div>
+                  <h3 class="text-xl font-display font-bold text-dark-900 dark:text-white mb-1">
+                    {item.group}
+                  </h3>
+                  <p class="text-dark-500 dark:text-dark-400 text-sm">
+                    {item.duration} / zajęcia
+                  </p>
+                </div>
+                <span
+                  class={`px-3 py-1 rounded-full bg-${item.color}-100 dark:bg-${item.color}-900/30 text-${item.color}-600 dark:text-${item.color}-400 text-sm font-semibold`}
+                >
+                  {item.days.length}x / tydz.
+                </span>
               </div>
-              <span class={`px-3 py-1 rounded-full bg-${item.color}-100 dark:bg-${item.color}-900/30 text-${item.color}-600 dark:text-${item.color}-400 text-sm font-semibold`}>
-                {item.days.length}x / tydz.
-              </span>
-            </div>
-            <div class="space-y-2">
-              <div class="flex items-center gap-2 text-dark-600 dark:text-dark-300">
-                <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              <div class="space-y-2">
+                <div class="flex items-center gap-2 text-dark-600 dark:text-dark-300">
+                  <svg
+                    class="w-5 h-5 text-primary-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <span>{item.days.join(", ")}</span>
+                </div>
+                <div class="flex items-center gap-2 text-dark-600 dark:text-dark-300">
+                  <svg
+                    class="w-5 h-5 text-primary-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span>{item.time}</span>
+                </div>
+              </div>
+              <a
+                href={`/treningi-pilkarskie-dla-dzieci/${item.group.includes("3-6") ? "3-6-lat" : item.group.includes("7-9") ? "7-9-lat" : item.group.includes("9-11") ? "9-11-lat" : "11-13-lat"}`}
+                class="mt-4 inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-semibold hover:gap-3 transition-all text-sm"
+              >
+                Szczegóły grupy
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
                 </svg>
-                <span>{item.days.join(', ')}</span>
-              </div>
-              <div class="flex items-center gap-2 text-dark-600 dark:text-dark-300">
-                <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>{item.time}</span>
-              </div>
+              </a>
             </div>
-            <a href={`/treningi-pilkarskie-dla-dzieci/${item.group.includes('3-6') ? '3-6-lat' : item.group.includes('7-9') ? '7-9-lat' : item.group.includes('9-11') ? '9-11-lat' : '11-13-lat'}`} class="mt-4 inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-semibold hover:gap-3 transition-all text-sm">
-              Szczegóły grupy
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -333,54 +454,72 @@ const faqItems = [
   <section class="section-padding bg-dark-50 dark:bg-dark-950">
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4"
+        >
           Korzyści
         </span>
         <h2 class="mb-6 text-dark-900 dark:text-white">
-          Dlaczego warto zapisać dziecko na <span class="gradient-text">zajęcia piłkarskie</span>?
+          Dlaczego warto zapisać dziecko na <span class="gradient-text"
+            >zajęcia piłkarskie</span
+          >?
         </h2>
         <p class="text-dark-600 dark:text-dark-300 text-lg">
-          Regularne <strong>zajęcia z piłki nożnej dla dzieci</strong> to nie tylko nauka gry – to inwestycja w wszechstronny rozwój Twojego dziecka.
+          Regularne <strong>zajęcia z piłki nożnej dla dzieci</strong> to nie tylko
+          nauka gry – to inwestycja w wszechstronny rozwój Twojego dziecka.
         </p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {benefits.map((benefit, index) => (
-          <div class={`card p-6 reveal animation-delay-${index % 3}00`}>
-            <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-3xl mb-4">
-              {benefit.icon}
+        {
+          benefits.map((benefit, index) => (
+            <div class={`card p-6 reveal animation-delay-${index % 3}00`}>
+              <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-3xl mb-4">
+                {benefit.icon}
+              </div>
+              <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
+                {benefit.title}
+              </h3>
+              <p class="text-dark-600 dark:text-dark-300 text-sm">
+                {benefit.description}
+              </p>
             </div>
-            <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
-              {benefit.title}
-            </h3>
-            <p class="text-dark-600 dark:text-dark-300 text-sm">
-              {benefit.description}
-            </p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950 relative overflow-hidden">
+  <section
+    class="section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950 relative overflow-hidden"
+  >
     <div class="absolute inset-0 football-pattern opacity-50"></div>
-    <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"></div>
-    
+    <div
+      class="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"
+    >
+    </div>
+
     <div class="container-custom relative z-10">
       <div class="max-w-3xl mx-auto text-center reveal">
         <h2 class="text-white mb-6">
-          Zapisz dziecko na <span class="gradient-text">zajęcia piłkarskie</span>!
+          Zapisz dziecko na <span class="gradient-text">zajęcia piłkarskie</span
+          >!
         </h2>
         <p class="text-dark-300 text-lg md:text-xl mb-8">
-          Pierwsze <strong class="text-white">zajęcia z piłki nożnej</strong> są bezpłatne! Sprawdź, czy Twoje dziecko pokocha piłkę tak jak my.
+          Pierwsze <strong class="text-white">zajęcia z piłki nożnej</strong> są bezpłatne!
+          Sprawdź, czy Twoje dziecko pokocha piłkę tak jak my.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/zapisy" class="btn-primary text-lg">
-            Zapisz na zajęcia
-          </a>
-          <a href="/kontakt" class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20">
+          <a href="/zapisy" class="btn-primary text-lg"> Zapisz na zajęcia </a>
+          <a
+            href="/kontakt"
+            class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20"
+          >
             Masz pytania?
           </a>
         </div>
@@ -393,7 +532,9 @@ const faqItems = [
     <div class="container-custom">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-12 reveal">
-          <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4"
+          >
             FAQ
           </span>
           <h2 class="mb-6 text-dark-900 dark:text-white">
@@ -402,19 +543,31 @@ const faqItems = [
         </div>
 
         <div class="space-y-4 reveal">
-          {faqItems.map((item) => (
-            <details class="group card p-6 cursor-pointer">
-              <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
-                {item.question}
-                <svg class="w-5 h-5 text-primary-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <p class="mt-4 text-dark-600 dark:text-dark-300">
-                {item.answer}
-              </p>
-            </details>
-          ))}
+          {
+            faqItems.map((item) => (
+              <details class="group card p-6 cursor-pointer">
+                <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
+                  {item.question}
+                  <svg
+                    class="w-5 h-5 text-primary-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <p class="mt-4 text-dark-600 dark:text-dark-300">
+                  {item.answer}
+                </p>
+              </details>
+            ))
+          }
         </div>
       </div>
     </div>

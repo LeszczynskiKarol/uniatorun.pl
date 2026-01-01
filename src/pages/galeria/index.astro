@@ -1,0 +1,565 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+// SEO Data
+const seoTitle = "Galeria zdjęć – Akademia Piłkarska Unia Toruń";
+const seoDescription =
+  "Galeria zdjęć z treningów, turniejów i wydarzeń Akademii Piłkarskiej Unia Toruń. Zobacz naszych młodych piłkarzy w akcji!";
+const seoKeywords = [
+  "galeria Unia Toruń",
+  "zdjęcia treningi piłkarskie",
+  "turnieje piłkarskie dzieci Toruń",
+  "akademia piłkarska zdjęcia",
+];
+
+// =============================================
+// ZDJĘCIA - EDYTUJ TĘ SEKCJĘ
+// Dodawaj zdjęcia w formacie:
+// { src: 'URL_DO_ZDJECIA', alt: 'Opis zdjęcia' }
+// =============================================
+const galleryImages = [
+  {
+    src: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80",
+    alt: "Trening piłkarski dzieci",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80",
+    alt: "Mecz młodzieżowy",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80",
+    alt: "Piłka nożna na boisku",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800&q=80",
+    alt: "Dzieci grające w piłkę",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=800&q=80",
+    alt: "Turniej piłkarski",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=800&q=80",
+    alt: "Bramkarz w akcji",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1518604666860-9ed391f76460?w=800&q=80",
+    alt: "Młodzi piłkarze",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=800&q=80",
+    alt: "Trening drużynowy",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800&q=80",
+    alt: "Radość ze zwycięstwa",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=800&q=80",
+    alt: "Dekoracja medalami",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1552667466-07770ae110d0?w=800&q=80",
+    alt: "Wspólne zdjęcie drużyny",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=800&q=80",
+    alt: "Strzał na bramkę",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1600679472829-3044539ce8ed?w=800&q=80",
+    alt: "Rozgrzewka przed meczem",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1434648957308-5e6a859697e8?w=800&q=80",
+    alt: "Piłkarski obóz letni",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1624880357913-a8539238245b?w=800&q=80",
+    alt: "Trening techniczny",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1511426463457-0571e247d816?w=800&q=80",
+    alt: "Kibice na trybunach",
+  },
+];
+
+// Paginacja
+const IMAGES_PER_PAGE = 12;
+const totalPages = Math.ceil(galleryImages.length / IMAGES_PER_PAGE);
+---
+
+<Layout title={seoTitle} description={seoDescription} keywords={seoKeywords}>
+  <!-- Hero Section -->
+  <section
+    class="relative py-16 md:py-20 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950"
+  >
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div
+      class="absolute top-20 right-10 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl animate-pulse-glow"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 left-10 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"
+    >
+    </div>
+
+    <div class="container-custom relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <nav
+          class="flex items-center justify-center gap-2 text-dark-400 text-sm mb-6"
+        >
+          <a href="/" class="hover:text-white transition-colors"
+            >Strona główna</a
+          >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span class="text-white">Galeria</span>
+        </nav>
+
+        <h1 class="text-white mb-6 animate-fade-in-up">
+          <span class="gradient-text">Galeria</span> zdjęć
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-dark-300 mb-4 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto"
+        >
+          Zobacz naszych młodych piłkarzy w akcji! Zdjęcia z treningów,
+          turniejów i wydarzeń akademii.
+        </p>
+
+        <p class="text-dark-400 animate-fade-in-up animation-delay-300">
+          <span class="font-semibold text-white">{galleryImages.length}</span> zdjęć
+          w galerii
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <!-- Gallery Grid -->
+      <div
+        id="gallery-grid"
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+      >
+        {
+          galleryImages.map((image, index) => (
+            <div
+              class="gallery-item group relative aspect-square rounded-xl overflow-hidden cursor-pointer bg-dark-100 dark:bg-dark-800"
+              data-index={index}
+              data-src={image.src}
+              data-alt={image.alt}
+              data-page={Math.floor(index / IMAGES_PER_PAGE) + 1}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                  <p class="text-white text-sm font-medium line-clamp-2">
+                    {image.alt}
+                  </p>
+                </div>
+              </div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Pagination -->
+      {
+        totalPages > 1 && (
+          <div
+            class="mt-12 flex items-center justify-center gap-2"
+            id="pagination"
+          >
+            <button
+              id="prev-page"
+              class="p-2 rounded-lg bg-dark-100 dark:bg-dark-800 text-dark-600 dark:text-dark-400 hover:bg-primary-500 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              disabled
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+
+            <div id="page-numbers" class="flex items-center gap-1">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <button
+                    data-page={page}
+                    class={`page-btn w-10 h-10 rounded-lg font-semibold transition-all ${page === 1 ? "bg-primary-500 text-white" : "bg-dark-100 dark:bg-dark-800 text-dark-600 dark:text-dark-400 hover:bg-dark-200 dark:hover:bg-dark-700"}`}
+                  >
+                    {page}
+                  </button>
+                )
+              )}
+            </div>
+
+            <button
+              id="next-page"
+              class="p-2 rounded-lg bg-dark-100 dark:bg-dark-800 text-dark-600 dark:text-dark-400 hover:bg-primary-500 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
+        )
+      }
+
+      <!-- Info -->
+      <div class="mt-8 text-center text-dark-500 dark:text-dark-400 text-sm">
+        Kliknij na zdjęcie, aby je powiększyć
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2
+          class="text-2xl font-display font-bold text-dark-900 dark:text-white mb-4"
+        >
+          Chcesz, żeby Twoje dziecko było na tych zdjęciach?
+        </h2>
+        <p class="text-dark-600 dark:text-dark-300 mb-6">
+          Zapisz dziecko na treningi piłkarskie w Unii Toruń – pierwszy trening
+          gratis!
+        </p>
+        <a href="/zapisy" class="btn-primary"> Zapisz dziecko </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div
+    id="lightbox"
+    class="fixed inset-0 z-50 hidden bg-dark-950/95 backdrop-blur-sm"
+  >
+    <button
+      id="lightbox-close"
+      class="absolute top-4 right-4 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <button
+      id="lightbox-prev"
+      class="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M15 19l-7-7 7-7"></path>
+      </svg>
+    </button>
+
+    <button
+      id="lightbox-next"
+      class="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+
+    <div class="absolute inset-0 flex items-center justify-center p-4 md:p-12">
+      <img
+        id="lightbox-image"
+        src=""
+        alt=""
+        class="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+      />
+    </div>
+
+    <div class="absolute bottom-4 left-0 right-0 text-center">
+      <p id="lightbox-caption" class="text-white text-lg font-medium"></p>
+      <p id="lightbox-counter" class="text-dark-400 text-sm mt-1"></p>
+    </div>
+  </div>
+</Layout>
+
+<script define:vars={{ IMAGES_PER_PAGE, totalPages }}>
+  document.addEventListener("DOMContentLoaded", () => {
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const lightboxCounter = document.getElementById("lightbox-counter");
+    const lightboxClose = document.getElementById("lightbox-close");
+    const lightboxPrev = document.getElementById("lightbox-prev");
+    const lightboxNext = document.getElementById("lightbox-next");
+    const prevPageBtn = document.getElementById("prev-page");
+    const nextPageBtn = document.getElementById("next-page");
+    const pageButtons = document.querySelectorAll(".page-btn");
+
+    let currentIndex = 0;
+    let currentPage = 1;
+    const images = Array.from(galleryItems).map((item) => ({
+      src: item.dataset.src,
+      alt: item.dataset.alt,
+    }));
+
+    // Pagination
+    function showPage(page) {
+      currentPage = page;
+
+      galleryItems.forEach((item) => {
+        const itemPage = parseInt(item.dataset.page);
+        if (itemPage === page) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+
+      // Update buttons
+      pageButtons.forEach((btn) => {
+        if (parseInt(btn.dataset.page) === page) {
+          btn.classList.add("bg-primary-500", "text-white");
+          btn.classList.remove(
+            "bg-dark-100",
+            "dark:bg-dark-800",
+            "text-dark-600",
+            "dark:text-dark-400"
+          );
+        } else {
+          btn.classList.remove("bg-primary-500", "text-white");
+          btn.classList.add(
+            "bg-dark-100",
+            "dark:bg-dark-800",
+            "text-dark-600",
+            "dark:text-dark-400"
+          );
+        }
+      });
+
+      prevPageBtn.disabled = page === 1;
+      nextPageBtn.disabled = page === totalPages;
+
+      // Scroll to top of gallery
+      document
+        .getElementById("gallery-grid")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    pageButtons.forEach((btn) => {
+      btn.addEventListener("click", () => showPage(parseInt(btn.dataset.page)));
+    });
+
+    prevPageBtn?.addEventListener("click", () => {
+      if (currentPage > 1) showPage(currentPage - 1);
+    });
+
+    nextPageBtn?.addEventListener("click", () => {
+      if (currentPage < totalPages) showPage(currentPage + 1);
+    });
+
+    // Initialize first page
+    showPage(1);
+
+    // Lightbox
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightbox();
+      lightbox?.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox?.classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+
+    function updateLightbox() {
+      const image = images[currentIndex];
+      if (lightboxImage) {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+      }
+      if (lightboxCaption) lightboxCaption.textContent = image.alt;
+      if (lightboxCounter)
+        lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateLightbox();
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateLightbox();
+    }
+
+    galleryItems.forEach((item, index) => {
+      item.addEventListener("click", () => openLightbox(index));
+    });
+
+    lightboxClose?.addEventListener("click", closeLightbox);
+    lightboxNext?.addEventListener("click", nextImage);
+    lightboxPrev?.addEventListener("click", prevImage);
+
+    lightbox?.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (lightbox?.classList.contains("hidden")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+    });
+  });
+</script>
+
+<style>
+  .gallery-item {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+  }
+
+  .gallery-item:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  .gallery-item:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .gallery-item:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+  .gallery-item:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+  .gallery-item:nth-child(5) {
+    animation-delay: 0.25s;
+  }
+  .gallery-item:nth-child(6) {
+    animation-delay: 0.3s;
+  }
+  .gallery-item:nth-child(7) {
+    animation-delay: 0.35s;
+  }
+  .gallery-item:nth-child(8) {
+    animation-delay: 0.4s;
+  }
+  .gallery-item:nth-child(9) {
+    animation-delay: 0.45s;
+  }
+  .gallery-item:nth-child(10) {
+    animation-delay: 0.5s;
+  }
+  .gallery-item:nth-child(11) {
+    animation-delay: 0.55s;
+  }
+  .gallery-item:nth-child(12) {
+    animation-delay: 0.6s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  #lightbox-image {
+    animation: zoomIn 0.3s ease;
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>

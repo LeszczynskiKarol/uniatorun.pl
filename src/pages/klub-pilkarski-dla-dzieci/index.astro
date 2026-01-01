@@ -1,175 +1,202 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
 
 // SEO Data - optymalizacja pod "klub piłkarski dla dzieci Toruń"
-const seoTitle = 'Klub piłkarski dla dzieci Toruń – Dołącz do Unii Toruń';
-const seoDescription = 'Klub piłkarski dla dzieci w Toruniu. Unia Toruń – dziecięcy klub piłki nożnej z tradycją. Profesjonalne szkolenie, wartości sportowe, turnieje i rozgrywki ligowe. Zapisz dziecko!';
+const seoTitle = "Klub piłkarski dla dzieci Toruń – Dołącz do Unii Toruń";
+const seoDescription =
+  "Klub piłkarski dla dzieci w Toruniu. Unia Toruń – dziecięcy klub piłki nożnej z tradycją. Profesjonalne szkolenie, wartości sportowe, turnieje i rozgrywki ligowe. Zapisz dziecko!";
 const seoKeywords = [
-  'klub piłkarski dla dzieci Toruń',
-  'klub piłki nożnej dla dzieci',
-  'dziecięcy klub piłkarski Toruń',
-  'klub sportowy dla dzieci Toruń',
-  'Unia Toruń dzieci',
-  'klub piłkarski młodzieżowy Toruń',
-  'piłkarski klub dla chłopców',
-  'zapisz dziecko do klubu piłkarskiego',
-  'najlepszy klub piłkarski dla dzieci',
+  "klub piłkarski dla dzieci Toruń",
+  "klub piłki nożnej dla dzieci",
+  "dziecięcy klub piłkarski Toruń",
+  "klub sportowy dla dzieci Toruń",
+  "Unia Toruń dzieci",
+  "klub piłkarski młodzieżowy Toruń",
+  "piłkarski klub dla chłopców",
+  "zapisz dziecko do klubu piłkarskiego",
+  "najlepszy klub piłkarski dla dzieci",
 ];
 
 // Wartości klubowe
 const clubValues = [
   {
-    title: 'Szacunek',
-    description: 'Uczymy szacunku do rywali, sędziów, trenerów i kolegów z drużyny. W naszym klubie każdy jest ważny.',
-    icon: '🤝',
+    title: "Szacunek",
+    description:
+      "Uczymy szacunku do rywali, sędziów, trenerów i kolegów z drużyny. W naszym klubie każdy jest ważny.",
+    icon: "🤝",
   },
   {
-    title: 'Fair play',
-    description: 'Stawiamy na uczciwą grę i sportowe zachowanie. Wygrywamy z klasą, przegrywamy z godnością.',
-    icon: '⚖️',
+    title: "Fair play",
+    description:
+      "Stawiamy na uczciwą grę i sportowe zachowanie. Wygrywamy z klasą, przegrywamy z godnością.",
+    icon: "⚖️",
   },
   {
-    title: 'Praca zespołowa',
-    description: 'Piłka nożna to sport drużynowy. Uczymy, że razem możemy osiągnąć więcej niż w pojedynkę.',
-    icon: '👥',
+    title: "Praca zespołowa",
+    description:
+      "Piłka nożna to sport drużynowy. Uczymy, że razem możemy osiągnąć więcej niż w pojedynkę.",
+    icon: "👥",
   },
   {
-    title: 'Wytrwałość',
-    description: 'Sukces wymaga czasu i systematycznej pracy. Uczymy dzieci, że warto dążyć do celu mimo trudności.',
-    icon: '💪',
+    title: "Wytrwałość",
+    description:
+      "Sukces wymaga czasu i systematycznej pracy. Przekonujemy dzieci, że trudności są nieodłączne w drodze do celu.",
+    icon: "💪",
   },
   {
-    title: 'Radość z gry',
-    description: 'Piłka nożna ma przede wszystkim sprawiać radość. Chcemy, żeby dzieci kochały ten sport.',
-    icon: '😊',
+    title: "Radość z gry",
+    description:
+      "Piłka nożna ma przede wszystkim sprawiać radość. Chcemy, żeby dzieci kochały ten sport.",
+    icon: "😊",
   },
   {
-    title: 'Rozwój',
-    description: 'Każde dziecko ma potencjał. Nasz klub pomaga go odkryć i rozwijać w przyjaznej atmosferze.',
-    icon: '🌱',
+    title: "Rozwój",
+    description:
+      "Każde dziecko ma potencjał. Nasz klub pomaga go odkryć i rozwijać w przyjaznej atmosferze.",
+    icon: "🌱",
   },
 ];
 
 // Co oferuje klub
 const clubOfferings = [
   {
-    title: 'Profesjonalne szkolenie',
-    description: 'Licencjonowani trenerzy PZPN prowadzą treningi według nowoczesnych metod szkoleniowych.',
-    icon: '🎓',
+    title: "Profesjonalne szkolenie",
+    description:
+      "Licencjonowani trenerzy PZPN prowadzą treningi według nowoczesnych metod szkoleniowych.",
+    icon: "🎓",
   },
   {
-    title: 'Udział w rozgrywkach',
-    description: 'Starsze grupy uczestniczą w oficjalnych rozgrywkach ligowych KPZPN i turniejach.',
-    icon: '🏆',
+    title: "Udział w rozgrywkach",
+    description:
+      "Starsze grupy uczestniczą w oficjalnych rozgrywkach ligowych KPZPN i turniejach.",
+    icon: "🏆",
   },
   {
-    title: 'Strój klubowy',
-    description: 'Każdy zawodnik otrzymuje komplet treningowy i meczowy w barwach Unii Toruń.',
-    icon: '👕',
+    title: "Strój klubowy",
+    description:
+      "Każdy zawodnik otrzymuje komplet treningowy i meczowy w barwach Unii Toruń.",
+    icon: "👕",
   },
   {
-    title: 'Ubezpieczenie',
-    description: 'Wszyscy zawodnicy są objęci ubezpieczeniem NNW podczas treningów i meczów.',
-    icon: '🛡️',
+    title: "Ubezpieczenie",
+    description:
+      "Wszyscy zawodnicy są objęci ubezpieczeniem NNW podczas treningów i meczów.",
+    icon: "🛡️",
   },
   {
-    title: 'Obozy i wyjazdy',
-    description: 'Organizujemy obozy piłkarskie, wyjazdy na turnieje i mecze wyjazdowe.',
-    icon: '🚌',
+    title: "Obozy i wyjazdy",
+    description:
+      "Organizujemy obozy piłkarskie, wyjazdy na turnieje i mecze wyjazdowe.",
+    icon: "🚌",
   },
   {
-    title: 'Społeczność',
-    description: 'Dołączasz do rodziny – znajomi, wspólne wydarzenia, integracja rodziców i zawodników.',
-    icon: '❤️',
+    title: "Społeczność",
+    description:
+      "Dołączasz do rodziny – znajomi, wspólne wydarzenia, integracja rodziców i zawodników.",
+    icon: "❤️",
   },
 ];
 
 // Ścieżka w klubie
 const clubPath = [
   {
-    stage: 'Przedszkole piłkarskie',
-    age: '3-6 lat',
-    description: 'Pierwsze kroki w klubie. Nauka przez zabawę, poznawanie zasad i integracja z grupą.',
-    activities: ['Zabawy z piłką', 'Gry zespołowe', 'Mini turnieje wewnętrzne'],
+    stage: "Przedszkole piłkarskie",
+    age: "3-6 lat",
+    description:
+      "Pierwsze kroki w klubie. Nauka przez zabawę, poznawanie zasad i integracja z grupą.",
+    activities: ["Zabawy z piłką", "Gry zespołowe", "Mini turnieje wewnętrzne"],
   },
   {
-    stage: 'Żak U-9',
-    age: '7-9 lat',
-    description: 'Nauka podstaw techniki. Pierwsze sparingi i turnieje z innymi klubami.',
-    activities: ['Treningi techniczne', 'Sparingi', 'Turnieje regionalne'],
+    stage: "Żak U-9",
+    age: "7-9 lat",
+    description:
+      "Nauka podstaw techniki. Pierwsze sparingi i turnieje z innymi klubami.",
+    activities: ["Treningi techniczne", "Sparingi", "Turnieje regionalne"],
   },
   {
-    stage: 'Orlik U-11',
-    age: '9-11 lat',
-    description: 'Doskonalenie umiejętności. Udział w rozgrywkach ligowych KPZPN.',
-    activities: ['Liga KPZPN', 'Turnieje ogólnopolskie', 'Obozy piłkarskie'],
+    stage: "Orlik U-11",
+    age: "9-11 lat",
+    description:
+      "Doskonalenie umiejętności. Udział w rozgrywkach ligowych KPZPN.",
+    activities: ["Liga KPZPN", "Turnieje ogólnopolskie", "Obozy piłkarskie"],
   },
   {
-    stage: 'Młodzik U-13',
-    age: '11-13 lat',
-    description: 'Zaawansowane szkolenie. Przygotowanie do gry w kategoriach juniorskich.',
-    activities: ['Liga KPZPN', 'Analiza wideo', 'Współpraca ze skautami'],
+    stage: "Młodzik U-13",
+    age: "11-13 lat",
+    description:
+      "Zaawansowane szkolenie. Przygotowanie do gry w kategoriach juniorskich.",
+    activities: ["Liga KPZPN", "Analiza wideo", "Współpraca ze skautami"],
   },
 ];
 
 // FAQ
 const faqItems = [
   {
-    question: 'Jak zapisać dziecko do klubu piłkarskiego Unia Toruń?',
-    answer: 'Zapisanie dziecka do naszego klubu piłkarskiego jest proste – wystarczy wypełnić formularz online lub przyjść na bezpłatny trening próbny. Po treningu próbnym podejmiesz decyzję o dołączeniu do klubu.',
+    question: "Jak zapisać dziecko do klubu piłkarskiego Unia Toruń?",
+    answer:
+      "Zapisanie dziecka do naszego klubu piłkarskiego jest proste – wystarczy wypełnić formularz online, zadzwonić napisać wiadomość email na adres ksuniatorun@gmail.com lub przyjść na bezpłatny trening próbny. Po treningu próbnym podejmiesz decyzję o dołączeniu do klubu.",
   },
   {
-    question: 'Ile kosztuje członkostwo w klubie piłkarskim?',
-    answer: 'Składka klubowa zależy od grupy wiekowej i obejmuje wszystkie treningi, ubezpieczenie oraz strój treningowy. Szczegółowy cennik znajdziesz na stronie zapisów lub możesz zapytać bezpośrednio trenera.',
+    question: "Ile kosztuje członkostwo w klubie piłkarskim?",
+    answer:
+      "Składka klubowa zależy od grupy wiekowej i obejmuje wszystkie treningi, ubezpieczenie oraz strój treningowy. Szczegółowy cennik znajdziesz na stronie zapisów lub możesz zapytać bezpośrednio trenera.",
   },
   {
-    question: 'Czy dziecko musi mieć doświadczenie, żeby dołączyć do klubu?',
-    answer: 'Nie! Do naszego klubu piłkarskiego przyjmujemy dzieci na każdym poziomie zaawansowania. Dla początkujących mamy odpowiedni program, który pozwala stopniowo rozwijać umiejętności.',
+    question: "Czy dziecko musi mieć doświadczenie, żeby dołączyć do klubu?",
+    answer:
+      "Nie! Do naszego klubu piłkarskiego przyjmujemy dzieci na każdym poziomie zaawansowania. Dla początkujących mamy odpowiedni program, który pozwala stopniowo rozwijać umiejętności.",
   },
+
   {
-    question: 'Czy klub piłkarski jest tylko dla chłopców?',
-    answer: 'Absolutnie nie! Unia Toruń to klub piłkarski otwarty zarówno dla chłopców, jak i dziewczynek. Piłka nożna jest sportem dla wszystkich.',
-  },
-  {
-    question: 'Jakie są obowiązki rodziców w klubie?',
-    answer: 'Rodzice są ważną częścią naszej społeczności. Oczekujemy regularnego dowożenia dzieci na treningi i mecze, wsparcia młodych zawodników oraz uczestnictwa w życiu klubu. Zachęcamy też do pomocy przy organizacji wydarzeń.',
+    question: "Jak rodzice mogą brać udział w życiu klubu?",
+    answer:
+      "Rodzice są ważną częścią naszej społeczności. Jesteśmy wdzięczni za regularne dowożenie dzieci na treningi i mecze, wsparcia młodych zawodników, uczestnictwa w życiu klubu i śledzenie naszego profilu na Facebooku. Zachęcamy też do pomocy przy organizacji wydarzeń.",
   },
 ];
 
 // Testimoniale
 const testimonials = [
   {
-    content: 'Syn jest w klubie od 3 lat i widać ogromny postęp – nie tylko piłkarski, ale też w zachowaniu i pewności siebie.',
-    author: 'Tomasz K.',
-    role: 'Tata 10-latka',
+    content:
+      "Syn jest w klubie od 3 lat i widać ogromny postęp – nie tylko piłkarski, ale też w zachowaniu i pewności siebie.",
+    author: "Tomasz K.",
+    role: "Tata 10-latka",
   },
   {
-    content: 'Świetna atmosfera w klubie. Trenerzy traktują dzieci poważnie, ale jednocześnie dbają o to, żeby była zabawa.',
-    author: 'Marta P.',
-    role: 'Mama 7-latka',
+    content:
+      "Świetna atmosfera w klubie. Trenerzy traktują dzieci poważnie, ale jednocześnie dbają o to, żeby była zabawa.",
+    author: "Marta P.",
+    role: "Mama 7-latka",
   },
   {
-    content: 'Córka gra w Unii i jest zachwycona. Dziewczynki są traktowane na równi z chłopcami – to dla nas ważne.',
-    author: 'Agnieszka W.',
-    role: 'Mama 9-latki',
+    content:
+      "Córka gra w Unii i jest zachwycona. Dziewczynki są traktowane na równi z chłopcami – to dla nas ważne.",
+    author: "Agnieszka W.",
+    role: "Mama 9-latki",
   },
 ];
 ---
 
-<Layout 
-  title={seoTitle}
-  description={seoDescription}
-  keywords={seoKeywords}
->
+<Layout title={seoTitle} description={seoDescription} keywords={seoKeywords}>
   <!-- Hero Section -->
-  <section class="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950">
+  <section
+    class="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950"
+  >
     <div class="absolute inset-0 football-pattern opacity-50"></div>
-    <div class="absolute top-20 right-10 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
-    <div class="absolute bottom-20 left-10 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"></div>
-    
+    <div
+      class="absolute top-20 right-10 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl animate-pulse-glow"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 left-10 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"
+    >
+    </div>
+
     <div class="container-custom relative z-10">
       <div class="max-w-4xl mx-auto text-center">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-sm font-medium mb-6">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-sm font-medium mb-6"
+        >
           <span>🏟️</span>
           Od ponad 10 lat szkolimy młodych piłkarzy
         </div>
@@ -177,36 +204,54 @@ const testimonials = [
         <h1 class="text-white mb-6 animate-fade-in-up">
           <span class="gradient-text">Klub piłkarski</span> dla dzieci w Toruniu
         </h1>
-        
-        <p class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto">
-          <strong class="text-white">Unia Toruń</strong> – dziecięcy <strong class="text-white">klub piłki nożnej</strong> z tradycją i wartościami. Dołącz do naszej piłkarskiej rodziny i rozwijaj talent swojego dziecka!
+
+        <p
+          class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto"
+        >
+          <strong class="text-white">Unia Toruń</strong> – dziecięcy <strong
+            class="text-white">klub piłki nożnej</strong
+          > z tradycją i wartościami. Dołącz do naszej piłkarskiej rodziny i rozwijaj
+          talent swojego dziecka!
         </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300">
-          <a href="/zapisy" class="btn-primary text-lg">
-            Dołącz do klubu
-          </a>
-          <a href="#wartosci" class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20">
+
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300"
+        >
+          <a href="/zapisy" class="btn-primary text-lg"> Dołącz do klubu </a>
+          <a
+            href="#wartosci"
+            class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20"
+          >
             Poznaj nasze wartości
           </a>
         </div>
 
         <!-- Stats -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 animate-fade-in-up animation-delay-400">
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 animate-fade-in-up animation-delay-400"
+        >
           <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
-            <div class="text-3xl md:text-4xl font-display font-bold text-white">10+</div>
+            <div class="text-3xl md:text-4xl font-display font-bold text-white">
+              10+
+            </div>
             <div class="text-dark-400 text-sm">Lat tradycji</div>
           </div>
           <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
-            <div class="text-3xl md:text-4xl font-display font-bold text-white">150+</div>
+            <div class="text-3xl md:text-4xl font-display font-bold text-white">
+              150+
+            </div>
             <div class="text-dark-400 text-sm">Zawodników</div>
           </div>
           <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
-            <div class="text-3xl md:text-4xl font-display font-bold text-white">8</div>
+            <div class="text-3xl md:text-4xl font-display font-bold text-white">
+              8
+            </div>
             <div class="text-dark-400 text-sm">Trenerów</div>
           </div>
           <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
-            <div class="text-3xl md:text-4xl font-display font-bold text-white">4</div>
+            <div class="text-3xl md:text-4xl font-display font-bold text-white">
+              4
+            </div>
             <div class="text-dark-400 text-sm">Drużyny</div>
           </div>
         </div>
@@ -219,7 +264,9 @@ const testimonials = [
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12 reveal">
-          <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4"
+          >
             O naszym klubie
           </span>
           <h2 class="mb-6 text-dark-900 dark:text-white">
@@ -230,31 +277,52 @@ const testimonials = [
         <div class="grid md:grid-cols-2 gap-8 items-center reveal">
           <div class="space-y-4 text-dark-600 dark:text-dark-300">
             <p>
-              <strong class="text-dark-900 dark:text-white">Unia Toruń</strong> to nie tylko <strong>klub piłkarski dla dzieci</strong> – to społeczność, która łączy pasję do piłki nożnej z profesjonalnym podejściem do szkolenia młodzieży.
+              <strong class="text-dark-900 dark:text-white">Unia Toruń</strong> to
+              nie tylko <strong>klub piłkarski dla dzieci</strong> – to społeczność,
+              która łączy pasję do piłki nożnej z profesjonalnym podejściem do szkolenia
+              młodzieży.
             </p>
             <p>
-              Nasz <strong>dziecięcy klub piłki nożnej</strong> stawia na wszechstronny rozwój młodych zawodników. Uczymy nie tylko techniki i taktyki, ale również wartości takich jak fair play, szacunek i praca zespołowa.
+              Nasz <strong>dziecięcy klub piłki nożnej</strong> stawia na wszechstronny
+              rozwój młodych zawodników. Uczymy zarówno techniki i taktyki, jak i
+              wartości takich jak fair play, szacunek i praca zespołowa.
             </p>
             <p>
-              Jako <strong>klub sportowy dla dzieci w Toruniu</strong> uczestniczymy w oficjalnych rozgrywkach KPZPN, organizujemy turnieje i obozy piłkarskie. Jesteśmy dumni z naszych wychowanków, którzy trafiają do czołowych akademii w Polsce.
+              Jako <strong
+                >działający w Toruniu klub sportowy dla chłopców</strong
+              > uczestniczymy w oficjalnych rozgrywkach KPZPN, organizujemy turnieje
+              i obozy piłkarskie. Jesteśmy dumni z naszych wychowanków, którzy trafiają
+              do czołowych akademii w Polsce.
             </p>
           </div>
           <div class="relative">
-            <div class="aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900/50 dark:to-primary-800/50 flex items-center justify-center">
+            <div
+              class="aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900/50 dark:to-primary-800/50 flex items-center justify-center"
+            >
               <div class="text-center p-8">
                 <div class="text-7xl mb-4">🏟️</div>
-                <p class="text-dark-500 dark:text-dark-400 text-sm">Zdjęcie klubu</p>
+                <p class="text-dark-500 dark:text-dark-400 text-sm">
+                  Zdjęcie klubu
+                </p>
               </div>
             </div>
             <!-- Floating card -->
-            <div class="absolute -bottom-6 -right-6 bg-white dark:bg-dark-800 rounded-xl shadow-xl p-4 hidden md:block">
+            <div
+              class="absolute -bottom-6 -right-6 bg-white dark:bg-dark-800 rounded-xl shadow-xl p-4 hidden md:block"
+            >
               <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white text-xl">
+                <div
+                  class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white text-xl"
+                >
                   ⚽
                 </div>
                 <div>
-                  <div class="font-bold text-dark-900 dark:text-white">Licencja PZPN</div>
-                  <div class="text-sm text-dark-500 dark:text-dark-400">Certyfikowany klub</div>
+                  <div class="font-bold text-dark-900 dark:text-white">
+                    Licencja PZPN
+                  </div>
+                  <div class="text-sm text-dark-500 dark:text-dark-400">
+                    Certyfikowany klub
+                  </div>
                 </div>
               </div>
             </div>
@@ -265,34 +333,44 @@ const testimonials = [
   </section>
 
   <!-- Values Section -->
-  <section id="wartosci" class="section-padding bg-dark-50 dark:bg-dark-950 scroll-mt-20">
+  <section
+    id="wartosci"
+    class="section-padding bg-dark-50 dark:bg-dark-950 scroll-mt-20"
+  >
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4"
+        >
           Nasze wartości
         </span>
         <h2 class="mb-6 text-dark-900 dark:text-white">
-          Na czym opiera się nasz <span class="gradient-text">klub piłkarski</span>?
+          Na czym bazuje nasz <span class="gradient-text"
+            >klub piłkarski dla chłopców</span
+          >?
         </h2>
         <p class="text-dark-600 dark:text-dark-300 text-lg">
-          W <strong>klubie piłkarskim dla dzieci</strong> Unia Toruń wierzymy, że sport to nie tylko wyniki – to szkoła życia.
+          W Unii Toruń wierzymy, że sport to więcej niż wyniki – to kuźnia
+          charakteru, szkoła życia i źródło wewnętrznej satysfakcji.
         </p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {clubValues.map((value, index) => (
-          <div class={`card p-6 reveal animation-delay-${index % 3}00`}>
-            <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-3xl mb-4">
-              {value.icon}
+        {
+          clubValues.map((value, index) => (
+            <div class={`card p-6 reveal animation-delay-${index % 3}00`}>
+              <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-3xl mb-4">
+                {value.icon}
+              </div>
+              <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
+                {value.title}
+              </h3>
+              <p class="text-dark-600 dark:text-dark-300 text-sm">
+                {value.description}
+              </p>
             </div>
-            <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
-              {value.title}
-            </h3>
-            <p class="text-dark-600 dark:text-dark-300 text-sm">
-              {value.description}
-            </p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -301,31 +379,38 @@ const testimonials = [
   <section class="section-padding bg-white dark:bg-dark-900">
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4"
+        >
           Co oferujemy
         </span>
         <h2 class="mb-6 text-dark-900 dark:text-white">
-          Co zyskujesz dołączając do <span class="gradient-text">klubu</span>?
+          Co zyskujesz, dołączając do <span class="gradient-text"
+            >klubu Unia toruń</span
+          >?
         </h2>
         <p class="text-dark-600 dark:text-dark-300 text-lg">
-          Członkostwo w naszym <strong>klubie piłkarskim dla dzieci</strong> to kompleksowy pakiet dla młodego piłkarza.
+          Członkostwo w naszym <strong>klubie piłkarskim dla chłopców</strong> to
+          kompleksowy pakiet dla młodego piłkarza.
         </p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {clubOfferings.map((item, index) => (
-          <div class={`card p-6 reveal animation-delay-${index % 3}00`}>
-            <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-3xl mb-4">
-              {item.icon}
+        {
+          clubOfferings.map((item, index) => (
+            <div class={`card p-6 reveal animation-delay-${index % 3}00`}>
+              <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-3xl mb-4">
+                {item.icon}
+              </div>
+              <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
+                {item.title}
+              </h3>
+              <p class="text-dark-600 dark:text-dark-300 text-sm">
+                {item.description}
+              </p>
             </div>
-            <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
-              {item.title}
-            </h3>
-            <p class="text-dark-600 dark:text-dark-300 text-sm">
-              {item.description}
-            </p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -334,47 +419,53 @@ const testimonials = [
   <section class="section-padding bg-dark-50 dark:bg-dark-950">
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4"
+        >
           Ścieżka rozwoju
         </span>
         <h2 class="mb-6 text-dark-900 dark:text-white">
-          Jak wygląda droga w naszym <span class="gradient-text">klubie piłkarskim</span>?
+          Jak wygląda droga w naszym <span class="gradient-text"
+            >klubie piłkarskim</span
+          >?
         </h2>
       </div>
 
       <div class="max-w-4xl mx-auto">
         <div class="space-y-6">
-          {clubPath.map((stage, index) => (
-            <div class={`card p-6 reveal animation-delay-${index}00`}>
-              <div class="flex flex-col md:flex-row md:items-center gap-6">
-                <div class="flex-shrink-0">
-                  <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center text-white font-display font-bold text-xl">
-                    {index + 1}
+          {
+            clubPath.map((stage, index) => (
+              <div class={`card p-6 reveal animation-delay-${index}00`}>
+                <div class="flex flex-col md:flex-row md:items-center gap-6">
+                  <div class="flex-shrink-0">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center text-white font-display font-bold text-xl">
+                      {index + 1}
+                    </div>
                   </div>
-                </div>
-                <div class="flex-grow">
-                  <div class="flex flex-wrap items-center gap-3 mb-2">
-                    <h3 class="text-xl font-display font-bold text-dark-900 dark:text-white">
-                      {stage.stage}
-                    </h3>
-                    <span class="px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold">
-                      {stage.age}
-                    </span>
-                  </div>
-                  <p class="text-dark-600 dark:text-dark-300 mb-3">
-                    {stage.description}
-                  </p>
-                  <div class="flex flex-wrap gap-2">
-                    {stage.activities.map((activity) => (
-                      <span class="px-3 py-1 rounded-full bg-dark-100 dark:bg-dark-800 text-dark-600 dark:text-dark-300 text-xs">
-                        {activity}
+                  <div class="flex-grow">
+                    <div class="flex flex-wrap items-center gap-3 mb-2">
+                      <h3 class="text-xl font-display font-bold text-dark-900 dark:text-white">
+                        {stage.stage}
+                      </h3>
+                      <span class="px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+                        {stage.age}
                       </span>
-                    ))}
+                    </div>
+                    <p class="text-dark-600 dark:text-dark-300 mb-3">
+                      {stage.description}
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      {stage.activities.map((activity) => (
+                        <span class="px-3 py-1 rounded-full bg-dark-100 dark:bg-dark-800 text-dark-600 dark:text-dark-300 text-xs">
+                          {activity}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </div>
@@ -384,65 +475,86 @@ const testimonials = [
   <section class="section-padding bg-white dark:bg-dark-900">
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4"
+        >
           Opinie rodziców
         </span>
         <h2 class="mb-6 text-dark-900 dark:text-white">
-          Co mówią o naszym <span class="gradient-text">klubie piłkarskim</span>?
+          Co mówią rodzice o naszym <span class="gradient-text"
+            >klubie piłkarskim</span
+          >?
         </h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        {testimonials.map((testimonial, index) => (
-          <div class={`card p-6 reveal animation-delay-${index}00`}>
-            <div class="flex gap-1 mb-4">
-              {[...Array(5)].map(() => (
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <p class="text-dark-600 dark:text-dark-300 mb-4 italic">
-              "{testimonial.content}"
-            </p>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold">
-                {testimonial.author.charAt(0)}
+        {
+          testimonials.map((testimonial, index) => (
+            <div class={`card p-6 reveal animation-delay-${index}00`}>
+              <div class="flex gap-1 mb-4">
+                {[...Array(5)].map(() => (
+                  <svg
+                    class="w-5 h-5 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
               </div>
-              <div>
-                <div class="font-semibold text-dark-900 dark:text-white text-sm">
-                  {testimonial.author}
+              <p class="text-dark-600 dark:text-dark-300 mb-4 italic">
+                "{testimonial.content}"
+              </p>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold">
+                  {testimonial.author.charAt(0)}
                 </div>
-                <div class="text-dark-500 dark:text-dark-400 text-xs">
-                  {testimonial.role}
+                <div>
+                  <div class="font-semibold text-dark-900 dark:text-white text-sm">
+                    {testimonial.author}
+                  </div>
+                  <div class="text-dark-500 dark:text-dark-400 text-xs">
+                    {testimonial.role}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950 relative overflow-hidden">
+  <section
+    class="section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950 relative overflow-hidden"
+  >
     <div class="absolute inset-0 football-pattern opacity-50"></div>
-    <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"></div>
-    
+    <div
+      class="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"
+    >
+    </div>
+
     <div class="container-custom relative z-10">
       <div class="max-w-3xl mx-auto text-center reveal">
         <h2 class="text-white mb-6">
           Dołącz do <span class="gradient-text">klubu piłkarskiego</span> Unia Toruń!
         </h2>
         <p class="text-dark-300 text-lg md:text-xl mb-8">
-          Nasz <strong class="text-white">klub piłkarski dla dzieci</strong> czeka na nowych zawodników. Przyjdź na bezpłatny trening próbny i przekonaj się, że to miejsce dla Twojego dziecka!
+          Nasz <strong class="text-white">klub piłkarski dla dzieci</strong> czeka
+          na nowych zawodników. Przyjdź na bezpłatny trening próbny i przekonaj się,
+          że to miejsce dla Twojego dziecka!
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/zapisy" class="btn-primary text-lg">
-            Zapisz do klubu
-          </a>
-          <a href="/kontakt" class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20">
+          <a href="/zapisy" class="btn-primary text-lg"> Zapisz do klubu </a>
+          <a
+            href="/kontakt"
+            class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20"
+          >
             Skontaktuj się z nami
           </a>
         </div>
@@ -455,7 +567,9 @@ const testimonials = [
     <div class="container-custom">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-12 reveal">
-          <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4"
+          >
             FAQ
           </span>
           <h2 class="mb-6 text-dark-900 dark:text-white">
@@ -464,19 +578,31 @@ const testimonials = [
         </div>
 
         <div class="space-y-4 reveal">
-          {faqItems.map((item) => (
-            <details class="group card p-6 cursor-pointer">
-              <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
-                {item.question}
-                <svg class="w-5 h-5 text-primary-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <p class="mt-4 text-dark-600 dark:text-dark-300">
-                {item.answer}
-              </p>
-            </details>
-          ))}
+          {
+            faqItems.map((item) => (
+              <details class="group card p-6 cursor-pointer">
+                <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
+                  {item.question}
+                  <svg
+                    class="w-5 h-5 text-primary-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <p class="mt-4 text-dark-600 dark:text-dark-300">
+                  {item.answer}
+                </p>
+              </details>
+            ))
+          }
         </div>
       </div>
     </div>
