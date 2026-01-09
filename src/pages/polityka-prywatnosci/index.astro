@@ -1,0 +1,489 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+const seoTitle = "Polityka Prywatności – Akademia Piłkarska Unia Toruń";
+const seoDescription =
+  "Polityka prywatności i cookies serwisu uniatorun.pl. Dowiedz się, jak przetwarzamy Twoje dane osobowe zgodnie z RODO i jakich plików cookies używamy.";
+const seoKeywords = [
+  "polityka prywatności",
+  "RODO",
+  "cookies",
+  "ochrona danych osobowych",
+  "Unia Toruń",
+];
+
+const lastUpdated = "9 stycznia 2026";
+---
+
+<Layout title={seoTitle} description={seoDescription} keywords={seoKeywords}>
+  <!-- Hero Section -->
+  <section
+    class="relative py-16 md:py-20 overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-100 dark:from-dark-900 dark:via-dark-950 dark:to-primary-950"
+  >
+    <div class="absolute inset-0 football-pattern opacity-30 dark:opacity-50">
+    </div>
+
+    <div class="container-custom relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <nav
+          class="flex items-center justify-center gap-2 text-dark-500 dark:text-dark-400 text-sm mb-6"
+        >
+          <a
+            href="/"
+            class="hover:text-primary-600 dark:hover:text-white transition-colors"
+            >Strona główna</a
+          >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span class="text-dark-900 dark:text-white">Polityka Prywatności</span
+          >
+        </nav>
+
+        <h1 class="text-dark-900 dark:text-white mb-6 animate-fade-in-up">
+          Polityka <span class="gradient-text">Prywatności</span>
+        </h1>
+
+        <p
+          class="text-lg text-dark-600 dark:text-dark-400 animate-fade-in-up animation-delay-200"
+        >
+          Ostatnia aktualizacja: {lastUpdated}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose-content">
+        <!-- 1. Informacje ogólne -->
+        <div class="policy-section">
+          <h2>1. Informacje ogólne</h2>
+          <p>
+            Niniejsza polityka prywatności określa zasady przetwarzania danych
+            osobowych oraz wykorzystywania plików cookies w serwisie <strong
+              >uniatorun.pl</strong
+            > należącym do Akademii Piłkarskiej Unia Toruń.
+          </p>
+          <p>
+            Administratorem serwisu jest <strong>KS Unia Toruń S.A.</strong> z siedzibą
+            przy ul. Pera Jonssona 7, 87-100 Toruń. Dokładamy wszelkich starań, aby
+            chronić prywatność użytkowników naszego serwisu i przetwarzać dane osobowe
+            zgodnie z obowiązującymi przepisami, w szczególności z Rozporządzeniem
+            Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016
+            r. (RODO).
+          </p>
+        </div>
+
+        <!-- 2. Zakres zbieranych danych -->
+        <div class="policy-section">
+          <h2>2. Zakres zbieranych danych</h2>
+          <p>W ramach korzystania z serwisu możemy zbierać następujące dane:</p>
+
+          <h3>2.1. Dane zbierane automatycznie</h3>
+          <ul>
+            <li>Adres IP (anonimizowany)</li>
+            <li>Typ przeglądarki internetowej</li>
+            <li>System operacyjny</li>
+            <li>Rozdzielczość ekranu</li>
+            <li>Przybliżona lokalizacja (kraj, region)</li>
+            <li>Źródło odwiedzin (skąd trafiłeś na stronę)</li>
+            <li>Czas spędzony na stronie</li>
+            <li>Odwiedzane podstrony</li>
+          </ul>
+
+          <h3>2.2. Dane podawane dobrowolnie</h3>
+          <p>
+            Poprzez formularze na stronie (kontaktowy, rejestracyjny) możesz
+            przekazać nam:
+          </p>
+          <ul>
+            <li>Imię i nazwisko rodzica/opiekuna</li>
+            <li>Imię i wiek dziecka</li>
+            <li>Numer telefonu</li>
+            <li>Adres e-mail</li>
+            <li>Treść wiadomości</li>
+            <li>Preferowaną grupę treningową</li>
+          </ul>
+        </div>
+
+        <!-- 3. Cele przetwarzania danych -->
+        <div class="policy-section">
+          <h2>3. Cele przetwarzania danych</h2>
+          <p>Twoje dane przetwarzamy w następujących celach:</p>
+          <ul>
+            <li>
+              <strong>Zapisy na treningi</strong> – rejestracja dziecka w akademii
+              i kontakt w sprawie zajęć (podstawa: art. 6 ust. 1 lit. b RODO – wykonanie
+              umowy)
+            </li>
+            <li>
+              <strong>Kontakt</strong> – odpowiedź na zapytania przesłane przez formularz
+              kontaktowy (podstawa: art. 6 ust. 1 lit. f RODO – prawnie uzasadniony
+              interes)
+            </li>
+            <li>
+              <strong>Analityka</strong> – analiza ruchu na stronie w celu jej ulepszania
+              (podstawa: art. 6 ust. 1 lit. a RODO – zgoda)
+            </li>
+            <li>
+              <strong>Marketing</strong> – wyświetlanie spersonalizowanych reklam
+              (podstawa: art. 6 ust. 1 lit. a RODO – zgoda)
+            </li>
+          </ul>
+        </div>
+
+        <!-- 4. Pliki cookies -->
+        <div class="policy-section">
+          <h2>4. Pliki cookies</h2>
+          <p>
+            Serwis wykorzystuje pliki cookies (ciasteczka), czyli małe pliki
+            tekstowe zapisywane na Twoim urządzeniu. Pliki cookies dzielimy na
+            trzy kategorie:
+          </p>
+
+          <h3>4.1. Niezbędne cookies (zawsze aktywne)</h3>
+          <p>Są konieczne do prawidłowego funkcjonowania strony. Obejmują:</p>
+          <ul>
+            <li>Zapamiętanie Twoich preferencji cookies</li>
+            <li>Obsługę sesji użytkownika</li>
+            <li>Podstawowe funkcje bezpieczeństwa</li>
+            <li>Zapamiętanie preferencji motywu (jasny/ciemny)</li>
+          </ul>
+
+          <h3>4.2. Analityczne cookies (wymagają zgody)</h3>
+          <p>
+            Pozwalają nam zrozumieć, jak użytkownicy korzystają z serwisu.
+            Wykorzystujemy:
+          </p>
+          <ul>
+            <li>
+              <strong>Google Analytics 4</strong> (GA4) – do analizy ruchu na stronie
+            </li>
+            <li>
+              <strong>Google Tag Manager</strong> (GTM) – do zarządzania tagami analitycznymi
+            </li>
+          </ul>
+          <p>
+            Dane są anonimizowane (m.in. anonimizacja IP) i nie pozwalają na
+            bezpośrednią identyfikację użytkownika.
+          </p>
+
+          <h3>4.3. Marketingowe cookies (wymagają zgody)</h3>
+          <p>
+            Umożliwiają wyświetlanie spersonalizowanych reklam. Mogą być
+            wykorzystywane przez:
+          </p>
+          <ul>
+            <li>Google Ads</li>
+            <li>Facebook Pixel</li>
+            <li>Inne platformy reklamowe</li>
+          </ul>
+        </div>
+
+        <!-- 5. Zarządzanie zgodami -->
+        <div class="policy-section">
+          <h2>5. Zarządzanie zgodami cookies</h2>
+          <p>
+            Przy pierwszej wizycie na stronie wyświetlamy baner z prośbą o
+            wyrażenie zgody na wykorzystanie cookies. Możesz:
+          </p>
+          <ul>
+            <li>
+              <strong>Zaakceptować wszystkie</strong> – zgadzasz się na wszystkie
+              kategorie cookies
+            </li>
+            <li>
+              <strong>Dostosować preferencje</strong> – samodzielnie wybierasz, które
+              kategorie cookies akceptujesz
+            </li>
+            <li>
+              <strong>Odrzucić opcjonalne</strong> – akceptujesz tylko niezbędne cookies
+            </li>
+          </ul>
+          <p>
+            W każdej chwili możesz zmienić swoje preferencje klikając w link
+            <button
+              onclick="openCookieSettings()"
+              class="text-primary-600 dark:text-primary-400 hover:underline cursor-pointer bg-transparent border-none font-semibold"
+            >
+              „Ustawienia cookies"
+            </button>
+            w stopce strony.
+          </p>
+        </div>
+
+        <!-- 6. Google Consent Mode v2 -->
+        <div class="policy-section">
+          <h2>6. Google Consent Mode v2</h2>
+          <p>
+            Nasz serwis wykorzystuje Google Consent Mode v2, który zapewnia
+            zgodność z wymogami GDPR i Digital Markets Act (DMA). Dzięki temu:
+          </p>
+          <ul>
+            <li>
+              Skrypty Google (Analytics, Ads, GTM) respektują Twoje wybory
+              dotyczące cookies
+            </li>
+            <li>
+              Bez Twojej zgody nie są zbierane dane analityczne ani marketingowe
+            </li>
+            <li>
+              Możemy wykorzystywać modelowanie konwersji bez naruszania
+              prywatności
+            </li>
+          </ul>
+        </div>
+
+        <!-- 7. Twoje prawa -->
+        <div class="policy-section">
+          <h2>7. Twoje prawa</h2>
+          <p>Zgodnie z RODO przysługują Ci następujące prawa:</p>
+          <ul>
+            <li>
+              <strong>Prawo dostępu</strong> – możesz zażądać informacji o przetwarzanych
+              danych
+            </li>
+            <li>
+              <strong>Prawo do sprostowania</strong> – możesz poprawić nieprawidłowe
+              dane
+            </li>
+            <li>
+              <strong>Prawo do usunięcia</strong> – możesz zażądać usunięcia swoich
+              danych
+            </li>
+            <li>
+              <strong>Prawo do ograniczenia przetwarzania</strong> – możesz ograniczyć
+              zakres przetwarzania
+            </li>
+            <li>
+              <strong>Prawo do przenoszenia danych</strong> – możesz otrzymać swoje
+              dane w formacie elektronicznym
+            </li>
+            <li>
+              <strong>Prawo do sprzeciwu</strong> – możesz sprzeciwić się przetwarzaniu
+              danych
+            </li>
+            <li>
+              <strong>Prawo do wycofania zgody</strong> – możesz w dowolnym momencie
+              wycofać zgodę na przetwarzanie danych
+            </li>
+          </ul>
+          <p>
+            W celu realizacji swoich praw, skontaktuj się z nami przez <a
+              href="/kontakt">formularz kontaktowy</a
+            > lub e-mail: <a href="mailto:ksuniatorun@gmail.com"
+              >ksuniatorun@gmail.com</a
+            >.
+          </p>
+        </div>
+
+        <!-- 8. Okres przechowywania -->
+        <div class="policy-section">
+          <h2>8. Okres przechowywania danych</h2>
+          <ul>
+            <li>
+              <strong>Dane z formularzy</strong> – przechowujemy przez okres niezbędny
+              do obsługi zapytania lub trwania członkostwa w akademii, maksymalnie
+              3 lata od ostatniego kontaktu
+            </li>
+            <li>
+              <strong>Dane analityczne</strong> – przechowywane przez Google Analytics
+              przez 14 miesięcy
+            </li>
+            <li>
+              <strong>Preferencje cookies</strong> – zapisane w Twojej przeglądarce
+              przez 365 dni
+            </li>
+          </ul>
+        </div>
+
+        <!-- 9. Odbiorcy danych -->
+        <div class="policy-section">
+          <h2>9. Odbiorcy danych</h2>
+          <p>Twoje dane mogą być przekazywane następującym podmiotom:</p>
+          <ul>
+            <li>
+              <strong>Google LLC</strong> – w związku z korzystaniem z Google Analytics
+              i Google Tag Manager
+            </li>
+            <li>
+              <strong>Amazon Web Services</strong> – hosting i infrastruktura serwisu
+            </li>
+          </ul>
+          <p>
+            Google LLC ma siedzibę w USA i stosuje odpowiednie zabezpieczenia
+            (Standard Contractual Clauses) zapewniające ochronę danych zgodną z
+            RODO.
+          </p>
+        </div>
+
+        <!-- 10. Bezpieczeństwo -->
+        <div class="policy-section">
+          <h2>10. Bezpieczeństwo danych</h2>
+          <p>Stosujemy następujące środki ochrony danych:</p>
+          <ul>
+            <li>Szyfrowanie SSL/TLS dla wszystkich połączeń</li>
+            <li>Bezpieczne serwery z regularnym monitoringiem</li>
+            <li>Ograniczony dostęp do danych osobowych</li>
+            <li>Regularne aktualizacje zabezpieczeń</li>
+          </ul>
+        </div>
+
+        <!-- 11. Dane dzieci -->
+        <div class="policy-section">
+          <h2>11. Ochrona danych dzieci</h2>
+          <p>
+            Ze względu na charakter naszej działalności (akademia piłkarska dla
+            dzieci) szczególnie dbamy o ochronę danych osobowych małoletnich.
+            Dane dzieci (imię, wiek, grupa treningowa) zbieramy wyłącznie za
+            zgodą rodziców/opiekunów prawnych w celu realizacji zajęć
+            sportowych.
+          </p>
+          <p>
+            Nie wykorzystujemy danych dzieci w celach marketingowych bez
+            wyraźnej zgody rodziców.
+          </p>
+        </div>
+
+        <!-- 12. Zmiany -->
+        <div class="policy-section">
+          <h2>12. Zmiany w polityce prywatności</h2>
+          <p>
+            Zastrzegamy sobie prawo do wprowadzania zmian w niniejszej polityce
+            prywatności. O istotnych zmianach poinformujemy poprzez komunikat na
+            stronie. Data ostatniej aktualizacji jest podana na górze tego
+            dokumentu.
+          </p>
+        </div>
+
+        <!-- 13. Kontakt -->
+        <div class="policy-section">
+          <h2>13. Kontakt</h2>
+          <p>
+            W sprawach związanych z ochroną danych osobowych możesz się z nami
+            skontaktować:
+          </p>
+          <ul>
+            <li>
+              E-mail: <a href="mailto:ksuniatorun@gmail.com"
+                >ksuniatorun@gmail.com</a
+              >
+            </li>
+            <li>Telefon: <a href="tel:+48517740146">+48 517 740 146</a></li>
+            <li>Formularz: <a href="/kontakt">strona kontaktowa</a></li>
+            <li>Adres: ul. Pera Jonssona 7, 87-100 Toruń</li>
+          </ul>
+        </div>
+
+        <!-- Cookie Settings Button -->
+        <div
+          class="mt-12 p-8 bg-dark-50 dark:bg-dark-800 rounded-2xl border border-dark-200 dark:border-dark-700"
+        >
+          <h3
+            class="text-xl font-display font-bold text-dark-900 dark:text-white mb-3"
+          >
+            Zarządzaj ustawieniami cookies
+          </h3>
+          <p class="text-dark-600 dark:text-dark-400 mb-6">
+            Możesz w każdej chwili zmienić swoje preferencje dotyczące plików
+            cookies.
+          </p>
+          <button onclick="openCookieSettings()" class="btn-primary">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            Otwórz ustawienia cookies
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Navigation -->
+  <section
+    class="py-8 bg-dark-50 dark:bg-dark-950 border-t border-dark-100 dark:border-dark-800"
+  >
+    <div class="container-custom">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <nav
+          class="flex items-center gap-2 text-sm text-dark-500 dark:text-dark-400"
+        >
+          <a
+            href="/"
+            class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            >Strona główna</a
+          >
+          <span>/</span>
+          <span class="text-dark-900 dark:text-white font-medium"
+            >Polityka Prywatności</span
+          >
+        </nav>
+        <a href="/kontakt" class="btn-primary !py-2 !px-4 text-sm"> Kontakt </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .prose-content {
+    @apply text-dark-700 dark:text-dark-300;
+  }
+
+  .policy-section {
+    @apply mb-10 pb-10 border-b border-dark-100 dark:border-dark-800 last:border-0;
+  }
+
+  .policy-section h2 {
+    @apply text-2xl font-display font-bold text-dark-900 dark:text-white mb-4;
+  }
+
+  .policy-section h3 {
+    @apply text-lg font-display font-semibold text-dark-900 dark:text-white mt-6 mb-3;
+  }
+
+  .policy-section p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .policy-section ul {
+    @apply my-4 pl-6 space-y-2;
+  }
+
+  .policy-section li {
+    @apply list-disc;
+  }
+
+  .policy-section a {
+    @apply text-primary-600 dark:text-primary-400 hover:underline;
+  }
+
+  .policy-section strong {
+    @apply font-semibold text-dark-900 dark:text-white;
+  }
+</style>

@@ -4,10 +4,10 @@ const currentYear = new Date().getFullYear();
 const footerLinks = {
   akademia: [
     { name: "O akademii", href: "/akademia-pilkarska-torun" },
-    { name: "Nasi trenerzy", href: "/trenerzy" },
+    //{ name: "Nasi trenerzy", href: "/trenerzy" },
     { name: "Plan zajęć", href: "/plan-zajec" },
     { name: "Lokalizacja", href: "/lokalizacja" },
-    { name: "Aktualności", href: "/aktualnosci" },
+    //{ name: "Aktualności", href: "/aktualnosci" },
   ],
   treningi: [
     { name: "Wszystkie grupy", href: "/treningi-pilkarskie-dla-dzieci" },
@@ -36,7 +36,7 @@ const footerLinks = {
   kontakt: [
     { name: "Formularz kontaktowy", href: "/kontakt" },
     { name: "Zapisy online", href: "/zapisy" },
-    { name: "Galeria", href: "/galeria" },
+    //{ name: "Galeria", href: "/galeria" },
   ],
 };
 
@@ -293,12 +293,12 @@ const socialLinks = [
           >
             Polityka prywatności
           </a>
-          <a
-            href="/regulamin"
-            class="text-dark-500 hover:text-dark-300 text-sm transition-colors"
+          <button
+            onclick="openCookieSettings()"
+            class="text-dark-500 hover:text-dark-300 text-sm transition-colors cursor-pointer bg-transparent border-none"
           >
-            Regulamin
-          </a>
+            Ustawienia cookies
+          </button>
         </div>
       </div>
     </div>

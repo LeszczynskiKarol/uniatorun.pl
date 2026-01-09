@@ -1,0 +1,421 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+const seoTitle = "Lokalizacja treningów – Orlik Wojska Polskiego | Unia Toruń";
+const seoDescription =
+  "Treningi piłkarskie Unii Toruń odbywają się na orliku przy ul. Wojska Polskiego 47a w Toruniu. Sprawdź mapę dojazdu i informacje o obiekcie.";
+const seoKeywords = [
+  "orlik Toruń Wojska Polskiego",
+  "boisko piłkarskie Toruń",
+  "gdzie treningi Unia Toruń",
+  "lokalizacja treningów piłkarskich",
+  "orlik ul Wojska Polskiego 47a",
+];
+
+const facilities = [
+  {
+    icon: "🏟️",
+    title: "Orlik",
+    description: "Boisko ze sztuczną nawierzchnią, oświetlenie, bramki",
+  },
+  {
+    icon: "🚗",
+    title: "Parking",
+    description: "Bezpłatny parking w pobliżu boiska",
+  },
+  {
+    icon: "🚌",
+    title: "Komunikacja",
+    description: "Dojazd autobusem MZK – przystanek w pobliżu",
+  },
+  {
+    icon: "👀",
+    title: "Trybuny",
+    description: "Miejsca dla rodziców do obserwacji treningów",
+  },
+];
+---
+
+<Layout title={seoTitle} description={seoDescription} keywords={seoKeywords}>
+  <!-- Hero Section -->
+  <section
+    class="relative py-16 md:py-20 overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-100 dark:from-dark-900 dark:via-dark-950 dark:to-primary-950"
+  >
+    <div class="absolute inset-0 football-pattern opacity-30 dark:opacity-50">
+    </div>
+    <div
+      class="absolute top-20 right-10 w-72 h-72 bg-primary-500/10 dark:bg-primary-500/20 rounded-full blur-3xl animate-pulse-glow"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 left-10 w-96 h-96 bg-primary-400/10 dark:bg-primary-600/10 rounded-full blur-3xl"
+    >
+    </div>
+
+    <div class="container-custom relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <nav
+          class="flex items-center justify-center gap-2 text-dark-500 dark:text-dark-400 text-sm mb-6"
+        >
+          <a
+            href="/"
+            class="hover:text-primary-600 dark:hover:text-white transition-colors"
+            >Strona główna</a
+          >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span class="text-dark-900 dark:text-white">Lokalizacja</span>
+        </nav>
+
+        <h1 class="text-dark-900 dark:text-white mb-6 animate-fade-in-up">
+          <span class="gradient-text">Lokalizacja</span> treningów
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-dark-600 dark:text-dark-300 mb-4 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto"
+        >
+          Treningi odbywają się na <strong class="text-dark-900 dark:text-white"
+            >Orliku przy ul. Wojska Polskiego 47a</strong
+          > w Toruniu
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Location Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <!-- Map -->
+        <div class="reveal">
+          <div
+            class="aspect-video lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-dark-200 dark:border-dark-700"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2415.8876!2d18.5985!3d53.0138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470335b5a0a1a1a1%3A0x1234567890abcdef!2sWojska%20Polskiego%2047a%2C%20Toru%C5%84!5e0!3m2!1spl!2spl!4v1234567890"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa dojazdu do Orlika przy ul. Wojska Polskiego 47a"
+            ></iframe>
+          </div>
+
+          <!-- Google Maps Link -->
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Wojska+Polskiego+47a+Toruń"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 mt-4 text-primary-600 dark:text-primary-400 hover:underline font-medium"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              ></path>
+            </svg>
+            Otwórz w Google Maps
+          </a>
+        </div>
+
+        <!-- Info -->
+        <div class="reveal animation-delay-200">
+          <!-- Address Card -->
+          <div class="card p-8 mb-8">
+            <div class="flex items-start gap-4 mb-6">
+              <div
+                class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-2xl flex-shrink-0"
+              >
+                📍
+              </div>
+              <div>
+                <h2
+                  class="text-xl font-display font-bold text-dark-900 dark:text-white mb-2"
+                >
+                  Główne miejsce treningów
+                </h2>
+                <p class="text-dark-600 dark:text-dark-300">
+                  <strong class="text-dark-900 dark:text-white">Orlik</strong
+                  ><br />
+                  ul. Wojska Polskiego 47a<br />
+                  87-100 Toruń
+                </p>
+              </div>
+            </div>
+
+            <div class="border-t border-dark-100 dark:border-dark-800 pt-6">
+              <h3
+                class="font-display font-bold text-dark-900 dark:text-white mb-4 flex items-center gap-2"
+              >
+                <svg
+                  class="w-5 h-5 text-primary-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+                Jak dojechać?
+              </h3>
+              <ul class="space-y-3 text-dark-600 dark:text-dark-300">
+                <li class="flex items-start gap-3">
+                  <span class="text-lg">🚗</span>
+                  <span
+                    ><strong class="text-dark-900 dark:text-white"
+                      >Samochodem:</strong
+                    > Bezpłatny parking dostępny przy boisku</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-lg">🚌</span>
+                  <span
+                    ><strong class="text-dark-900 dark:text-white"
+                      >Autobusem MZK:</strong
+                    > Przystanek w pobliżu orlika</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Weather Alert -->
+          <div
+            class="card p-6 bg-amber-50 dark:bg-amber-900/20 border-2 border-amber-200 dark:border-amber-800"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center text-2xl flex-shrink-0"
+              >
+                ⛈️
+              </div>
+              <div>
+                <h3
+                  class="font-display font-bold text-dark-900 dark:text-white mb-2"
+                >
+                  Gdy pogoda nie dopisuje
+                </h3>
+                <p class="text-dark-600 dark:text-dark-300">
+                  W przypadku złej pogody treningi odbywają się na <strong
+                    class="text-dark-900 dark:text-white"
+                    >halach sportowych</strong
+                  >. Informacja o zmianie miejsca jest podawana z odpowiednim
+                  wyprzedzeniem przez grupę dla rodziców.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities Section -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4"
+        >
+          Infrastruktura
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          Co znajdziesz <span class="gradient-text">na miejscu</span>?
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        {
+          facilities.map((item, index) => (
+            <div
+              class={`card p-6 text-center reveal animation-delay-${index}00`}
+            >
+              <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-2xl mx-auto mb-4">
+                {item.icon}
+              </div>
+              <h3 class="font-display font-bold text-dark-900 dark:text-white mb-2">
+                {item.title}
+              </h3>
+              <p class="text-dark-600 dark:text-dark-300 text-sm">
+                {item.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding gradient-bg relative overflow-hidden">
+    <div class="absolute inset-0 football-pattern opacity-20"></div>
+    <div
+      class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+    >
+    </div>
+
+    <div class="container-custom relative z-10">
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <h2 class="text-white mb-6">
+          Odwiedź nas na <span class="text-primary-200">treningu!</span>
+        </h2>
+        <p class="text-primary-100 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+          Pierwszy trening jest <strong class="text-white">bezpłatny</strong>.
+          Przyjedź z dzieckiem i przekonaj się, jak wyglądają nasze zajęcia!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/zapisy"
+            class="btn bg-white text-primary-600 hover:bg-primary-50 hover:shadow-xl hover:-translate-y-0.5"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+              ></path>
+            </svg>
+            Zapisz się na trening
+          </a>
+          <a
+            href="/plan-zajec"
+            class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
+            </svg>
+            Zobacz plan zajęć
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-2xl mx-auto text-center reveal">
+        <h2
+          class="text-2xl font-display font-bold text-dark-900 dark:text-white mb-6"
+        >
+          Masz pytania o lokalizację?
+        </h2>
+        <p class="text-dark-600 dark:text-dark-300 mb-8">
+          Skontaktuj się z nami – chętnie pomożemy!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="tel:+48517740146"
+            class="inline-flex items-center justify-center gap-2 text-dark-900 dark:text-white font-semibold hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+          >
+            <svg
+              class="w-5 h-5 text-primary-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              ></path>
+            </svg>
+            +48 517 740 146
+          </a>
+          <span class="hidden sm:inline text-dark-300 dark:text-dark-600"
+            >|</span
+          >
+          <a
+            href="mailto:ksuniatorun@gmail.com"
+            class="inline-flex items-center justify-center gap-2 text-dark-900 dark:text-white font-semibold hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+          >
+            <svg
+              class="w-5 h-5 text-primary-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+            ksuniatorun@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Navigation -->
+  <section
+    class="py-8 bg-dark-50 dark:bg-dark-950 border-t border-dark-100 dark:border-dark-800"
+  >
+    <div class="container-custom">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <nav
+          class="flex items-center gap-2 text-sm text-dark-500 dark:text-dark-400"
+        >
+          <a
+            href="/"
+            class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            >Strona główna</a
+          >
+          <span>/</span>
+          <span class="text-dark-900 dark:text-white font-medium"
+            >Lokalizacja</span
+          >
+        </nav>
+        <a href="/zapisy" class="btn-primary !py-2 !px-4 text-sm">
+          Zapisz dziecko
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
