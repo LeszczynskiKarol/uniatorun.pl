@@ -1,6 +1,4 @@
 ---
-import CookieBanner from "../components/CookieBanner.astro";
-
 export interface Props {
   title: string;
   description: string;
@@ -27,6 +25,7 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
 import "@/styles/global.css";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import CookieBanner from "@/components/CookieBanner.astro";
 ---
 
 <!doctype html>
@@ -159,7 +158,17 @@ import Footer from "@/components/Footer.astro";
       document.documentElement.classList.toggle("dark", theme === "dark");
     </script>
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col overflow-x-hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KKFR6MRT"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <Header />
 
     <main class="flex-grow">
@@ -167,6 +176,9 @@ import Footer from "@/components/Footer.astro";
     </main>
 
     <Footer />
+
+    <!-- Cookie Banner -->
+    <CookieBanner />
 
     <!-- Reveal on scroll script -->
     <script>
@@ -190,6 +202,5 @@ import Footer from "@/components/Footer.astro";
           observer.observe(el);
         });
     </script>
-    <CookieBanner />
   </body>
 </html>

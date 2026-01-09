@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,13 +8,15 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: hidden;
   }
 
   body {
     @apply font-body antialiased;
     @apply bg-white text-dark-900;
     @apply dark:bg-dark-950 dark:text-dark-100;
-    @apply transition-colors duration-300;
+    overflow-x: hidden;
+    position: relative;
   }
 
   h1,
@@ -139,18 +141,23 @@
   .animation-delay-100 {
     animation-delay: 100ms;
   }
+
   .animation-delay-200 {
     animation-delay: 200ms;
   }
+
   .animation-delay-300 {
     animation-delay: 300ms;
   }
+
   .animation-delay-400 {
     animation-delay: 400ms;
   }
+
   .animation-delay-500 {
     animation-delay: 500ms;
   }
+
   .animation-delay-600 {
     animation-delay: 600ms;
   }
@@ -232,18 +239,14 @@
 
 /* Football field pattern for backgrounds */
 .football-pattern {
-  background-image: linear-gradient(
-      rgba(82, 113, 255, 0.03) 1px,
-      transparent 1px
-    ),
+  background-image:
+    linear-gradient(rgba(82, 113, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(82, 113, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
 .dark .football-pattern {
-  background-image: linear-gradient(
-      rgba(82, 113, 255, 0.08) 1px,
-      transparent 1px
-    ),
+  background-image:
+    linear-gradient(rgba(82, 113, 255, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(82, 113, 255, 0.08) 1px, transparent 1px);
 }
