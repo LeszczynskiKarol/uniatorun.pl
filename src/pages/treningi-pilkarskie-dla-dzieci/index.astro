@@ -134,10 +134,7 @@ const methodology = [
 
 // FAQ dla tej strony
 const faqItems = [
-  {
-    question: 'Ile razy w tygodniu odbywają się treningi piłkarskie?',
-    answer: 'Częstotliwość treningów zależy od grupy wiekowej. Najmłodsi (3-6 lat) trenują 2 razy w tygodniu po 45 minut. Żaki (7-9 lat) również 2 razy po 60 minut. Orliki (9-11 lat) i Młodziki (11-13 lat) trenują 3 razy w tygodniu odpowiednio po 75 i 90 minut.',
-  },
+  
   {
     question: 'Jak wygląda typowy trening piłkarski dla dzieci?',
     answer: 'Każdy trening piłkarski w Unii Toruń składa się z rozgrzewki, części głównej (ćwiczenia techniczne lub taktyczne) oraz gry. Dla najmłodszych dzieci treningi mają formę zabawy. Starsze grupy pracują nad konkretnymi elementami zgodnie z planem szkoleniowym.',
@@ -216,7 +213,7 @@ const faqItems = [
             <div class="text-dark-400 text-sm">Zakres wiekowy</div>
           </div>
           <div class="text-center bg-white/5 rounded-xl p-4 backdrop-blur-sm">
-            <div class="text-3xl md:text-4xl font-display font-bold text-white">2-3 x</div>
+            <div class="text-3xl md:text-4xl font-display font-bold text-white">1-3 x</div>
             <div class="text-dark-400 text-sm">Treningi tygodniowo</div>
           </div>
           <div class="text-center bg-white/5 rounded-xl p-4 backdrop-blur-sm">
@@ -244,7 +241,7 @@ const faqItems = [
         <div class="grid md:grid-cols-2 gap-8 items-center reveal">
           <div class="space-y-4 text-dark-600 dark:text-dark-300">
             <p>
-              W <strong class="text-dark-900 dark:text-white">Unii Toruń</strong> prowadzimy <strong>treningi piłkarskie dla dzieci</strong> zgodnie z najnowszymi standardami szkolenia młodzieżowego. Nasz program bazuje na wytycznych PZPN oraz najlepszych europejskich akademii piłkarskich.
+              W <strong class="text-dark-900 dark:text-white">Unii Toruń</strong> prowadzimy <strong>treningi piłkarskie dla dzieci</strong> zgodnie z najnowszymi standardami szkolenia młodzieżowego. Nasz program jest oparty na wytycznych PZPN oraz najlepszych europejskich akademii piłkarskich.
             </p>
             <p>
               Każda grupa wiekowa ma indywidualnie dopasowany program treningowy, uwzględniający możliwości rozwojowe i potrzeby dzieci na danym etapie. <strong>Treningi piłki nożnej</strong> prowadzimy w sposób progresywny – od prostych zabaw z piłką dla najmłodszych, po zaawansowane ćwiczenia taktyczne dla starszych zawodników.
@@ -253,14 +250,174 @@ const faqItems = [
               Nasi <strong>trenerzy piłki nożnej w Toruniu</strong> posiadają licencje PZPN i wieloletnie doświadczenie w pracy z dziećmi. Dbamy o to, aby każdy trening był nie tylko efektywny, ale również sprawiał radość młodym zawodnikom.
             </p>
           </div>
-          <div class="relative">
-            <div class="aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900/50 dark:to-primary-800/50 flex items-center justify-center">
-              <div class="text-center p-8">
-                <div class="text-6xl mb-4">🎬</div>
-                <p class="text-dark-500 dark:text-dark-400 text-sm">Film z treningów</p>
+          <div class="relative group">
+            <div class="aspect-video rounded-2xl overflow-hidden bg-dark-900 shadow-2xl relative" id="video-container">
+              <video 
+                id="training-video"
+                class="w-full h-full object-cover cursor-pointer"
+                muted 
+                loop 
+                playsinline
+              >
+                <source src="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/AQOTpx25BpsEqrIS1pN7UdW9Xe4iJ0djtKw5tppB2t2aFtchSmtKYUW07ZSfR_dgBW1lm5BAKfyUj98iW2-avrxnuxFtOY1zDTgtoy_mEg.mp4" type="video/mp4" />
+                Twoja przeglądarka nie obsługuje odtwarzania wideo.
+              </video>
+              
+              <!-- Duży przycisk PLAY na środku - tylko gdy nie gra -->
+              <button 
+                id="big-play-btn"
+                class="absolute inset-0 flex items-center justify-center bg-dark-900/40 transition-opacity duration-300"
+                aria-label="Odtwórz wideo"
+              >
+                <div class="w-20 h-20 rounded-full bg-white/90 flex items-center justify-center shadow-2xl transform transition-transform hover:scale-110">
+                  <svg class="w-8 h-8 text-primary-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </button>
+              
+              <!-- Pasek kontrolny na dole - tylko na hover gdy gra -->
+              <div id="video-controls" class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark-900/90 to-transparent p-4 pt-8 opacity-0 transition-opacity duration-300">
+                <!-- Progress bar -->
+                <div id="progress-container" class="w-full h-1 bg-white/30 rounded-full mb-3 cursor-pointer">
+                  <div id="progress-bar" class="h-full bg-primary-500 rounded-full relative" style="width: 0%">
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  </div>
+                </div>
+                
+                <!-- Kontrolki -->
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <!-- Play/Pause -->
+                    <button id="play-pause-btn" class="text-white hover:text-primary-400 transition-colors" aria-label="Pauza">
+                      <svg id="pause-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                      </svg>
+                      <svg id="play-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </button>
+                    
+                    <!-- Czas -->
+                    <span id="time-display" class="text-white/80 text-sm font-mono">0:00 / 0:00</span>
+                  </div>
+                  
+                  <!-- Mute toggle -->
+                  <button id="mute-btn" class="text-white hover:text-primary-400 transition-colors" aria-label="Włącz dźwięk">
+                    <svg id="muted-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                    </svg>
+                    <svg id="unmuted-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
+            <!-- Caption -->
+            <p class="text-center text-dark-500 dark:text-dark-400 text-sm mt-3">
+              🎬 Fragment treningu w Akademii Piłkarskiej Unia Toruń
+            </p>
           </div>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const video = document.getElementById('training-video') as HTMLVideoElement | null;
+              const bigPlayBtn = document.getElementById('big-play-btn');
+              const videoControls = document.getElementById('video-controls');
+              const playPauseBtn = document.getElementById('play-pause-btn');
+              const playIcon = document.getElementById('play-icon');
+              const pauseIcon = document.getElementById('pause-icon');
+              const progressBar = document.getElementById('progress-bar');
+              const progressContainer = document.getElementById('progress-container');
+              const timeDisplay = document.getElementById('time-display');
+              const muteBtn = document.getElementById('mute-btn');
+              const mutedIcon = document.getElementById('muted-icon');
+              const unmutedIcon = document.getElementById('unmuted-icon');
+              const container = document.getElementById('video-container');
+              
+              if (!video || !bigPlayBtn || !videoControls || !playPauseBtn || !playIcon || !pauseIcon || !progressBar || !progressContainer || !timeDisplay || !muteBtn || !mutedIcon || !unmutedIcon || !container) return;
+              
+              let isPlaying = false;
+              
+              const formatTime = (seconds: number) => {
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs.toString().padStart(2, '0')}`;
+              };
+              
+              const updateTime = () => {
+                const current = formatTime(video.currentTime);
+                const duration = formatTime(video.duration || 0);
+                timeDisplay.textContent = `${current} / ${duration}`;
+                const progress = (video.currentTime / video.duration) * 100;
+                progressBar.style.width = `${progress}%`;
+              };
+              
+              const togglePlay = () => {
+                if (isPlaying) {
+                  video.pause();
+                  playIcon.classList.remove('hidden');
+                  pauseIcon.classList.add('hidden');
+                } else {
+                  video.play();
+                  playIcon.classList.add('hidden');
+                  pauseIcon.classList.remove('hidden');
+                  bigPlayBtn.classList.add('opacity-0', 'pointer-events-none');
+                }
+                isPlaying = !isPlaying;
+              };
+              
+              // Duży przycisk play
+              bigPlayBtn.addEventListener('click', togglePlay);
+              
+              // Klik na wideo
+              video.addEventListener('click', togglePlay);
+              
+              // Mały przycisk play/pause
+              playPauseBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                togglePlay();
+              });
+              
+              // Pokaż kontrolki na hover gdy gra
+              container.addEventListener('mouseenter', () => {
+                if (isPlaying) videoControls.classList.add('opacity-100');
+              });
+              
+              container.addEventListener('mouseleave', () => {
+                if (isPlaying) videoControls.classList.remove('opacity-100');
+              });
+              
+              // Aktualizuj czas
+              video.addEventListener('timeupdate', updateTime);
+              video.addEventListener('loadedmetadata', updateTime);
+              
+              // Klik na progress bar
+              progressContainer.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const rect = progressContainer.getBoundingClientRect();
+                const percent = (e.clientX - rect.left) / rect.width;
+                video.currentTime = percent * video.duration;
+              });
+              
+              // Mute toggle
+              muteBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                video.muted = !video.muted;
+                mutedIcon.classList.toggle('hidden', !video.muted);
+                unmutedIcon.classList.toggle('hidden', video.muted);
+              });
+              
+              // Pokaż kontrolki gdy wideo spauzowane
+              video.addEventListener('pause', () => {
+                isPlaying = false;
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                bigPlayBtn.classList.remove('opacity-0', 'pointer-events-none');
+              });
+            });
+          </script>
         </div>
       </div>
     </div>
@@ -277,7 +434,7 @@ const faqItems = [
           4 etapy rozwoju młodego piłkarza
         </h2>
         <p class="text-dark-600 dark:text-dark-300 text-lg">
-          Podczas <strong>treningów piłkarskich</strong> wykorzystujemy sprawdzony system szkolenia, który prowadzi chłopców przez kolejne etapy rozwoju piłkarskiego.
+          Podczas <strong>treningów piłkarskich w Toruniu</strong> wykorzystujemy sprawdzony system szkolenia, w ramach którego prowadzimy dziecko przez kolejne etapy rozwoju piłkarskiego.
         </p>
       </div>
 
@@ -378,7 +535,7 @@ const faqItems = [
                   <div class="absolute inset-0 flex items-center justify-center">
                     <div class="text-center p-8">
                       <div class="text-6xl mb-3 opacity-50">{group.image}</div>
-                      <p class="text-dark-400 dark:text-dark-500 text-sm">Zdjęcie grupy</p>
+                      {/*<p class="text-dark-400 dark:text-dark-500 text-sm">Zdjęcie grupy</p> */}
                     </div>
                   </div>
                   <!-- Placeholder for actual image -->
