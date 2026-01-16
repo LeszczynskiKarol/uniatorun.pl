@@ -32,7 +32,7 @@ const includesList = [
   { icon: "🛡️", text: "Ubezpieczenie NNW" },
   { icon: "⚽", text: "2-3 treningi tygodniowo" },
   { icon: "🏆", text: "Udział w turniejach i sparingach" },
-  { icon: "📱", text: "Dostęp do grupy rodzica" },
+  { icon: "📱", text: "Dostęp do grupy rodzica na FB" },
   { icon: "🎁", text: "Pierwszy trening GRATIS" },
 ];
 ---
@@ -85,7 +85,7 @@ const includesList = [
             <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"
             ></span>
           </span>
-          Rekrutacja otwarta – sezon 2025/2026
+          Rekrutacja otwarta – sezon 2026/2027
         </div>
 
         <h1 class="text-white mb-6 animate-fade-in-up">
@@ -95,7 +95,7 @@ const includesList = [
         <p
           class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto"
         >
-          Wypełnij formularz, a oddzwonimy w ciągu <strong class="text-white"
+          Wypełnij formularz, a odpowiemy w ciągu <strong class="text-white"
             >24 godzin</strong
           >, żeby umówić pierwszy bezpłatny trening!
         </p>
@@ -151,13 +151,12 @@ const includesList = [
                       for="phone"
                       class="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
                     >
-                      Telefon kontaktowy *
+                      Telefon kontaktowy (opcjonalnie)
                     </label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
-                      required
                       class="w-full px-4 py-3 rounded-xl border border-dark-200 dark:border-dark-700 bg-white dark:bg-dark-800 text-dark-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
                       placeholder="500 000 000"
                     />
@@ -242,7 +241,8 @@ const includesList = [
                   </div>
                 </div>
 
-                <div>
+                {
+                  /*  <div>
                   <label
                     for="ageGroup"
                     class="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
@@ -251,8 +251,7 @@ const includesList = [
                   </label>
                   <select
                     id="ageGroup"
-                    name="ageGroup"
-                    required
+                    name="ageGroup"                   
                     class="w-full px-4 py-3 rounded-xl border border-dark-200 dark:border-dark-700 bg-white dark:bg-dark-800 text-dark-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
                   >
                     <option value="">Wybierz grupę</option>
@@ -265,7 +264,8 @@ const includesList = [
                   <p class="text-xs text-dark-500 dark:text-dark-400 mt-1">
                     Trener może zaproponować inną grupę po ocenie umiejętności
                   </p>
-                </div>
+                </div>*/
+                }
               </div>
 
               <!-- Additional Info -->
@@ -329,7 +329,7 @@ const includesList = [
                     for="source"
                     class="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
                   >
-                    Skąd dowiedziałeś się o nas?
+                    Skąd się o nas dowiedziałaś/eś?
                   </label>
                   <select
                     id="source"
@@ -611,7 +611,7 @@ DODATKOWE INFORMACJE:
       );
 
       if (response.ok) {
-        form.classList.add("hidden");
+        form.reset();
         successMsg.classList.remove("hidden");
       } else {
         throw new Error("Błąd wysyłania");

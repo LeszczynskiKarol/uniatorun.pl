@@ -602,7 +602,7 @@ const socialLinks = [
       );
 
       if (response.ok) {
-        form.classList.add("hidden");
+        form.reset();
         successMsg.classList.remove("hidden");
       } else {
         throw new Error("Błąd wysyłania");

@@ -1,123 +1,183 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
 
 // SEO Data - optymalizacja pod "treningi piłkarskie 11-13 lat / Młodzik U-13 Toruń"
-const seoTitle = 'Treningi piłkarskie dla dzieci 11-13 lat Toruń – Młodzik U-13';
-const seoDescription = 'Profesjonalne treningi piłki nożnej dla dzieci 11-13 lat w Toruniu. Grupa Młodzik U-13 – zaawansowana taktyka, przygotowanie motoryczne, rozgrywki ligowe. Szkolenie na poziomie juniorskim w Unii Toruń!';
+const seoTitle =
+  "Treningi piłkarskie dla dzieci 11-13 lat Toruń – Młodzik U-13";
+const seoDescription =
+  "Profesjonalne treningi piłki nożnej dla dzieci 11-13 lat w Toruniu. Grupa Młodzik U-13 – zaawansowana taktyka, przygotowanie motoryczne, rozgrywki ligowe. Szkolenie na poziomie juniorskim w Unii Toruń!";
 const seoKeywords = [
-  'treningi piłkarskie 11-13 lat Toruń',
-  'piłka nożna dla 11 latka',
-  'piłka nożna dla 12 latka',
-  'piłka nożna dla 13 latka',
-  'młodzik U-13 Toruń',
-  'rozgrywki ligowe młodzik',
-  'szkółka piłkarska 11-13 lat',
-  'zaawansowane treningi piłkarskie',
+  "treningi piłkarskie 11-13 lat Toruń",
+  "piłka nożna dla 11 latka",
+  "piłka nożna dla 12 latka",
+  "piłka nożna dla 13 latka",
+  "młodzik U-13 Toruń",
+  "rozgrywki ligowe młodzik",
+  "szkółka piłkarska 11-13 lat",
+  "zaawansowane treningi piłkarskie",
 ];
 
 // Program szczegółowy
 const programDetails = [
   {
-    title: 'Zaawansowana technika',
-    description: 'Perfekcjonowanie wszystkich elementów technicznych. Praca nad obiema nogami. Technika w wysokim tempie.',
-    icon: '⚽',
+    title: "Zaawansowana technika",
+    description:
+      "Perfekcjonowanie wszystkich elementów technicznych. Praca nad obiema nogami. Technika w wysokim tempie.",
+    icon: "⚽",
   },
   {
-    title: 'Taktyka zespołowa',
-    description: 'Systemy gry, ustawienia, zasady współpracy na boisku. Pressing, kontratak, budowanie akcji.',
-    icon: '📋',
+    title: "Taktyka zespołowa",
+    description:
+      "Systemy gry, ustawienia, zasady współpracy na boisku. Pressing, kontratak, budowanie akcji.",
+    icon: "📋",
   },
   {
-    title: 'Gra na pozycjach',
-    description: 'Specjalizacja pozycyjna. Nauka zadań defensywnych, pomocników i napastników.',
-    icon: '🎯',
+    title: "Gra na pozycjach",
+    description:
+      "Specjalizacja pozycyjna. Nauka zadań defensywnych, pomocników i napastników.",
+    icon: "🎯",
   },
   {
-    title: 'Przygotowanie motoryczne',
-    description: 'Intensywny rozwój siły, szybkości, wytrzymałości. Prewencja kontuzji, ćwiczenia stabilizacyjne.',
-    icon: '💪',
+    title: "Przygotowanie motoryczne",
+    description:
+      "Intensywny rozwój siły, szybkości, wytrzymałości. Prewencja kontuzji, ćwiczenia stabilizacyjne.",
+    icon: "💪",
   },
   {
-    title: 'Analiza wideo',
-    description: 'Oglądanie i analizowanie meczów. Nauka czytania gry, rozpoznawania sytuacji.',
-    icon: '📹',
+    title: "Analiza wideo",
+    description:
+      "Oglądanie i analizowanie meczów. Nauka czytania gry, rozpoznawania sytuacji.",
+    icon: "📹",
   },
   {
-    title: 'Przygotowanie mentalne',
-    description: 'Budowanie mentalności zwycięzcy. Koncentracja, radzenie sobie z presją, praca zespołowa.',
-    icon: '🧠',
+    title: "Przygotowanie mentalne",
+    description:
+      "Budowanie mentalności zwycięzcy. Koncentracja, radzenie sobie z presją, praca zespołowa.",
+    icon: "🧠",
   },
 ];
 
 // Typowy trening
 const trainingStructure = [
-  { time: '15 min', activity: 'Rozgrzewka', description: 'Aktywacja, mobilność, ćwiczenia z piłką w parach' },
-  { time: '30 min', activity: 'Część główna', description: 'Ćwiczenia techniczno-taktyczne wg planu szkoleniowego' },
-  { time: '25 min', activity: 'Gry szkoleniowe', description: 'Zaawansowane gry pozycyjne, sytuacje meczowe' },
-  { time: '20 min', activity: 'Gra właściwa', description: 'Mecz 9v9 lub 11v11 z zadaniami taktycznymi' },
+  {
+    time: "15 min",
+    activity: "Rozgrzewka",
+    description: "Aktywacja, mobilność, ćwiczenia z piłką w parach",
+  },
+  {
+    time: "30 min",
+    activity: "Część główna",
+    description: "Ćwiczenia techniczno-taktyczne wg planu szkoleniowego",
+  },
+  {
+    time: "25 min",
+    activity: "Gry szkoleniowe",
+    description: "Zaawansowane gry pozycyjne, sytuacje meczowe",
+  },
+  {
+    time: "20 min",
+    activity: "Gra właściwa",
+    description: "Mecz 9 vs 9 lub 11 vs 11 z zadaniami taktycznymi",
+  },
 ];
 
 // FAQ
 const faqItems = [
   {
-    question: 'Jak intensywne są treningi w grupie Młodzik U-13?',
-    answer: 'To najbardziej zaawansowana grupa w naszej akademii. Treningi trwają 90 minut i odbywają się 3 razy w tygodniu. Program obejmuje zaawansowaną technikę, taktykę zespołową i intensywne przygotowanie motoryczne. Do tego dochodzą weekendowe mecze ligowe.',
+    question: "Jak intensywne są treningi w grupie Młodzik U-13?",
+    answer:
+      "To najbardziej zaawansowana grupa w naszej akademii. Treningi trwają 90 minut i odbywają się 3 razy w tygodniu. Program obejmuje zaawansowaną technikę, taktykę zespołową i intensywne przygotowanie motoryczne. Do tego dochodzą weekendowe mecze ligowe.",
   },
   {
-    question: 'Czy można dołączyć do grupy bez wcześniejszego doświadczenia?',
-    answer: 'Grupa Młodzik U-13 wymaga pewnego poziomu umiejętności piłkarskich. Jeśli dziecko nie trenowało wcześniej, rekomendujemy rozpoczęcie od młodszej grupy lub indywidualne treningi uzupełniające. Na treningu próbnym ocenimy poziom i dobierzemy odpowiednią ścieżkę rozwoju.',
+    question: "Czy można dołączyć do grupy bez wcześniejszego doświadczenia?",
+    answer:
+      "Grupa Młodzik U-13 wymaga pewnego poziomu umiejętności piłkarskich. Jeśli dziecko nie trenowało wcześniej, rekomendujemy rozpoczęcie od młodszej grupy lub indywidualne treningi uzupełniające. Na treningu próbnym ocenimy poziom i dobierzemy odpowiednią ścieżkę rozwoju.",
   },
   {
-    question: 'W jakich rozgrywkach uczestniczy drużyna?',
-    answer: 'Młodziki U-13 uczestniczą w oficjalnych rozgrywkach ligowych KPZPN (Kujawsko-Pomorski Związek Piłki Nożnej). Gramy również w turniejach regionalnych i ogólnopolskich. Sezon ligowy trwa od września do czerwca.',
+    question: "W jakich rozgrywkach uczestniczy drużyna?",
+    answer:
+      "Młodziki U-13 uczestniczą w oficjalnych rozgrywkach ligowych KPZPN (Kujawsko-Pomorski Związek Piłki Nożnej). Gramy również w turniejach regionalnych i ogólnopolskich. Sezon ligowy trwa od września do czerwca.",
   },
   {
-    question: 'Czy po Młodzikach można przejść do wyższych kategorii?',
-    answer: 'Tak! Najzdolniejsi zawodnicy mają możliwość przejścia do grup juniorskich (U-15, U-17) lub zostać zauważeni przez skautów profesjonalnych klubów. Współpracujemy z klubami z wyższych lig, które regularnie obserwują naszych zawodników.',
+    question: "Czy po Młodzikach można przejść do wyższych kategorii?",
+    answer:
+      "Tak! Najzdolniejsi zawodnicy mają możliwość przejścia do grup juniorskich (U-15, U-17) lub zostać zauważeni przez skautów profesjonalnych klubów. Współpracujemy z klubami z wyższych lig, które regularnie obserwują naszych zawodników.",
   },
   {
-    question: 'Jakie są wymagania sprzętowe?',
-    answer: 'Zawodnik potrzebuje: pełny komplet ochraniaczy, buty piłkarskie (korki i turfy), rękawice bramkarskie (jeśli gra na bramce), bidon i ręcznik. Po zapisie dziecko otrzymuje komplet strojów klubowych (meczowy i treningowy).',
+    question: "Jakie są wymagania sprzętowe?",
+    answer:
+      "Zawodnik potrzebuje: pełny komplet ochraniaczy, buty piłkarskie (korki i turfy), rękawice bramkarskie (jeśli gra na bramce), bidon i ręcznik. Po zapisie dziecko otrzymuje komplet strojów klubowych (meczowy i treningowy).",
   },
 ];
 
 // Ścieżka rozwoju
 const developmentPath = [
-  { stage: 'Młodzik U-13', description: 'Obecna kategoria', current: true },
-  { stage: 'Trampkarz U-15', description: 'Następny etap', current: false },
-  { stage: 'Junior U-17', description: 'Gra młodzieżowa', current: false },
-  { stage: 'Senior', description: 'Profesjonalna piłka', current: false },
+  { stage: "Młodzik U-13", description: "Obecna kategoria", current: true },
+  { stage: "Trampkarz U-15", description: "Następny etap", current: false },
+  { stage: "Junior U-17", description: "Gra młodzieżowa", current: false },
+  { stage: "Senior", description: "Profesjonalna piłka", current: false },
 ];
 ---
 
-<Layout 
-  title={seoTitle}
-  description={seoDescription}
-  keywords={seoKeywords}
->
+<Layout title={seoTitle} description={seoDescription} keywords={seoKeywords}>
   <!-- Hero Section -->
-  <section class="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-orange-950">
+  <section
+    class="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-orange-950"
+  >
     <div class="absolute inset-0 football-pattern opacity-50"></div>
-    <div class="absolute top-20 right-10 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
-    <div class="absolute bottom-20 left-10 w-96 h-96 bg-red-600/10 rounded-full blur-3xl"></div>
-    
+    <div
+      class="absolute top-20 right-10 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl animate-pulse-glow"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 left-10 w-96 h-96 bg-red-600/10 rounded-full blur-3xl"
+    >
+    </div>
+
     <div class="container-custom relative z-10">
       <div class="max-w-4xl mx-auto text-center">
         <!-- Breadcrumb -->
-        <nav class="flex items-center justify-center gap-2 text-dark-400 text-sm mb-6 flex-wrap">
-          <a href="/" class="hover:text-white transition-colors">Strona główna</a>
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        <nav
+          class="flex items-center justify-center gap-2 text-dark-400 text-sm mb-6 flex-wrap"
+        >
+          <a href="/" class="hover:text-white transition-colors"
+            >Strona główna</a
+          >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
           </svg>
-          <a href="/treningi-pilkarskie-dla-dzieci" class="hover:text-white transition-colors">Treningi</a>
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          <a
+            href="/treningi-pilkarskie-dla-dzieci"
+            class="hover:text-white transition-colors">Treningi</a
+          >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
           </svg>
           <span class="text-white">11-13 lat</span>
         </nav>
 
         <!-- Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-300 text-sm font-medium mb-6">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-300 text-sm font-medium mb-6"
+        >
           <span class="text-2xl">🔥</span>
           Młodzik U-13 • Roczniki 2012-2014
         </div>
@@ -125,25 +185,50 @@ const developmentPath = [
         <h1 class="text-white mb-6 animate-fade-in-up">
           Treningi piłkarskie <span class="text-orange-400">11-13 lat</span>
         </h1>
-        
-        <p class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto">
-          Grupa <strong class="text-white">Młodzik U-13</strong> – zaawansowane szkolenie, taktyka zespołowa i <strong class="text-white">przygotowanie do piłki juniorskiej</strong> w Toruniu.
+
+        <p
+          class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto"
+        >
+          Grupa <strong class="text-white">Młodzik U-13</strong> – zaawansowane szkolenie,
+          taktyka zespołowa i <strong class="text-white"
+            >przygotowanie do piłki juniorskiej</strong
+          > w Toruniu.
         </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300">
-          <a href="/zapisy" class="btn bg-orange-500 text-white hover:bg-orange-600 hover:shadow-xl hover:-translate-y-0.5">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300"
+        >
+          <a
+            href="/zapisy"
+            class="btn bg-orange-500 text-white hover:bg-orange-600 hover:shadow-xl hover:-translate-y-0.5"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+              ></path>
             </svg>
             Zapisz dziecko
           </a>
-          <a href="/kontakt" class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20">
+          <a
+            href="/kontakt"
+            class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20"
+          >
             Umów trening próbny
           </a>
         </div>
 
         <!-- Quick info -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 animate-fade-in-up animation-delay-400">
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 animate-fade-in-up animation-delay-400"
+        >
           <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
             <div class="text-2xl mb-1">🎂</div>
             <div class="text-white font-bold">11-13 lat</div>
@@ -151,7 +236,7 @@ const developmentPath = [
           </div>
           <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
             <div class="text-2xl mb-1">📅</div>
-            <div class="text-white font-bold">3x / tydzień</div>
+            <div class="text-white font-bold">3 x / tydzień</div>
             <div class="text-dark-400 text-xs">Treningi</div>
           </div>
           <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
@@ -174,42 +259,67 @@ const developmentPath = [
     <div class="container-custom">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="reveal-left">
-          <span class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4"
+          >
             Młodzik U-13
           </span>
           <h2 class="mb-6 text-dark-900 dark:text-white">
-            Przygotowanie do <span class="text-orange-500">profesjonalnej piłki</span>
+            Przygotowanie do <span class="text-orange-500"
+              >profesjonalnej piłki</span
+            >
           </h2>
           <div class="space-y-4 text-dark-600 dark:text-dark-300">
             <p>
-              <strong class="text-dark-900 dark:text-white">Treningi piłkarskie dla dzieci 11-13 lat</strong> w Unii Toruń to najbardziej zaawansowany etap szkolenia w naszej akademii. Grupa <strong>Młodzik U-13</strong> przygotowuje zawodników do gry w kategoriach juniorskich.
+              <strong class="text-dark-900 dark:text-white"
+                >Treningi piłkarskie dla chłopców 11-13 lat</strong
+              > w Unii Toruń to najbardziej zaawansowany etap szkolenia w naszej akademii.
+              Grupa <strong>Młodzik U-13</strong> przygotowuje zawodników do gry w
+              kategoriach juniorskich.
             </p>
             <p>
-              Na tym etapie intensywnie pracujemy nad taktyką zespołową, specjalizacją pozycyjną i przygotowaniem motorycznym. Zawodnicy uczestniczą w oficjalnych rozgrywkach ligowych KPZPN, grając mecze 9v9 i 11v11.
+              Na tym etapie intensywnie pracujemy nad taktyką zespołową,
+              specjalizacją pozycyjną i przygotowaniem motorycznym. Zawodnicy
+              uczestniczą w oficjalnych rozgrywkach ligowych KPZPN, grając mecze
+              9 vs 9 i 11 vs 11.
             </p>
             <p>
-              <strong>Treningi piłki nożnej dla 11-13 latków</strong> obejmują również elementy przygotowania mentalnego i analizę wideo. Nasz cel to wychowanie nie tylko dobrych piłkarzy, ale również świadomych zawodników rozumiejących grę.
+              <strong>Treningi piłki nożnej dla 11-13 latków</strong> obejmują również
+              elementy przygotowania mentalnego i analizę wideo. Nasz cel to wychowanie
+              dobrych piłkarzy i świadomych zawodników rozumiejących grę.
             </p>
           </div>
         </div>
-        
+
         <div class="reveal-right">
           <div class="relative">
-            <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-red-100 dark:from-orange-900/50 dark:to-red-900/50 flex items-center justify-center">
+            <div
+              class="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-red-100 dark:from-orange-900/50 dark:to-red-900/50 flex items-center justify-center"
+            >
               <div class="text-center p-8">
                 <div class="text-7xl mb-4">🔥</div>
-                <p class="text-dark-500 dark:text-dark-400">Zdjęcie z meczu</p>
+                {
+                  /*<p class="text-dark-500 dark:text-dark-400">Zdjęcie z meczu</p> */
+                }
               </div>
             </div>
-            
-            <div class="absolute -bottom-6 -right-6 bg-white dark:bg-dark-800 rounded-xl shadow-2xl p-4">
+
+            <div
+              class="absolute -bottom-6 -right-6 bg-white dark:bg-dark-800 rounded-xl shadow-2xl p-4"
+            >
               <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-full bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center text-2xl">
+                <div
+                  class="w-12 h-12 rounded-full bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center text-2xl"
+                >
                   🚀
                 </div>
                 <div>
-                  <p class="font-bold text-dark-900 dark:text-white text-sm">Poziom PRO</p>
-                  <p class="text-xs text-dark-500 dark:text-dark-400">Zaawansowane szkolenie</p>
+                  <p class="font-bold text-dark-900 dark:text-white text-sm">
+                    Poziom PRO
+                  </p>
+                  <p class="text-xs text-dark-500 dark:text-dark-400">
+                    Zaawansowane szkolenie
+                  </p>
                 </div>
               </div>
             </div>
@@ -223,28 +333,33 @@ const developmentPath = [
   <section class="section-padding bg-dark-50 dark:bg-dark-950">
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-        <span class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4"
+        >
           Program szkolenia
         </span>
         <h2 class="mb-6 text-dark-900 dark:text-white">
-          Zaawansowany program <span class="text-orange-500">Młodzika U-13</span>
+          Zaawansowany program <span class="text-orange-500">Młodzika U-13</span
+          >
         </h2>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {programDetails.map((item, index) => (
-          <div class={`card p-6 reveal animation-delay-${(index % 3) * 100}`}>
-            <div class="w-14 h-14 rounded-xl bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center text-2xl mb-4">
-              {item.icon}
+        {
+          programDetails.map((item, index) => (
+            <div class={`card p-6 reveal animation-delay-${(index % 3) * 100}`}>
+              <div class="w-14 h-14 rounded-xl bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center text-2xl mb-4">
+                {item.icon}
+              </div>
+              <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
+                {item.title}
+              </h3>
+              <p class="text-dark-600 dark:text-dark-300 text-sm">
+                {item.description}
+              </p>
             </div>
-            <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
-              {item.title}
-            </h3>
-            <p class="text-dark-600 dark:text-dark-300 text-sm">
-              {item.description}
-            </p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -254,7 +369,9 @@ const developmentPath = [
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12 reveal">
-          <span class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4"
+          >
             Przebieg zajęć
           </span>
           <h2 class="mb-6 text-dark-900 dark:text-white">
@@ -263,24 +380,28 @@ const developmentPath = [
         </div>
 
         <div class="space-y-4 reveal">
-          {trainingStructure.map((phase, index) => (
-            <div class="card p-6 flex gap-6 items-start">
-              <div class="flex-shrink-0 w-20 text-center">
-                <div class="text-2xl font-display font-bold text-orange-500">{phase.time}</div>
+          {
+            trainingStructure.map((phase, index) => (
+              <div class="card p-6 flex gap-6 items-start">
+                <div class="flex-shrink-0 w-20 text-center">
+                  <div class="text-2xl font-display font-bold text-orange-500">
+                    {phase.time}
+                  </div>
+                </div>
+                <div class="flex-grow">
+                  <h3 class="font-display font-bold text-dark-900 dark:text-white mb-1">
+                    {phase.activity}
+                  </h3>
+                  <p class="text-dark-600 dark:text-dark-300 text-sm">
+                    {phase.description}
+                  </p>
+                </div>
+                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center text-orange-600 dark:text-orange-400 font-bold">
+                  {index + 1}
+                </div>
               </div>
-              <div class="flex-grow">
-                <h3 class="font-display font-bold text-dark-900 dark:text-white mb-1">
-                  {phase.activity}
-                </h3>
-                <p class="text-dark-600 dark:text-dark-300 text-sm">
-                  {phase.description}
-                </p>
-              </div>
-              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center text-orange-600 dark:text-orange-400 font-bold">
-                {index + 1}
-              </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </div>
@@ -291,36 +412,48 @@ const developmentPath = [
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12 reveal">
-          <span class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4"
+          >
             Ścieżka kariery
           </span>
           <h2 class="mb-6 text-dark-900 dark:text-white">
             Co po Młodziku U-13?
           </h2>
           <p class="text-dark-600 dark:text-dark-300 text-lg">
-            Młodzik U-13 to ważny etap w rozwoju piłkarza. Najzdolniejsi zawodnicy mają szansę na dalszą karierę!
+            Młodzik U-13 to ważny etap w rozwoju piłkarza. Najzdolniejsi
+            zawodnicy mają szansę na dalszą karierę!
           </p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
-          {developmentPath.map((item, index) => (
-            <div class={`card p-6 text-center ${item.current ? 'ring-2 ring-orange-500 bg-orange-50 dark:bg-orange-900/20' : ''}`}>
-              <div class={`w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3 ${item.current ? 'bg-orange-500 text-white' : 'bg-dark-100 dark:bg-dark-700 text-dark-500'}`}>
-                {index + 1}
+          {
+            developmentPath.map((item, index) => (
+              <div
+                class={`card p-6 text-center ${item.current ? "ring-2 ring-orange-500 bg-orange-50 dark:bg-orange-900/20" : ""}`}
+              >
+                <div
+                  class={`w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3 ${item.current ? "bg-orange-500 text-white" : "bg-dark-100 dark:bg-dark-700 text-dark-500"}`}
+                >
+                  {index + 1}
+                </div>
+                <h3
+                  class={`font-display font-bold mb-1 ${item.current ? "text-orange-600 dark:text-orange-400" : "text-dark-900 dark:text-white"}`}
+                >
+                  {item.stage}
+                </h3>
+                <p class="text-dark-500 dark:text-dark-400 text-xs">
+                  {item.description}
+                </p>
               </div>
-              <h3 class={`font-display font-bold mb-1 ${item.current ? 'text-orange-600 dark:text-orange-400' : 'text-dark-900 dark:text-white'}`}>
-                {item.stage}
-              </h3>
-              <p class="text-dark-500 dark:text-dark-400 text-xs">
-                {item.description}
-              </p>
-            </div>
-          ))}
+            ))
+          }
         </div>
 
         <div class="mt-8 text-center reveal">
           <p class="text-dark-600 dark:text-dark-300 text-sm">
-            Współpracujemy z klubami z wyższych lig. Najzdolniejsi zawodnicy są regularnie obserwowani przez skautów.
+            Współpracujemy z klubami z wyższych lig. Najzdolniejsi zawodnicy są
+            regularnie obserwowani przez skautów.
           </p>
         </div>
       </div>
@@ -332,7 +465,9 @@ const developmentPath = [
     <div class="container-custom">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-12 reveal">
-          <span class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4"
+          >
             FAQ
           </span>
           <h2 class="mb-6 text-dark-900 dark:text-white">
@@ -341,43 +476,71 @@ const developmentPath = [
         </div>
 
         <div class="space-y-4 reveal">
-          {faqItems.map((item) => (
-            <details class="group card p-6 cursor-pointer">
-              <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
-                {item.question}
-                <svg class="w-5 h-5 text-orange-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <p class="mt-4 text-dark-600 dark:text-dark-300">
-                {item.answer}
-              </p>
-            </details>
-          ))}
+          {
+            faqItems.map((item) => (
+              <details class="group card p-6 cursor-pointer">
+                <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
+                  {item.question}
+                  <svg
+                    class="w-5 h-5 text-orange-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <p class="mt-4 text-dark-600 dark:text-dark-300">
+                  {item.answer}
+                </p>
+              </details>
+            ))
+          }
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-orange-950 relative overflow-hidden">
+  <section
+    class="section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-orange-950 relative overflow-hidden"
+  >
     <div class="absolute inset-0 football-pattern opacity-50"></div>
-    <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl"></div>
-    
+    <div
+      class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl"
+    >
+    </div>
+
     <div class="container-custom relative z-10">
       <div class="max-w-3xl mx-auto text-center reveal">
         <h2 class="text-white mb-6">
           Dołącz do <span class="text-orange-400">Młodzików U-13</span>!
         </h2>
         <p class="text-dark-300 text-lg md:text-xl mb-8">
-          <strong class="text-white">Treningi piłkarskie dla dzieci 11-13 lat</strong> – zaawansowane szkolenie, rozgrywki ligowe, przygotowanie do kariery piłkarskiej!
+          <strong class="text-white"
+            >Treningi piłkarskie dla dzieci 11-13 lat</strong
+          > – zaawansowane szkolenie, rozgrywki ligowe, przygotowanie do kariery piłkarskiej!
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/zapisy" class="btn bg-orange-500 text-white hover:bg-orange-600 hover:shadow-xl hover:-translate-y-0.5">
+          <a
+            href="/zapisy"
+            class="btn bg-orange-500 text-white hover:bg-orange-600 hover:shadow-xl hover:-translate-y-0.5"
+          >
             Zapisz dziecko
           </a>
-          <a href="/treningi-pilkarskie-dla-dzieci" class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20">
+          <a
+            href="/treningi-pilkarskie-dla-dzieci"
+            class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20"
+          >
             Zobacz inne grupy
           </a>
         </div>
@@ -386,19 +549,45 @@ const developmentPath = [
   </section>
 
   <!-- Navigation -->
-  <section class="py-8 bg-dark-50 dark:bg-dark-950 border-t border-dark-100 dark:border-dark-800">
+  <section
+    class="py-8 bg-dark-50 dark:bg-dark-950 border-t border-dark-100 dark:border-dark-800"
+  >
     <div class="container-custom">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <a href="/treningi-pilkarskie-dla-dzieci/9-11-lat" class="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        <a
+          href="/treningi-pilkarskie-dla-dzieci/9-11-lat"
+          class="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path>
           </svg>
           Poprzednia: Orlik U-11 (9-11 lat)
         </a>
-        <a href="/treningi-pilkarskie-dla-dzieci" class="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
+        <a
+          href="/treningi-pilkarskie-dla-dzieci"
+          class="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+        >
           Wszystkie grupy wiekowe
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
           </svg>
         </a>
       </div>
