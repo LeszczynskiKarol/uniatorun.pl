@@ -1,0 +1,71 @@
+name: Deploy Unia Toruń
+
+on:
+  repository_dispatch:
+    types: [deploy-site]
+
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Powód deployu"
+        required: false
+        default: "Manual deploy"
+
+env:
+  S3_BUCKET: www.uniatorun.pl
+  CLOUDFRONT_DISTRIBUTION_ID: E2FWM8CSRWDCDP
+  AWS_REGION: eu-central-1
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: 📚 Install dependencies
+        run: npm ci
+
+      - name: 🔧 Create .env file
+        run: |
+          echo "CMS_URL=${{ secrets.CMS_URL }}" >> .env
+          echo "CMS_API_KEY=${{ secrets.CMS_API_KEY }}" >> .env
+          echo "SITE_URL=https://www.uniatorun.pl" >> .env
+
+      - name: 🔍 Debug - Test CMS connection
+        run: |
+          echo "Testing CMS at: ${{ secrets.CMS_URL }}"
+          curl -s -H "x-api-key: ${{ secrets.CMS_API_KEY }}" \
+            "${{ secrets.CMS_URL }}/api/public/news?limit=1" | head -100 || echo "CMS test failed"
+
+      - name: 🏗️ Build Astro site
+        run: npm run build
+
+      - name: 🔑 Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: 🚀 Deploy to S3
+        run: |
+          aws s3 sync ./dist s3://${{ env.S3_BUCKET }} --delete
+
+      - name: 🔄 Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
+
+      - name: ✅ Deployment complete
+        run: |
+          echo "🎉 Site deployed successfully!"
+          echo "URL: https://www.uniatorun.pl"
