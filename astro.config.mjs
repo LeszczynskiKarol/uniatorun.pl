@@ -3,7 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://unia-torun.pl",
+  site: "https://www.uniatorun.pl",
   output: "static",
   integrations: [
     tailwind({
@@ -18,8 +18,9 @@ export default defineConfig({
       },
     }),
   ],
-
-  // Vite config for environment variables
+  build: {
+    inlineStylesheets: "auto",
+  },
   vite: {
     define: {
       "import.meta.env.CMS_URL": JSON.stringify(
@@ -29,11 +30,6 @@ export default defineConfig({
         process.env.CMS_API_KEY || ""
       ),
     },
-  },
-  build: {
-    inlineStylesheets: "auto",
-  },
-  vite: {
     build: {
       cssMinify: true,
     },
