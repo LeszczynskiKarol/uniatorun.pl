@@ -1,0 +1,271 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { getNews, getNewsBySlug, type NewsItem } from '@/lib/cms';
+
+// Generuj statyczne ścieżki dla wszystkich aktualności
+export async function getStaticPaths() {
+  const news = await getNews(100);
+  
+  return news.map((item) => ({
+    params: { slug: item.slug },
+    props: { news: item },
+  }));
+}
+
+interface Props {
+  news: NewsItem;
+}
+
+const { news } = Astro.props;
+
+// Fallback - jeśli props nie ma danych, pobierz z API
+const article = news || await getNewsBySlug(Astro.params.slug);
+
+if (!article) {
+  return Astro.redirect('/aktualnosci');
+}
+
+// Format date
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('pl-PL', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+};
+
+const formatDateTime = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toISOString();
+};
+
+// SEO
+const seoTitle = `${article.title} – Aktualności | Unia Toruń`;
+const seoDescription = article.excerpt || `Przeczytaj aktualność: ${article.title} - najnowsze wiadomości z Akademii Piłkarskiej Unia Toruń.`;
+---
+
+<Layout 
+  title={seoTitle}
+  description={seoDescription}
+  ogImage={article.image || undefined}
+>
+  <!-- Article Header -->
+  <section class="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-primary-950">
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div class="absolute top-20 right-10 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-dark-400 text-sm mb-8">
+          <a href="/" class="hover:text-white transition-colors">Strona główna</a>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <a href="/aktualnosci" class="hover:text-white transition-colors">Aktualności</a>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-white truncate max-w-[200px]">{article.title}</span>
+        </nav>
+        
+        <!-- Meta -->
+        <div class="flex flex-wrap items-center gap-4 text-dark-400 text-sm mb-6">
+          <time datetime={formatDateTime(article.publishedAt)} class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            {formatDate(article.publishedAt)}
+          </time>
+          <span class="text-dark-600">•</span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            {article.author}
+          </span>
+        </div>
+        
+        <!-- Title -->
+        <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-tight animate-fade-in-up">
+          {article.title}
+        </h1>
+        
+        {article.excerpt && (
+          <p class="text-xl text-dark-300 mt-6 leading-relaxed animate-fade-in-up animation-delay-200">
+            {article.excerpt}
+          </p>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Image -->
+  {article.image && (
+    <section class="bg-white dark:bg-dark-900 -mt-8 relative z-10">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <div class="aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl">
+            <img 
+              src={article.image} 
+              alt={article.title}
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Article Content -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <!-- Article Body -->
+        <article class="prose prose-lg dark:prose-invert max-w-none">
+          <div set:html={article.content} />
+        </article>
+        
+        <!-- Share & Navigation -->
+        <div class="mt-12 pt-8 border-t border-dark-200 dark:border-dark-700">
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+            <!-- Share -->
+            <div class="flex items-center gap-4">
+              <span class="text-dark-500 dark:text-dark-400 text-sm">Udostępnij:</span>
+              <div class="flex items-center gap-2">
+                <a 
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://www.uniatorun.pl/aktualnosci/${article.slug}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-colors"
+                  title="Udostępnij na Facebooku"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </a>
+                <button 
+                  onclick="navigator.clipboard.writeText(window.location.href); alert('Link skopiowany!');"
+                  class="w-10 h-10 rounded-full bg-dark-200 dark:bg-dark-700 text-dark-600 dark:text-dark-300 flex items-center justify-center hover:bg-dark-300 dark:hover:bg-dark-600 transition-colors"
+                  title="Kopiuj link"
+                >
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+            <!-- Back -->
+            <a 
+              href="/aktualnosci"
+              class="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-semibold hover:gap-3 transition-all"
+            >
+              <svg class="w-5 h-5 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+              Wróć do aktualności
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 gradient-bg relative overflow-hidden">
+    <div class="absolute inset-0 football-pattern opacity-20"></div>
+    <div class="container-custom relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+          Chcesz dołączyć do naszej akademii?
+        </h2>
+        <p class="text-primary-100 mb-8">
+          Zapisz swoje dziecko na bezpłatny trening próbny i przekonaj się, że piłka nożna może być świetną zabawą!
+        </p>
+        <a href="/zapisy" class="btn bg-white text-primary-600 hover:bg-primary-50 hover:shadow-xl">
+          Zapisz dziecko
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": article.title,
+    "description": article.excerpt,
+    "image": article.image,
+    "datePublished": article.publishedAt,
+    "dateModified": article.updatedAt,
+    "author": {
+      "@type": "Person",
+      "name": article.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Akademia Piłkarska Unia Toruń",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.uniatorun.pl/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.uniatorun.pl/aktualnosci/${article.slug}`
+    }
+  })} />
+</Layout>
+
+<style is:global>
+  /* Prose styles for article content */
+  .prose {
+    @apply text-dark-700 dark:text-dark-300;
+  }
+  
+  .prose h2 {
+    @apply text-2xl font-display font-bold text-dark-900 dark:text-white mt-10 mb-4;
+  }
+  
+  .prose h3 {
+    @apply text-xl font-display font-bold text-dark-900 dark:text-white mt-8 mb-3;
+  }
+  
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+  
+  .prose a {
+    @apply text-primary-600 dark:text-primary-400 hover:underline;
+  }
+  
+  .prose strong {
+    @apply text-dark-900 dark:text-white font-semibold;
+  }
+  
+  .prose ul, .prose ol {
+    @apply my-4 ml-6;
+  }
+  
+  .prose li {
+    @apply mb-2;
+  }
+  
+  .prose ul li {
+    @apply list-disc;
+  }
+  
+  .prose ol li {
+    @apply list-decimal;
+  }
+  
+  .prose img {
+    @apply rounded-xl my-8;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-primary-500 pl-4 italic text-dark-600 dark:text-dark-400 my-6;
+  }
+</style>
