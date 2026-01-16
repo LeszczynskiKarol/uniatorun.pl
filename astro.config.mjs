@@ -9,14 +9,7 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap({
-      i18n: {
-        defaultLocale: "pl",
-        locales: {
-          pl: "pl-PL",
-        },
-      },
-    }),
+    sitemap(),
   ],
   build: {
     inlineStylesheets: "auto",
