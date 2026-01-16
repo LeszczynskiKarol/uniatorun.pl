@@ -4,8 +4,8 @@
 // Pobiera dane z Multi-tenant CMS dla strony UniaTorun.pl
 // =============================================================================
 
-const CMS_URL = import.meta.env.CMS_URL || 'http://localhost:3000';
-const CMS_API_KEY = import.meta.env.CMS_API_KEY || '';
+const CMS_URL = import.meta.env.CMS_URL || "http://localhost:3000";
+const CMS_API_KEY = import.meta.env.CMS_API_KEY || "";
 
 interface NewsItem {
   id: string;
@@ -35,19 +35,19 @@ export async function getNews(limit = 20): Promise<NewsItem[]> {
   try {
     const response = await fetch(`${CMS_URL}/api/public/news?limit=${limit}`, {
       headers: {
-        'x-api-key': CMS_API_KEY,
+        "x-api-key": CMS_API_KEY,
       },
     });
 
     if (!response.ok) {
-      console.error('CMS API error:', response.status);
+      console.error("CMS API error:", response.status);
       return [];
     }
 
     const data: NewsResponse = await response.json();
     return Array.isArray(data.news) ? data.news : [];
   } catch (error) {
-    console.error('Failed to fetch news:', error);
+    console.error("Failed to fetch news:", error);
     return [];
   }
 }
@@ -59,7 +59,7 @@ export async function getNewsBySlug(slug: string): Promise<NewsItem | null> {
   try {
     const response = await fetch(`${CMS_URL}/api/public/news?slug=${slug}`, {
       headers: {
-        'x-api-key': CMS_API_KEY,
+        "x-api-key": CMS_API_KEY,
       },
     });
 
@@ -67,14 +67,14 @@ export async function getNewsBySlug(slug: string): Promise<NewsItem | null> {
       if (response.status === 404) {
         return null;
       }
-      console.error('CMS API error:', response.status);
+      console.error("CMS API error:", response.status);
       return null;
     }
 
     const data: NewsResponse = await response.json();
     return data.news as NewsItem;
   } catch (error) {
-    console.error('Failed to fetch news by slug:', error);
+    console.error("Failed to fetch news by slug:", error);
     return null;
   }
 }
