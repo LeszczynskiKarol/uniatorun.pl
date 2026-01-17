@@ -1,0 +1,948 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+// SEO Data - optymalizacja pod "piłka nożna dla 11-12 latka Toruń"
+const seoTitle =
+  "Piłka nożna dla dzieci 11-12 lat Toruń – Rocznik 2013-2014 | Młodzik U-13";
+const seoDescription =
+  "Profesjonalne treningi piłkarskie dla dzieci 11-12 lat w Toruniu. Zajęcia piłki nożnej dla rocznika 2013-2014 – zaawansowana taktyka zespołowa, specjalizacja pozycyjna, rozgrywki ligowe KPZPN. Zapisz dziecko!";
+const seoKeywords = [
+  "piłka nożna dla 11 latka Toruń",
+  "piłka nożna dla 12 latka Toruń",
+  "treningi piłkarskie rocznik 2013",
+  "treningi piłkarskie rocznik 2014",
+  "młodzik U-13 Toruń",
+  "szkółka piłkarska 11-12 lat",
+  "zaawansowane treningi piłkarskie",
+  "akademia piłkarska Toruń",
+  "Unia Toruń młodzież",
+  "liga KPZPN młodzik",
+  "rozgrywki ligowe młodzik Toruń",
+];
+
+// Dane grupy
+const groupData = {
+  name: "Młodzik U-13",
+  yearGroup: "2013-2014",
+  ages: "11-12 lat",
+  icon: "🔥",
+  trainingDuration: "90 minut",
+  trainingsPerWeek: "3x w tygodniu",
+  maxGroupSize: 20,
+  description:
+    "Zaawansowana taktyka zespołowa, przygotowanie motoryczne i specjalizacja pozycyjna. Rozgrywki ligowe KPZPN, analiza wideo i przygotowanie do piłki juniorskiej.",
+};
+
+// Program szczegółowy dla 11-12 latków
+const programDetails = [
+  {
+    title: "Zaawansowana technika",
+    description:
+      "Perfekcjonowanie wszystkich elementów technicznych. Intensywna praca nad słabszą nogą. Technika w wysokim tempie i pod presją.",
+    icon: "⚽",
+  },
+  {
+    title: "Taktyka zespołowa",
+    description:
+      "Systemy gry, ustawienia taktyczne, zasady współpracy na boisku. Pressing, kontratak, budowanie akcji od bramkarza.",
+    icon: "📋",
+  },
+  {
+    title: "Specjalizacja pozycyjna",
+    description:
+      "Nauka zadań na konkretnych pozycjach. Obrońcy, pomocnicy, napastnicy – każdy poznaje swoje obowiązki taktyczne.",
+    icon: "🎯",
+  },
+  {
+    title: "Przygotowanie motoryczne",
+    description:
+      "Intensywny rozwój siły, szybkości i wytrzymałości. Ćwiczenia prewencyjne, stabilizacja, koordynacja na najwyższym poziomie.",
+    icon: "💪",
+  },
+  {
+    title: "Analiza wideo",
+    description:
+      "Oglądanie i analizowanie meczów własnych i profesjonalnych. Nauka czytania gry i rozpoznawania sytuacji.",
+    icon: "📹",
+  },
+  {
+    title: "Przygotowanie mentalne",
+    description:
+      "Budowanie mentalności zwycięzcy. Koncentracja, radzenie sobie z presją meczową, przywództwo na boisku.",
+    icon: "🧠",
+  },
+];
+
+// Struktura typowego treningu
+const trainingStructure = [
+  {
+    time: "15 min",
+    activity: "Rozgrzewka i aktywacja",
+    description: "Dynamiczna rozgrzewka, aktywacja mięśni, mobilność stawów z piłką",
+    icon: "🏃",
+  },
+  {
+    time: "30 min",
+    activity: "Część główna techniczno-taktyczna",
+    description: "Ćwiczenia według planu szkoleniowego – technika, taktyka, sytuacje meczowe",
+    icon: "⚽",
+  },
+  {
+    time: "25 min",
+    activity: "Gry pozycyjne i sytuacje meczowe",
+    description: "Zaawansowane gry szkoleniowe, stałe fragmenty gry, przećwiczenie schematów",
+    icon: "🎯",
+  },
+  {
+    time: "20 min",
+    activity: "Gra właściwa",
+    description: "Mecz 9v9 lub 11v11 z konkretnymi zadaniami taktycznymi",
+    icon: "🥅",
+  },
+];
+
+// Korzyści dla rodziców
+const parentBenefits = [
+  {
+    title: "Profesjonalne szkolenie",
+    description: "Trening na poziomie akademii ligowych",
+    icon: "⭐",
+  },
+  {
+    title: "Rozgrywki ligowe",
+    description: "Oficjalne mecze KPZPN co tydzień",
+    icon: "🏟️",
+  },
+  {
+    title: "Specjalizacja pozycyjna",
+    description: "Nauka gry na konkretnej pozycji",
+    icon: "🎯",
+  },
+  {
+    title: "Przygotowanie fizyczne",
+    description: "Profesjonalny trening motoryczny",
+    icon: "💪",
+  },
+  {
+    title: "Analiza i rozwój",
+    description: "Analiza wideo, feedback, indywidualne cele",
+    icon: "📹",
+  },
+  {
+    title: "Ścieżka kariery",
+    description: "Przygotowanie do piłki juniorskiej",
+    icon: "🚀",
+  },
+];
+
+// FAQ
+const faqItems = [
+  {
+    question: "Czym różnią się treningi Młodzików od grupy Orlik?",
+    answer:
+      "Grupa Młodzik U-13 to najbardziej zaawansowany etap szkolenia w naszej akademii. Treningi trwają 90 minut (zamiast 75) i odbywają się 3 razy w tygodniu. Program obejmuje zaawansowaną taktykę zespołową, specjalizację pozycyjną, intensywne przygotowanie motoryczne oraz elementy analizy wideo i przygotowania mentalnego.",
+  },
+  {
+    question: "Jak intensywne są treningi w grupie Młodzik U-13?",
+    answer:
+      "To bardzo intensywny program. Treningi 3 razy w tygodniu po 90 minut plus weekendowe mecze ligowe. Zawodnicy muszą być gotowi na poważne zaangażowanie czasowe i fizyczne. Oczekujemy regularności i pełnego zaangażowania na każdym treningu.",
+  },
+  {
+    question: "Czy można dołączyć do grupy bez wcześniejszego doświadczenia?",
+    answer:
+      "Grupa Młodzik U-13 wymaga solidnego poziomu umiejętności piłkarskich. Jeśli dziecko nie trenowało wcześniej regularnie, rekomendujemy rozpoczęcie od młodszej grupy lub indywidualne treningi uzupełniające. Na treningu próbnym trener oceni poziom i zaproponuje najlepszą ścieżkę rozwoju.",
+  },
+  {
+    question: "W jakich rozgrywkach uczestniczy drużyna?",
+    answer:
+      "Młodziki U-13 uczestniczą w oficjalnych rozgrywkach ligowych KPZPN (Kujawsko-Pomorski Związek Piłki Nożnej). Gramy również w turniejach regionalnych i ogólnopolskich. Mecze ligowe odbywają się w weekendy, sezon trwa od września do czerwca.",
+  },
+  {
+    question: "Na jakim formacie boiska grają Młodziki?",
+    answer:
+      "Młodziki U-13 grają na boisku 9v9 (9 zawodników) lub już na pełnowymiarowym boisku 11v11, w zależności od rozgrywek i kategorii. To przygotowanie do pełnego formatu piłki seniorskiej.",
+  },
+  {
+    question: "Co po Młodzikach? Czy jest dalszy rozwój?",
+    answer:
+      "Tak! Najzdolniejsi zawodnicy mają możliwość przejścia do grup juniorskich (Trampkarz U-15, Junior U-17) w klubach partnerskich lub zostać zauważeni przez skautów profesjonalnych klubów. Współpracujemy z klubami z wyższych lig, które regularnie obserwują naszych zawodników.",
+  },
+  {
+    question: "Co dziecko powinno mieć na trening?",
+    answer:
+      "Pełny komplet ochraniaczy, buty piłkarskie (korki i turfy – obie pary!), rękawice bramkarskie (jeśli gra na bramce), bidon, ręcznik. Po zapisie zawodnik otrzymuje komplet strojów klubowych – meczowy i treningowy.",
+  },
+  {
+    question: "Jaki jest koszt treningów?",
+    answer:
+      "Szczegółowy cennik znajduje się na stronie /cennik. W składce zawarte są wszystkie treningi (3x tydzień), udział w rozgrywkach ligowych, stroje klubowe. Pierwszy trening próbny jest bezpłatny!",
+  },
+];
+
+// Dlaczego ten wiek jest ważny
+const whyThisAge = [
+  {
+    title: "Ostatni etap przed juniorami",
+    description:
+      "Wiek 11-12 lat to kluczowy moment przygotowania do piłki juniorskiej. Zawodnicy muszą opanować zaawansowaną taktykę i być gotowi na pełnowymiarową grę.",
+    icon: "🎯",
+  },
+  {
+    title: "Specjalizacja pozycyjna",
+    description:
+      "To czas na określenie optymalnej pozycji zawodnika. Obrońcy uczą się innych zadań niż napastnicy – każdy rozwija swoje mocne strony.",
+    icon: "📋",
+  },
+  {
+    title: "Budowanie charakteru sportowca",
+    description:
+      "Przygotowanie mentalne staje się równie ważne jak fizyczne. Zawodnicy uczą się radzić sobie z presją meczową i budować mentalność zwycięzcy.",
+    icon: "🧠",
+  },
+];
+
+// Umiejętności do opanowania
+const skillsToLearn = [
+  { skill: "Technika w wysokim tempie", level: "Zaawansowane" },
+  { skill: "Taktyka zespołowa", level: "Zaawansowane" },
+  { skill: "Gra na pozycji", level: "Średniozaawansowane" },
+  { skill: "Stałe fragmenty gry", level: "Średniozaawansowane" },
+  { skill: "Przygotowanie motoryczne", level: "Zaawansowane" },
+  { skill: "Analiza gry", level: "Wprowadzenie" },
+];
+
+// Ścieżka rozwoju
+const developmentPath = [
+  { stage: "Młodzik U-13", description: "Obecna kategoria", icon: "🔥", current: true },
+  { stage: "Trampkarz U-15", description: "Następny etap", icon: "🎯", current: false },
+  { stage: "Junior U-17", description: "Gra młodzieżowa", icon: "⚡", current: false },
+  { stage: "Senior", description: "Profesjonalna piłka", icon: "🏆", current: false },
+];
+
+// Elementy zaawansowanego szkolenia
+const advancedFeatures = [
+  "Rozgrywki ligowe KPZPN (sezon IX-VI)",
+  "Turnieje regionalne i ogólnopolskie",
+  "Analiza wideo meczów i treningów",
+  "Indywidualne plany rozwoju zawodnika",
+  "Współpraca ze skautami klubów ligowych",
+  "Obozy szkoleniowe (zimowy i letni)",
+];
+---
+
+<Layout title={seoTitle} description={seoDescription} keywords={seoKeywords}>
+  <!-- Hero Section -->
+  <section
+    class="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-orange-950"
+  >
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div
+      class="absolute top-20 right-10 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl animate-pulse-glow"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 left-10 w-96 h-96 bg-red-600/10 rounded-full blur-3xl"
+    >
+    </div>
+
+    <!-- Floating decorative elements -->
+    <div
+      class="absolute top-32 left-[15%] text-6xl opacity-30 animate-float"
+    >
+      🔥
+    </div>
+    <div
+      class="absolute bottom-24 right-[20%] text-5xl opacity-25 animate-float animation-delay-300"
+    >
+      🏆
+    </div>
+
+    <div class="container-custom relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Breadcrumb -->
+        <nav
+          class="flex items-center justify-center gap-2 text-dark-400 text-sm mb-6 flex-wrap"
+        >
+          <a href="/" class="hover:text-white transition-colors">Strona główna</a>
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+          <a
+            href="/treningi-pilkarskie-dla-dzieci"
+            class="hover:text-white transition-colors">Grupy wiekowe</a
+          >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span class="text-white">Rocznik {groupData.yearGroup}</span>
+        </nav>
+
+        <!-- Badge -->
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-300 text-sm font-medium mb-6"
+        >
+          <span class="text-2xl">{groupData.icon}</span>
+          {groupData.name} • Rocznik {groupData.yearGroup} • Zaawansowane szkolenie
+        </div>
+
+        <h1 class="text-white mb-6 animate-fade-in-up">
+          Piłka nożna dla dzieci <span class="text-orange-400">{groupData.ages}</span>
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto"
+        >
+          <strong class="text-white">Treningi piłkarskie dla roczników 2013-2014</strong> w Toruniu!
+          Zaawansowana taktyka zespołowa, specjalizacja pozycyjna i <strong class="text-white">przygotowanie do piłki juniorskiej</strong>.
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300"
+        >
+          <a
+            href="/zapisy"
+            class="btn bg-orange-500 text-white hover:bg-orange-600 hover:shadow-xl hover:-translate-y-0.5"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+              ></path>
+            </svg>
+            Zapisz dziecko
+          </a>
+          <a
+            href="/kontakt"
+            class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            Masz pytania?
+          </a>
+        </div>
+
+        <!-- Quick info -->
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 animate-fade-in-up animation-delay-400"
+        >
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">🎂</div>
+            <div class="text-white font-bold">{groupData.ages}</div>
+            <div class="text-dark-400 text-xs">Wiek uczestników</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">⏱️</div>
+            <div class="text-white font-bold">{groupData.trainingDuration}</div>
+            <div class="text-dark-400 text-xs">Czas treningu</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">📅</div>
+            <div class="text-white font-bold">{groupData.trainingsPerWeek}</div>
+            <div class="text-dark-400 text-xs">Częstotliwość</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">🏟️</div>
+            <div class="text-white font-bold">Liga + turnieje</div>
+            <div class="text-dark-400 text-xs">Rozgrywki KPZPN</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4"
+          >
+            Rocznik 2013-2014
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Przygotowanie do <span class="text-orange-500">profesjonalnej piłki</span>
+          </h2>
+          <div class="space-y-4 text-dark-600 dark:text-dark-300">
+            <p>
+              <strong class="text-dark-900 dark:text-white"
+                >Grupa Młodzik U-13 Unii Toruń</strong
+              > to najbardziej zaawansowany etap szkolenia w naszej akademii. 
+              Dzieci w wieku 11-12 lat są przygotowywane do <strong>piłki juniorskiej</strong> 
+              i potencjalnej kariery w profesjonalnym futbolu.
+            </p>
+            <p>
+              W tej grupie intensywnie pracujemy nad <strong class="text-dark-900 dark:text-white"
+                >taktyką zespołową i specjalizacją pozycyjną</strong
+              >. Zawodnicy uczą się systemów gry, zasad współpracy na boisku 
+              i zadań na konkretnych pozycjach – obrońcy, pomocnicy, napastnicy.
+            </p>
+            <p>
+              <strong class="text-dark-900 dark:text-white"
+                >Treningi piłkarskie dla 11-12 latków</strong
+              > obejmują również zaawansowane przygotowanie motoryczne, analizę wideo 
+              i elementy przygotowania mentalnego. Nasz cel to wychować nie tylko 
+              dobrych piłkarzy, ale świadomych zawodników rozumiejących grę.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <div class="relative">
+            <div
+              class="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-red-100 dark:from-orange-900/50 dark:to-red-900/50 flex items-center justify-center"
+            >
+              <div class="text-center p-8">
+                <div class="text-7xl mb-4">🔥⚽</div>
+              </div>
+            </div>
+
+            <div
+              class="absolute -bottom-6 -right-6 bg-white dark:bg-dark-800 rounded-xl shadow-2xl p-4"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-12 h-12 rounded-full bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center text-2xl"
+                >
+                  🚀
+                </div>
+                <div>
+                  <p class="font-bold text-dark-900 dark:text-white text-sm">
+                    Poziom PRO
+                  </p>
+                  <p class="text-xs text-dark-500 dark:text-dark-400">
+                    Zaawansowane szkolenie
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why This Age Section -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4"
+        >
+          Dlaczego warto?
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          Dlaczego wiek <span class="text-orange-500">11-12 lat</span> jest przełomowy?
+        </h2>
+        <p class="text-dark-600 dark:text-dark-300 text-lg">
+          To ostatni etap przed piłką juniorską. Oto dlaczego warto
+          zapisać dziecko do grupy <strong>Młodzik U-13</strong> właśnie teraz.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {
+          whyThisAge.map((item, index) => (
+            <div
+              class={`card p-8 reveal animation-delay-${index * 100}`}
+            >
+              <div class="w-16 h-16 rounded-2xl bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center text-3xl mb-6">
+                {item.icon}
+              </div>
+              <h3 class="text-xl font-display font-bold text-dark-900 dark:text-white mb-3">
+                {item.title}
+              </h3>
+              <p class="text-dark-600 dark:text-dark-300">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4"
+        >
+          Program szkolenia
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          Zaawansowany program <span class="text-orange-500">Młodzika U-13</span>
+        </h2>
+        <p class="text-dark-600 dark:text-dark-300 text-lg">
+          Nasze <strong>treningi piłki nożnej dla 11-12 latków</strong> to profesjonalne 
+          szkolenie przygotowujące do piłki juniorskiej i potencjalnej kariery.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          programDetails.map((item, index) => (
+            <div class={`card p-6 reveal animation-delay-${(index % 3) * 100}`}>
+              <div class="w-14 h-14 rounded-xl bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center text-2xl mb-4">
+                {item.icon}
+              </div>
+              <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
+                {item.title}
+              </h3>
+              <p class="text-dark-600 dark:text-dark-300 text-sm">
+                {item.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Structure -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4"
+          >
+            Przebieg zajęć
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Jak wygląda <span class="text-orange-500">90 minut</span> profesjonalnego treningu?
+          </h2>
+          <p class="text-dark-600 dark:text-dark-300 text-lg max-w-2xl mx-auto">
+            Każdy trening jest starannie zaplanowany według profesjonalnych standardów 
+            szkolenia młodzieżowego.
+          </p>
+        </div>
+
+        <div class="space-y-4 reveal">
+          {
+            trainingStructure.map((phase, index) => (
+              <div class="card p-6 flex gap-6 items-center">
+                <div class="flex-shrink-0 w-20 h-20 rounded-2xl bg-orange-100 dark:bg-orange-900/50 flex flex-col items-center justify-center">
+                  <span class="text-2xl">{phase.icon}</span>
+                  <span class="text-sm font-bold text-orange-600 dark:text-orange-400 mt-1">
+                    {phase.time}
+                  </span>
+                </div>
+                <div class="flex-grow">
+                  <h3 class="font-display font-bold text-dark-900 dark:text-white text-lg mb-1">
+                    {phase.activity}
+                  </h3>
+                  <p class="text-dark-600 dark:text-dark-300">
+                    {phase.description}
+                  </p>
+                </div>
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-lg">
+                  {index + 1}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Progress Section -->
+  <section class="section-padding bg-orange-50 dark:bg-orange-950/30">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="card p-8 md:p-12 reveal">
+          <div class="text-center mb-10">
+            <div class="text-5xl mb-4">📊</div>
+            <h2
+              class="text-2xl md:text-3xl font-display font-bold text-dark-900 dark:text-white mb-4"
+            >
+              Umiejętności do opanowania w grupie Młodzik U-13
+            </h2>
+            <p class="text-dark-600 dark:text-dark-300">
+              Oto czego Twoje dziecko nauczy się na <strong>treningach piłkarskich dla 11-12 latków</strong>:
+            </p>
+          </div>
+          
+          <div class="grid sm:grid-cols-2 gap-4">
+            {
+              skillsToLearn.map((item) => (
+                <div class="flex items-center justify-between p-4 bg-white dark:bg-dark-800 rounded-xl border border-orange-100 dark:border-dark-700">
+                  <span class="font-semibold text-dark-900 dark:text-white">{item.skill}</span>
+                  <span class="text-sm px-3 py-1 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400">
+                    {item.level}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advanced Training Features Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="card p-8 md:p-12 bg-gradient-to-br from-orange-500 to-red-600 text-white reveal">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div class="text-5xl mb-4">⭐</div>
+              <h2 class="text-2xl md:text-3xl font-display font-bold mb-4">
+                Profesjonalne szkolenie
+              </h2>
+              <p class="text-orange-100 mb-6">
+                Grupa Młodzik U-13 to najwyższy poziom szkolenia w naszej akademii. 
+                Oferujemy wszystko, czego potrzebuje młody piłkarz, by przygotować się 
+                do kariery w profesjonalnym futbolu.
+              </p>
+              <ul class="space-y-2 text-orange-100">
+                {advancedFeatures.map((feature) => (
+                  <li class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-yellow-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="text-center">
+              <div class="text-8xl mb-4">🏆</div>
+              <p class="text-xl font-display font-bold">
+                Sezon 2025/2026 w toku!
+              </p>
+              <p class="text-orange-200 mt-2">
+                Dołącz do drużyny Młodzików
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Development Path Section -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4"
+          >
+            Ścieżka kariery
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Co po <span class="text-orange-500">Młodziku U-13</span>?
+          </h2>
+          <p class="text-dark-600 dark:text-dark-300 text-lg">
+            Młodzik U-13 to ostatnia grupa w naszej akademii, ale nie koniec drogi! 
+            Najzdolniejsi zawodnicy mają szansę na dalszą karierę.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+          {
+            developmentPath.map((item) => (
+              <div
+                class={`card p-6 text-center ${item.current ? "ring-2 ring-orange-500 bg-orange-50 dark:bg-orange-900/20" : ""}`}
+              >
+                <div class="text-4xl mb-3">{item.icon}</div>
+                <h3
+                  class={`font-display font-bold mb-1 ${item.current ? "text-orange-600 dark:text-orange-400" : "text-dark-900 dark:text-white"}`}
+                >
+                  {item.stage}
+                </h3>
+                <p class="text-dark-500 dark:text-dark-400 text-xs">
+                  {item.description}
+                </p>
+                {item.current && (
+                  <span class="inline-block mt-2 px-2 py-0.5 bg-orange-500 text-white text-xs rounded-full">
+                    Obecnie
+                  </span>
+                )}
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-8 text-center reveal">
+          <div class="card p-6 bg-white dark:bg-dark-800 inline-block">
+            <p class="text-dark-600 dark:text-dark-300">
+              <strong class="text-dark-900 dark:text-white">Współpracujemy z klubami z wyższych lig.</strong><br />
+              Najzdolniejsi zawodnicy są regularnie obserwowani przez skautów profesjonalnych klubów.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits for Parents -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4"
+          >
+            Dla rodziców
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Co zyskuje Twoje dziecko?
+          </h2>
+          <p class="text-dark-600 dark:text-dark-300 mb-8">
+            <strong class="text-dark-900 dark:text-white"
+              >Treningi piłkarskie dla 11-12 latków</strong
+            > w Unii Toruń to profesjonalne przygotowanie do kariery piłkarskiej – 
+            zaawansowana taktyka, rozgrywki ligowe i budowanie charakteru sportowca.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            {
+              parentBenefits.map((benefit) => (
+                <div class="flex items-start gap-3 p-4 rounded-xl bg-orange-50 dark:bg-dark-800 border border-orange-100 dark:border-dark-700">
+                  <div class="w-10 h-10 rounded-lg bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center text-xl flex-shrink-0">
+                    {benefit.icon}
+                  </div>
+                  <div>
+                    <p class="font-semibold text-dark-900 dark:text-white text-sm">
+                      {benefit.title}
+                    </p>
+                    <p class="text-dark-500 dark:text-dark-400 text-xs mt-0.5">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <div class="card p-8 bg-white dark:bg-dark-800">
+            <div class="text-center mb-6">
+              <div class="text-5xl mb-4">🎉</div>
+              <h3
+                class="text-xl font-display font-bold text-dark-900 dark:text-white"
+              >
+                Pierwszy trening GRATIS!
+              </h3>
+            </div>
+            <p class="text-dark-600 dark:text-dark-300 text-center mb-6">
+              Nie jesteś pewien, czy <strong>piłka nożna dla 11-12 latka</strong> na tym 
+              poziomie to dobry wybór? Przyjdź na bezpłatny trening próbny i przekonaj się!
+            </p>
+            <a
+              href="/zapisy"
+              class="btn-primary w-full justify-center bg-orange-500 hover:bg-orange-600"
+            >
+              Umów trening próbny
+            </a>
+            <p class="text-dark-500 dark:text-dark-400 text-center text-sm mt-4">
+              Bez zobowiązań • Ocena poziomu • Indywidualna ścieżka
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4"
+          >
+            FAQ
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Pytania o grupę <span class="text-orange-500">Młodzik U-13</span>
+          </h2>
+          <p class="text-dark-600 dark:text-dark-300 text-lg">
+            Odpowiadamy na najczęściej zadawane pytania dotyczące <strong
+              >treningów piłkarskich dla rocznika 2013-2014</strong
+            >.
+          </p>
+        </div>
+
+        <div class="space-y-4 reveal">
+          {
+            faqItems.map((item) => (
+              <details class="group card p-6 cursor-pointer">
+                <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
+                  <span class="pr-4">{item.question}</span>
+                  <svg
+                    class="w-5 h-5 text-orange-500 transition-transform group-open:rotate-180 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <p class="mt-4 text-dark-600 dark:text-dark-300 border-t border-dark-100 dark:border-dark-700 pt-4">
+                  {item.answer}
+                </p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section
+    class="section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-orange-950 relative overflow-hidden"
+  >
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div
+      class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl"
+    >
+    </div>
+
+    <div class="container-custom relative z-10">
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <div class="text-6xl mb-6">🔥</div>
+        <h2 class="text-white mb-6">
+          Dołącz do grupy <span class="text-orange-400">Młodzik U-13</span>!
+        </h2>
+        <p class="text-dark-300 text-lg md:text-xl mb-8">
+          <strong class="text-white"
+            >Treningi piłkarskie dla dzieci 11-12 lat</strong
+          > w Unii Toruń – zaawansowane szkolenie, rozgrywki ligowe i przygotowanie 
+          do kariery piłkarskiej!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/zapisy"
+            class="btn bg-orange-500 text-white hover:bg-orange-600 hover:shadow-xl hover:-translate-y-0.5"
+          >
+            Zapisz dziecko teraz
+          </a>
+          <a
+            href="/treningi-pilkarskie-dla-dzieci"
+            class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20"
+          >
+            Zobacz inne grupy
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section
+    class="py-8 bg-dark-50 dark:bg-dark-950 border-t border-dark-100 dark:border-dark-800"
+  >
+    <div class="container-custom">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <a
+          href="/treningi-pilkarskie-dla-dzieci/2015-2016"
+          class="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Poprzednia: Rocznik 2015-2016 (9-10 lat)
+        </a>
+        <a
+          href="/treningi-pilkarskie-dla-dzieci"
+          class="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+        >
+          Wszystkie grupy wiekowe
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "Unia Toruń - Treningi piłkarskie dla dzieci 11-12 lat",
+      "description": "Profesjonalne treningi piłkarskie dla dzieci w wieku 11-12 lat (rocznik 2013-2014) w Toruniu. Zaawansowana taktyka zespołowa, specjalizacja pozycyjna, rozgrywki ligowe KPZPN.",
+      "url": "https://unia-torun.pl/treningi-pilkarskie-dla-dzieci/2013-2014",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toruń",
+        "addressCountry": "PL"
+      },
+      "sport": "Piłka nożna",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Dzieci 11-12 lat (rocznik 2013-2014)"
+      }
+    }
+  </script>
+</Layout>

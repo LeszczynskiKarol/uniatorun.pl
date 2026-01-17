@@ -19,8 +19,7 @@ const pricingPlans = [
     price: 200,
     features: [
       "4 treningi w miesiącu",
-      "Strój treningowy",
-      "Ubezpieczenie NNW",
+      "Strój treningowy",      
       "Dostęp do grupy rodziców na FB",
       "Udział w turniejach",
     ],
@@ -34,8 +33,7 @@ const pricingPlans = [
     price: 220,
     features: [
       "8 treningów w miesiącu",
-      "Strój treningowy",
-      "Ubezpieczenie NNW",
+      "Strój treningowy",      
       "Dostęp do grupy rodziców na FB",
       "Udział w turniejach",
     ],
@@ -49,8 +47,7 @@ const pricingPlans = [
     price: 240,
     features: [
       "12 treningów w miesiącu",
-      "Strój treningowy",
-      "Ubezpieczenie NNW",
+      "Strój treningowy",      
       "Dostęp do grupy rodziców na FB",
       "Udział w turniejach",
     ],
@@ -65,12 +62,7 @@ const includedItems = [
     icon: "👕",
     title: "Strój treningowy",
     description: "Koszulka, spodenki i getry w barwach klubu",
-  },
-  {
-    icon: "🛡️",
-    title: "Ubezpieczenie NNW",
-    description: "Pełne ubezpieczenie podczas treningów i meczów",
-  },
+  },  
   {
     icon: "📱",
     title: "Komunikacja",
@@ -160,16 +152,16 @@ const faqItems = [
         <p
           class="text-xl md:text-2xl text-dark-600 dark:text-dark-300 mb-4 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto"
         >
-          Przystępne ceny i elastyczne pakiety treningowe. <strong
+          Przystępne ceny i elastyczne pakiety treningowe <strong
             class="text-dark-900 dark:text-white"
-            >Pierwszy trening gratis!</strong
-          >
+          >już od 200 zł miesięcznie.</strong> Pierwszy trening gratis!
+          
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Pricing Section -->
+  <!-- Pricing Section 
   <section class="section-padding bg-white dark:bg-dark-900">
     <div class="container-custom">
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -238,7 +230,7 @@ const faqItems = [
         informacje.
       </p>
     </div>
-  </section>
+  </section>-->
 
   <!-- What's Included Section -->
   <section class="section-padding bg-dark-50 dark:bg-dark-950">
@@ -254,7 +246,7 @@ const faqItems = [
         </h2>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {
           includedItems.map((item, index) => (
             <div

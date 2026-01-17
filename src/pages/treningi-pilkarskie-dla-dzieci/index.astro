@@ -2,8 +2,8 @@
 import Layout from '@/layouts/Layout.astro';
 
 // SEO Data - optymalizacja pod "treningi piłkarskie dla dzieci Toruń"
-const seoTitle = 'Treningi piłkarskie dla dzieci Toruń – Grupy wiekowe 3-13 lat';
-const seoDescription = 'Profesjonalne treningi piłkarskie dla dzieci w Toruniu. Grupy wiekowe od 3 do 13 lat: Przedszkole piłkarskie, Żak U-9, Orlik U-11, Młodzik U-13. Zapisz dziecko na bezpłatny trening próbny w Unii Toruń!';
+const seoTitle = 'Treningi piłkarskie dla dzieci Toruń – Grupy wiekowe od 3 lat';
+const seoDescription = 'Profesjonalne treningi piłkarskie dla dzieci w Toruniu. Grupy wiekowe od 3 lat: Przedszkole piłkarskie, Żak U-9, Orlik U-11, Młodzik U-13. Zapisz dziecko na bezpłatny trening próbny w Unii Toruń!';
 const seoKeywords = [
   'treningi piłkarskie dla dzieci Toruń',
   'treningi piłki nożnej Toruń',
@@ -19,118 +19,162 @@ const seoKeywords = [
 // Age groups data - szczegółowe informacje
 const ageGroups = [
   {
-    name: 'Przedszkole piłkarskie',
-    ages: '3-6 lat',
-    category: 'Roczniki 2019-2022',
-    shortDesc: 'Pierwsze kroki z piłką nożną',
-    description: 'Treningi piłkarskie dla najmłodszych dzieci w wieku 3-6 lat. Zajęcia prowadzone w formie zabawy, rozwijające koordynację ruchową, motorykę i podstawowe umiejętności piłkarskie. Idealne wprowadzenie do świata futbolu!',
+    name: 'Żaczki',
+    ages: '3-4 lata',
+    category: 'Rocznik 2021-2022',
+    shortDesc: 'Pierwsze kroki w świecie sportu',
+    description: 'Najnowsza grupa w akademii! Treningi dla maluchów to przede wszystkim zabawa z piłką, rozwój koordynacji ruchowej i pierwsze kroki w świecie sportu. Idealne wprowadzenie do futbolu!',
     features: [
-      'Nauka przez zabawę',
-      'Rozwój koordynacji ruchowej',
-      'Podstawy techniki z piłką',
+      'Zabawa z piłką',
+      'Rozwój koordynacji',
+      'Motoryka duża',
+      'Gry grupowe',
+      'Małe grupy (max 10 dzieci)',
+    ],
+    schedule: '1-3x w tygodniu / 45 min',
+    icon: '👶',
+    color: 'from-lime-500 to-green-500',
+    bgColor: 'bg-lime-50 dark:bg-lime-900/20',
+    borderColor: 'border-lime-200 dark:border-lime-800',
+    href: '/treningi-pilkarskie-dla-dzieci/2021-2022',
+    image: '🎒',
+  },
+  {
+    name: 'Przedszkole piłkarskie',
+    ages: '4-5 lat',
+    category: 'Rocznik 2020-2021',
+    shortDesc: 'Pierwsze elementy techniczne',
+    description: 'Kontynuacja zabaw ruchowych z wprowadzeniem pierwszych elementów technicznych z piłką. Idealna grupa dla dzieci, które chcą rozwijać swoje umiejętności w przyjaznej atmosferze.',
+    features: [
+      'Zabawy z piłką',
+      'Pierwsze elementy techniczne',
+      'Koordynacja i zwinność',
       'Gry i zabawy zespołowe',
       'Małe grupy (max 12 dzieci)',
     ],
-    schedule: '2x w tygodniu / 45 min',
-    icon: '👶',
+    schedule: '1-2x w tygodniu / 45-60 min',
+    icon: '🎈',
     color: 'from-emerald-500 to-teal-500',
     bgColor: 'bg-emerald-50 dark:bg-emerald-900/20',
     borderColor: 'border-emerald-200 dark:border-emerald-800',
-    href: '/treningi-pilkarskie-dla-dzieci/3-6-lat',
+    href: '/treningi-pilkarskie-dla-dzieci/2020-2021',
     image: '🎈',
   },
   {
-    name: 'Żak U-9',
-    ages: '7-9 lat',
-    category: 'Roczniki 2016-2018',
-    shortDesc: 'Podstawy techniki piłkarskiej',
-    description: 'Treningi piłkarskie dla dzieci w wieku 7-9 lat. Na tym etapie kładziemy nacisk na naukę podstawowych elementów technicznych: prowadzenie piłki, podania, strzały. Rozwijamy umiejętności motoryczne i wprowadzamy elementy gry zespołowej.',
+    name: 'Żaczek',
+    ages: '6-7 lat',
+    category: 'Rocznik 2018-2019',
+    shortDesc: 'Systematyczna nauka techniki',
+    description: 'Wprowadzenie do systematycznej nauki techniki piłkarskiej. Prowadzenie piłki, podania, strzały – wszystko w przyjaznej atmosferze z elementami rywalizacji sportowej.',
     features: [
-      'Nauka techniki indywidualnej',
-      'Prowadzenie piłki i dryblingi',
+      'Prowadzenie piłki',
       'Podania i przyjęcia',
       'Strzały na bramkę',
-      'Pierwsze mecze i turnieje',
+      'Gry small-sided',
+      'Pierwsze sparingi',
     ],
     schedule: '2x w tygodniu / 60 min',
     icon: '⚽',
     color: 'from-blue-500 to-cyan-500',
     bgColor: 'bg-blue-50 dark:bg-blue-900/20',
     borderColor: 'border-blue-200 dark:border-blue-800',
-    href: '/treningi-pilkarskie-dla-dzieci/7-9-lat',
+    href: '/treningi-pilkarskie-dla-dzieci/2018-2019',
     image: '🏃',
   },
   {
-    name: 'Orlik U-11',
-    ages: '9-11 lat',
-    category: 'Roczniki 2014-2016',
-    shortDesc: 'Doskonalenie umiejętności',
-    description: 'Treningi piłkarskie dla dzieci w wieku 9-11 lat. Etap intensywnego rozwoju technicznego i wprowadzenia taktyki indywidualnej. Zawodnicy uczestniczą w regularnych rozgrywkach ligowych i turniejach, zdobywając cenne doświadczenie meczowe.',
+    name: 'Żak U-9',
+    ages: '8-9 lat',
+    category: 'Rocznik 2016-2017',
+    shortDesc: 'Technika indywidualna',
+    description: 'Intensywna praca nad techniką indywidualną. Dryblingi, zwody, gra 1v1 – wszystko w atmosferze zdrowej rywalizacji sportowej. Pierwsze turnieje i sparingi z innymi klubami.',
     features: [
-      'Doskonalenie techniki',
-      'Taktyka indywidualna',
-      'Gra 1v1, 2v2, small-sided games',
-      'Rozgrywki ligowe',
-      'Turnieje regionalne',
+      'Technika indywidualna',
+      'Dryblingi i zwody',
+      'Gra 1v1, small-sided games',
+      'Pierwsze turnieje',
+      'Sparingi z innymi klubami',
     ],
-    schedule: '3x w tygodniu / 75 min',
-    icon: '🏆',
+    schedule: '2x w tygodniu / 60 min',
+    icon: '🏃',
     color: 'from-violet-500 to-purple-500',
     bgColor: 'bg-violet-50 dark:bg-violet-900/20',
     borderColor: 'border-violet-200 dark:border-violet-800',
-    href: '/treningi-pilkarskie-dla-dzieci/9-11-lat',
+    href: '/treningi-pilkarskie-dla-dzieci/2016-2017',
     image: '🎯',
   },
   {
+    name: 'Orlik U-11',
+    ages: '9-10 lat',
+    category: 'Rocznik 2015-2016',
+    shortDesc: 'Doskonalenie i taktyka',
+    description: 'Doskonalenie techniki i wprowadzenie taktyki. Gra na pozycjach, przygotowanie motoryczne i udział w oficjalnych rozgrywkach ligowych KPZPN.',
+    features: [
+      'Doskonalenie techniki',
+      'Taktyka indywidualna',
+      'Gra na pozycjach',
+      'Rozgrywki ligowe KPZPN',
+      'Turnieje regionalne',
+    ],
+    schedule: '2-3x w tygodniu / 75 min',
+    icon: '🏆',
+    color: 'from-amber-500 to-orange-500',
+    bgColor: 'bg-amber-50 dark:bg-amber-900/20',
+    borderColor: 'border-amber-200 dark:border-amber-800',
+    href: '/treningi-pilkarskie-dla-dzieci/2015-2016',
+    image: '🏆',
+  },
+  {
     name: 'Młodzik U-13',
-    ages: '11-13 lat',
-    category: 'Roczniki 2012-2014',
-    shortDesc: 'Przygotowanie do profesjonalnej gry',
-    description: 'Treningi piłkarskie dla dzieci w wieku 11-13 lat. Zaawansowany etap szkolenia z naciskiem na taktykę zespołową, przygotowanie fizyczne i mentalne. Przygotowujemy zawodników do gry na poziomie juniorskim i seniorskim.',
+    ages: '11-12 lat',
+    category: 'Rocznik 2013-2014',
+    shortDesc: 'Zaawansowane szkolenie',
+    description: 'Zaawansowana taktyka zespołowa, przygotowanie motoryczne i specjalizacja pozycyjna. Rozgrywki ligowe KPZPN, analiza wideo i przygotowanie do piłki juniorskiej.',
     features: [
       'Zaawansowana taktyka',
       'Przygotowanie motoryczne',
-      'Gra na pozycjach',
+      'Specjalizacja pozycyjna',
       'Analiza wideo',
       'Rozgrywki ligowe KPZPN',
     ],
     schedule: '3x w tygodniu / 90 min',
-    icon: '🎯',
+    icon: '🔥',
     color: 'from-orange-500 to-red-500',
     bgColor: 'bg-orange-50 dark:bg-orange-900/20',
     borderColor: 'border-orange-200 dark:border-orange-800',
-    href: '/treningi-pilkarskie-dla-dzieci/11-13-lat',
+    href: '/treningi-pilkarskie-dla-dzieci/2013-2014',
     image: '🔥',
   },
 ];
+
 
 // Training methodology
 const methodology = [
   {
     title: 'Etap 1: Zabawa i ruch',
-    age: '3-6 lat',
+    age: '3-5 lat',
     description: 'Treningi oparte na zabawie. Rozwijamy radość z ruchu, koordynację i pierwsze kontakty z piłką.',
     icon: '🎮',
   },
   {
-    title: 'Etap 2: Technika indywidualna',
-    age: '7-9 lat',
-    description: 'Intensywna nauka techniki. Prowadzenie, podania, strzały – budujemy solidne fundamenty.',
+    title: 'Etap 2: Podstawy techniki',
+    age: '6-7 lat',
+    description: 'Wprowadzenie do systematycznej nauki. Prowadzenie piłki, podania, strzały – budujemy fundamenty.',
     icon: '⚡',
   },
   {
-    title: 'Etap 3: Taktyka i gra',
-    age: '9-11 lat',
-    description: 'Wprowadzenie taktyki. Gra na pozycjach, współpraca w zespole, pierwsze poważne mecze.',
+    title: 'Etap 3: Technika indywidualna',
+    age: '8-9 lat',
+    description: 'Intensywna praca nad techniką. Dryblingi, zwody, gra 1v1, pierwsze turnieje.',
     icon: '🧠',
   },
   {
-    title: 'Etap 4: Specjalizacja',
-    age: '11-13 lat',
-    description: 'Zaawansowane szkolenie. Przygotowanie do gry seniorskiej, specjalizacja pozycyjna.',
+    title: 'Etap 4: Taktyka i specjalizacja',
+    age: '9-12 lat',
+    description: 'Doskonalenie techniki, taktyka zespołowa, gra na pozycjach, rozgrywki ligowe.',
     icon: '🎯',
   },
 ];
+
 
 // FAQ dla tej strony
 const faqItems = [
@@ -184,7 +228,7 @@ const faqItems = [
         </h1>
         
         <p class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto">
-          Profesjonalne <strong class="text-white">treningi piłki nożnej</strong> dla dzieci w wieku od 3 do 13 lat. Wybierz grupę wiekową dopasowaną do Twojego dziecka i rozwijaj jego talent z <strong class="text-primary-400">Unią Toruń</strong>!
+          Profesjonalne <strong class="text-white">treningi piłki nożnej</strong> dla dzieci w wieku od 3 lat. Wybierz grupę wiekową dopasowaną do Twojego dziecka i rozwijaj jego talent z <strong class="text-primary-400">Unią Toruń</strong>!
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300">
@@ -205,11 +249,11 @@ const faqItems = [
         <!-- Quick stats -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 animate-fade-in-up animation-delay-400">
           <div class="text-center bg-white/5 rounded-xl p-4 backdrop-blur-sm">
-            <div class="text-3xl md:text-4xl font-display font-bold text-white">4</div>
-            <div class="text-dark-400 text-sm">Grupy wiekowe</div>
+            <div class="text-3xl md:text-4xl font-display font-bold text-white">6</div>
+            <div class="text-dark-400 text-sm">Grup wiekowych</div>
           </div>
           <div class="text-center bg-white/5 rounded-xl p-4 backdrop-blur-sm">
-            <div class="text-3xl md:text-4xl font-display font-bold text-white">3-13</div>
+            <div class="text-3xl md:text-4xl font-display font-bold text-white">od 3 lat</div>
             <div class="text-dark-400 text-sm">Zakres wiekowy</div>
           </div>
           <div class="text-center bg-white/5 rounded-xl p-4 backdrop-blur-sm">
@@ -470,7 +514,7 @@ const faqItems = [
           Wybierz <span class="gradient-text">treningi piłkarskie</span> dla swojego dziecka
         </h2>
         <p class="text-dark-600 dark:text-dark-300 text-lg">
-          Oferujemy <strong>treningi piłki nożnej dla dzieci</strong> w 4 grupach wiekowych. Kliknij wybraną grupę, aby poznać szczegóły programu szkoleniowego.
+          Oferujemy <strong>treningi piłki nożnej dla dzieci</strong> w 6 grupach wiekowych. Kliknij wybraną grupę, aby poznać szczegóły programu szkoleniowego.
         </p>
       </div>
 
@@ -574,18 +618,7 @@ const faqItems = [
           </p>
         </div>
 
-        <div class="card p-6 reveal animation-delay-100">
-          <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-2xl mb-4">
-            🛡️
-          </div>
-          <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
-            Ubezpieczenie NNW
-          </h3>
-          <p class="text-dark-600 dark:text-dark-300 text-sm">
-            Wszyscy zawodnicy są objęci ubezpieczeniem od następstw nieszczęśliwych wypadków podczas treningów i meczów.
-          </p>
-        </div>
-
+        
         <div class="card p-6 reveal animation-delay-200">
           <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-2xl mb-4">
             🏆

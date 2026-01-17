@@ -1,0 +1,886 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+// SEO Data - optymalizacja pod "piłka nożna dla 8-9 latka Toruń"
+const seoTitle =
+  "Piłka nożna dla dzieci 8-9 lat Toruń – Rocznik 2016-2017 | Żak U-9";
+const seoDescription =
+  "Treningi piłkarskie dla dzieci 8-9 lat w Toruniu. Zajęcia piłki nożnej dla rocznika 2016-2017 – intensywna nauka techniki indywidualnej, dryblingi, zwody, gra 1v1. Pierwsze turnieje! Zapisz dziecko na bezpłatny trening!";
+const seoKeywords = [
+  "piłka nożna dla 8 latka Toruń",
+  "piłka nożna dla 9 latka Toruń",
+  "treningi piłkarskie rocznik 2016",
+  "treningi piłkarskie rocznik 2017",
+  "żak U-9 Toruń",
+  "szkółka piłkarska 8-9 lat",
+  "nauka piłki nożnej dla dzieci",
+  "akademia piłkarska Toruń",
+  "Unia Toruń dzieci",
+  "treningi piłki nożnej 8 lat",
+  "turnieje piłkarskie dzieci Toruń",
+];
+
+// Dane grupy
+const groupData = {
+  name: "Żak U-9",
+  yearGroup: "2016-2017",
+  ages: "8-9 lat",
+  icon: "🏃",
+  trainingDuration: "60 minut",
+  trainingsPerWeek: "2x w tygodniu",
+  maxGroupSize: 16,
+  description:
+    "Intensywna praca nad techniką indywidualną. Dryblingi, zwody, gra 1v1 – wszystko w atmosferze zdrowej rywalizacji sportowej. Pierwsze turnieje i sparingi z innymi klubami.",
+};
+
+// Program szczegółowy dla 8-9 latków
+const programDetails = [
+  {
+    title: "Technika indywidualna",
+    description:
+      "Zaawansowane prowadzenie piłki, kontrola w ruchu, zmiana kierunku i tempa. Praca nad obiema nogami.",
+    icon: "👟",
+  },
+  {
+    title: "Dryblingi i zwody",
+    description:
+      "Nauka skutecznych zwodów: nożyce, przekładanka, zwód ciałem. Techniki mijania przeciwnika w grze 1v1.",
+    icon: "🌀",
+  },
+  {
+    title: "Podania i przyjęcia",
+    description:
+      "Podania na krótkie i średnie dystanse. Przyjęcia piłki w ruchu, z obrotem, pod presją przeciwnika.",
+    icon: "🎯",
+  },
+  {
+    title: "Strzały na bramkę",
+    description:
+      "Technika strzału wewnętrzną częścią stopy i podbiciem. Strzały z różnych pozycji, po przyjęciu i po dryblingu.",
+    icon: "⚽",
+  },
+  {
+    title: "Gra 1v1",
+    description:
+      "Sytuacje jeden na jednego – zarówno w ataku (mijanie), jak i w obronie (odbiór, pozycja ciała).",
+    icon: "⚔️",
+  },
+  {
+    title: "Small-sided games",
+    description:
+      "Gry 3v3, 4v4, 5v5 na małych boiskach. Idealne do nauki szybkiego podejmowania decyzji i pracy zespołowej.",
+    icon: "👥",
+  },
+];
+
+// Struktura typowego treningu
+const trainingStructure = [
+  {
+    time: "10 min",
+    activity: "Rozgrzewka dynamiczna",
+    description: "Bieg z zadaniami, ćwiczenia koordynacyjne, mobilizacja stawów z piłką",
+    icon: "🏃",
+  },
+  {
+    time: "20 min",
+    activity: "Część techniczna",
+    description: "Ćwiczenia techniki indywidualnej – dryblingi, zwody, podania lub strzały",
+    icon: "⚽",
+  },
+  {
+    time: "15 min",
+    activity: "Gry szkoleniowe",
+    description: "Small-sided games, gry w przewagach, sytuacje 1v1, zadania taktyczne",
+    icon: "🎯",
+  },
+  {
+    time: "15 min",
+    activity: "Mecz",
+    description: "Gra na małe bramki z zastosowaniem ćwiczonych elementów technicznych",
+    icon: "🥅",
+  },
+];
+
+// Korzyści dla rodziców
+const parentBenefits = [
+  {
+    title: "Zaawansowana technika",
+    description: "Intensywna praca nad umiejętnościami indywidualnymi",
+    icon: "⚽",
+  },
+  {
+    title: "Pewność w grze 1v1",
+    description: "Nauka skutecznego mijania i obrony",
+    icon: "⚔️",
+  },
+  {
+    title: "Doświadczenie turniejowe",
+    description: "Udział w turniejach i sparingach z innymi klubami",
+    icon: "🏆",
+  },
+  {
+    title: "Szybkość i zwinność",
+    description: "Rozwój sprawności fizycznej i koordynacji",
+    icon: "⚡",
+  },
+  {
+    title: "Praca zespołowa",
+    description: "Nauka współpracy i komunikacji na boisku",
+    icon: "🤝",
+  },
+  {
+    title: "Mentalność zwycięzcy",
+    description: "Budowanie charakteru przez zdrową rywalizację",
+    icon: "💪",
+  },
+];
+
+// FAQ
+const faqItems = [
+  {
+    question: "Czym różnią się treningi dla 8-9 latków od młodszych grup?",
+    answer:
+      "W grupie Żak U-9 (8-9 lat) znacząco wzrasta intensywność pracy nad techniką indywidualną. Wprowadzamy zaawansowane dryblingi, zwody i sytuacje 1v1. Dzieci uczestniczą już w turniejach i sparingach z innymi klubami. Ćwiczenia są bardziej złożone, a element rywalizacji sportowej staje się ważniejszą częścią treningów.",
+  },
+  {
+    question: "Czy dziecko bez doświadczenia może dołączyć do grupy?",
+    answer:
+      "Tak, przyjmujemy zarówno dzieci z doświadczeniem piłkarskim, jak i początkujące. Trenerzy dostosowują ćwiczenia do poziomu każdego zawodnika. Ważne jest jednak, aby dziecko było gotowe na regularną pracę i chciało się rozwijać – w tej grupie oczekujemy już pewnego zaangażowania.",
+  },
+  {
+    question: "Ile razy w tygodniu odbywają się treningi?",
+    answer:
+      "Dla rocznika 2016-2017 treningi odbywają się 2 razy w tygodniu po 60 minut. Taka częstotliwość pozwala na intensywny rozwój techniki przy jednoczesnym zachowaniu czasu na regenerację i inne aktywności dziecka.",
+  },
+  {
+    question: "Czy dzieci uczestniczą w turniejach?",
+    answer:
+      "Tak! Grupa Żak U-9 regularnie bierze udział w turniejach i sparingach – zarówno w Toruniu, jak i na wyjazdach. To doskonała okazja do sprawdzenia umiejętności w praktyce, nauki radzenia sobie ze stresem meczowym i budowania doświadczenia turniejowego.",
+  },
+  {
+    question: "W jakim formacie grają mecze dzieci w tym wieku?",
+    answer:
+      "Mecze gramy w formacie 5v5 lub 7v7 na zmniejszonych boiskach, zgodnie z wytycznymi PZPN dla tej kategorii wiekowej. Taki format zapewnia każdemu dziecku wiele kontaktów z piłką i sytuacji decyzyjnych.",
+  },
+  {
+    question: "Co dziecko powinno mieć na trening?",
+    answer:
+      "Strój sportowy, ochraniacze na golenie (obowiązkowo!), buty piłkarskie – korki na trawę naturalną/sztuczną lub turfy, bidon z wodą. Po zapisaniu dziecko otrzymuje oficjalny strój treningowy Unii Toruń.",
+  },
+  {
+    question: "Czy rodzic może obserwować treningi?",
+    answer:
+      "Tak, rodzice mogą obserwować zajęcia z wyznaczonego miejsca. Prosimy jednak o nieangażowanie się w przebieg treningu i niekomentowanie akcji dzieci – to pomaga zawodnikom lepiej się koncentrować i budować samodzielność.",
+  },
+  {
+    question: "Jaki jest koszt treningów?",
+    answer:
+      "Szczegółowy cennik znajduje się na stronie /cennik. Oferujemy konkurencyjne ceny z możliwością płatności miesięcznej. Pierwszy trening próbny jest zawsze bezpłatny!",
+  },
+];
+
+// Dlaczego ten wiek jest ważny
+const whyThisAge = [
+  {
+    title: "Środek „złotego wieku” motorycznego",
+    description:
+      "Wiek 8-9 lat to środek tzw. „złotego wieku” nauki motorycznej. Dzieci przyswajają technikę najszybciej w życiu – umiejętności nabyte teraz zostają na zawsze.",
+    icon: "🌟",
+  },
+  {
+    title: "Gotowość na rywalizację",
+    description:
+      "Dzieci w tym wieku są już emocjonalnie gotowe na zdrową rywalizację sportową. Turnieje i mecze stają się ważnym elementem motywacji i rozwoju.",
+    icon: "🏆",
+  },
+  {
+    title: "Czas na technikę indywidualną",
+    description:
+      "To ostatni moment na intensywną pracę nad techniką indywidualną, zanim w starszych kategoriach coraz więcej czasu poświęca się taktyce zespołowej.",
+    icon: "⚽",
+  },
+];
+
+// Umiejętności do opanowania
+const skillsToLearn = [
+  { skill: "Prowadzenie piłki", level: "Średniozaawansowane" },
+  { skill: "Dryblingi i zwody", level: "Podstawowe" },
+  { skill: "Podania krótkie i średnie", level: "Podstawowe" },
+  { skill: "Przyjęcia w ruchu", level: "Podstawowe" },
+  { skill: "Strzały z różnych pozycji", level: "Podstawowe" },
+  { skill: "Gra 1v1 (atak i obrona)", level: "Wprowadzenie" },
+];
+---
+
+<Layout title={seoTitle} description={seoDescription} keywords={seoKeywords}>
+  <!-- Hero Section -->
+  <section
+    class="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-indigo-950"
+  >
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div
+      class="absolute top-20 right-10 w-72 h-72 bg-indigo-500/20 rounded-full blur-3xl animate-pulse-glow"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 left-10 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl"
+    >
+    </div>
+
+    <!-- Floating decorative elements -->
+    <div
+      class="absolute top-32 left-[15%] text-6xl opacity-30 animate-float"
+    >
+      🏃
+    </div>
+    <div
+      class="absolute bottom-24 right-[20%] text-5xl opacity-25 animate-float animation-delay-300"
+    >
+      🏆
+    </div>
+
+    <div class="container-custom relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Breadcrumb -->
+        <nav
+          class="flex items-center justify-center gap-2 text-dark-400 text-sm mb-6 flex-wrap"
+        >
+          <a href="/" class="hover:text-white transition-colors">Strona główna</a>
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+          <a
+            href="/treningi-pilkarskie-dla-dzieci"
+            class="hover:text-white transition-colors">Grupy wiekowe</a
+          >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span class="text-white">Rocznik {groupData.yearGroup}</span>
+        </nav>
+
+        <!-- Badge -->
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-sm font-medium mb-6"
+        >
+          <span class="text-2xl">{groupData.icon}</span>
+          {groupData.name} • Rocznik {groupData.yearGroup}
+        </div>
+
+        <h1 class="text-white mb-6 animate-fade-in-up">
+          Piłka nożna dla dzieci <span class="text-indigo-400">{groupData.ages}</span>
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto"
+        >
+          <strong class="text-white">Treningi piłkarskie dla roczników 2016-2017</strong> w Toruniu!
+          Intensywna nauka techniki indywidualnej – dryblingi, zwody, gra 1v1. Pierwsze turnieje!
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300"
+        >
+          <a
+            href="/zapisy"
+            class="btn bg-indigo-500 text-white hover:bg-indigo-600 hover:shadow-xl hover:-translate-y-0.5"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+              ></path>
+            </svg>
+            Zapisz dziecko
+          </a>
+          <a
+            href="/kontakt"
+            class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            Masz pytania?
+          </a>
+        </div>
+
+        <!-- Quick info -->
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 animate-fade-in-up animation-delay-400"
+        >
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">🎂</div>
+            <div class="text-white font-bold">{groupData.ages}</div>
+            <div class="text-dark-400 text-xs">Wiek uczestników</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">⏱️</div>
+            <div class="text-white font-bold">{groupData.trainingDuration}</div>
+            <div class="text-dark-400 text-xs">Czas treningu</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">📅</div>
+            <div class="text-white font-bold">{groupData.trainingsPerWeek}</div>
+            <div class="text-dark-400 text-xs">Częstotliwość</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">🏆</div>
+            <div class="text-white font-bold">Turnieje</div>
+            <div class="text-dark-400 text-xs">W Toruniu i wyjazdowe</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 text-sm font-semibold mb-4"
+          >
+            Rocznik 2016-2017
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Czas na <span class="text-indigo-500">intensywną naukę</span> techniki
+          </h2>
+          <div class="space-y-4 text-dark-600 dark:text-dark-300">
+            <p>
+              <strong class="text-dark-900 dark:text-white"
+                >Grupa Żak U-9 Unii Toruń</strong
+              > to etap intensywnej pracy nad <strong>techniką indywidualną</strong>. 
+              Dzieci w wieku 8-9 lat są w samym środku „złotego wieku" motorycznego – 
+              to najlepszy moment na naukę zaawansowanych elementów piłkarskich.
+            </p>
+            <p>
+              W tej grupie przechodzimy od podstaw do bardziej zaawansowanych umiejętności: 
+              <strong class="text-dark-900 dark:text-white"
+                >dryblingi, zwody, gra 1v1</strong
+              >. Dzieci uczą się skutecznego mijania przeciwników i radzenia sobie 
+              w bezpośredniej rywalizacji na boisku.
+            </p>
+            <p>
+              <strong class="text-dark-900 dark:text-white"
+                >Treningi piłkarskie dla 8-9 latków</strong
+              > to także pierwsze poważne doświadczenia turniejowe. Organizujemy sparingi 
+              z innymi klubami i uczestniczymy w turniejach – zarówno w Toruniu, jak i na wyjazdach.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <div class="relative">
+            <div
+              class="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/50 dark:to-violet-900/50 flex items-center justify-center"
+            >
+              <div class="text-center p-8">
+                <div class="text-7xl mb-4">🏃⚽</div>
+              </div>
+            </div>
+
+            <div
+              class="absolute -bottom-6 -right-6 bg-white dark:bg-dark-800 rounded-xl shadow-2xl p-4"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-12 h-12 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-2xl"
+                >
+                  🏆
+                </div>
+                <div>
+                  <p class="font-bold text-dark-900 dark:text-white text-sm">
+                    Pierwsze turnieje
+                  </p>
+                  <p class="text-xs text-dark-500 dark:text-dark-400">
+                    Doświadczenie meczowe
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why This Age Section -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 text-sm font-semibold mb-4"
+        >
+          Dlaczego warto?
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          Dlaczego wiek <span class="text-indigo-500">8-9 lat</span> jest kluczowy?
+        </h2>
+        <p class="text-dark-600 dark:text-dark-300 text-lg">
+          To środek tzw. „złotego wieku" rozwoju motorycznego. Oto dlaczego warto
+          zapisać dziecko na <strong>treningi piłkarskie</strong> właśnie teraz.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {
+          whyThisAge.map((item, index) => (
+            <div
+              class={`card p-8 reveal animation-delay-${index * 100}`}
+            >
+              <div class="w-16 h-16 rounded-2xl bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-3xl mb-6">
+                {item.icon}
+              </div>
+              <h3 class="text-xl font-display font-bold text-dark-900 dark:text-white mb-3">
+                {item.title}
+              </h3>
+              <p class="text-dark-600 dark:text-dark-300">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 text-sm font-semibold mb-4"
+        >
+          Program szkolenia
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          Czego uczymy na <span class="text-indigo-500">treningach piłkarskich</span>?
+        </h2>
+        <p class="text-dark-600 dark:text-dark-300 text-lg">
+          Nasze <strong>treningi piłki nożnej dla 8-9 latków</strong> skupiają się 
+          na technice indywidualnej i budowaniu pewności siebie w grze 1v1.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          programDetails.map((item, index) => (
+            <div class={`card p-6 reveal animation-delay-${(index % 3) * 100}`}>
+              <div class="w-14 h-14 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-2xl mb-4">
+                {item.icon}
+              </div>
+              <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
+                {item.title}
+              </h3>
+              <p class="text-dark-600 dark:text-dark-300 text-sm">
+                {item.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Structure -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 text-sm font-semibold mb-4"
+          >
+            Przebieg zajęć
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Jak wygląda <span class="text-indigo-500">60 minut</span> treningu?
+          </h2>
+          <p class="text-dark-600 dark:text-dark-300 text-lg max-w-2xl mx-auto">
+            Każdy trening jest starannie zaplanowany, by maksymalnie wykorzystać
+            czas na rozwój techniki indywidualnej i umiejętności gry.
+          </p>
+        </div>
+
+        <div class="space-y-4 reveal">
+          {
+            trainingStructure.map((phase, index) => (
+              <div class="card p-6 flex gap-6 items-center">
+                <div class="flex-shrink-0 w-20 h-20 rounded-2xl bg-indigo-100 dark:bg-indigo-900/50 flex flex-col items-center justify-center">
+                  <span class="text-2xl">{phase.icon}</span>
+                  <span class="text-sm font-bold text-indigo-600 dark:text-indigo-400 mt-1">
+                    {phase.time}
+                  </span>
+                </div>
+                <div class="flex-grow">
+                  <h3 class="font-display font-bold text-dark-900 dark:text-white text-lg mb-1">
+                    {phase.activity}
+                  </h3>
+                  <p class="text-dark-600 dark:text-dark-300">
+                    {phase.description}
+                  </p>
+                </div>
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold text-lg">
+                  {index + 1}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Progress Section -->
+  <section class="section-padding bg-indigo-50 dark:bg-indigo-950/30">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="card p-8 md:p-12 reveal">
+          <div class="text-center mb-10">
+            <div class="text-5xl mb-4">📊</div>
+            <h2
+              class="text-2xl md:text-3xl font-display font-bold text-dark-900 dark:text-white mb-4"
+            >
+              Umiejętności do opanowania w grupie Żak U-9
+            </h2>
+            <p class="text-dark-600 dark:text-dark-300">
+              Oto czego Twoje dziecko nauczy się na <strong>treningach piłkarskich dla 8-9 latków</strong>:
+            </p>
+          </div>
+          
+          <div class="grid sm:grid-cols-2 gap-4">
+            {
+              skillsToLearn.map((item) => (
+                <div class="flex items-center justify-between p-4 bg-white dark:bg-dark-800 rounded-xl border border-indigo-100 dark:border-dark-700">
+                  <span class="font-semibold text-dark-900 dark:text-white">{item.skill}</span>
+                  <span class="text-sm px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400">
+                    {item.level}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tournaments Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="card p-8 md:p-12 bg-gradient-to-br from-indigo-500 to-violet-600 text-white reveal">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div class="text-5xl mb-4">🏆</div>
+              <h2 class="text-2xl md:text-3xl font-display font-bold mb-4">
+                Turnieje i sparingi
+              </h2>
+              <p class="text-indigo-100 mb-6">
+                Grupa Żak U-9 regularnie uczestniczy w turniejach piłkarskich. 
+                To niesamowita okazja do sprawdzenia umiejętności w praktyce 
+                i zdobycia cennego doświadczenia meczowego.
+              </p>
+              <ul class="space-y-2 text-indigo-100">
+                <li class="flex items-center gap-2">
+                  <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Turnieje w Toruniu i okolicach
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Wyjazdy na turnieje wyjazdowe
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Regularne sparingi z innymi klubami
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Format meczów 5v5 i 7v7
+                </li>
+              </ul>
+            </div>
+            <div class="text-center">
+              <div class="text-8xl mb-4">🥇</div>
+              <p class="text-xl font-display font-bold">
+                Budujemy doświadczenie turniejowe!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits for Parents -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 text-sm font-semibold mb-4"
+          >
+            Dla rodziców
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Co zyskuje Twoje dziecko?
+          </h2>
+          <p class="text-dark-600 dark:text-dark-300 mb-8">
+            <strong class="text-dark-900 dark:text-white"
+              >Treningi piłkarskie dla 8-9 latków</strong
+            > w Unii Toruń to kompleksowy rozwój – zaawansowana technika, 
+            doświadczenie turniejowe i budowanie charakteru przez sport.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            {
+              parentBenefits.map((benefit) => (
+                <div class="flex items-start gap-3 p-4 rounded-xl bg-white dark:bg-dark-800 border border-indigo-100 dark:border-dark-700">
+                  <div class="w-10 h-10 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-xl flex-shrink-0">
+                    {benefit.icon}
+                  </div>
+                  <div>
+                    <p class="font-semibold text-dark-900 dark:text-white text-sm">
+                      {benefit.title}
+                    </p>
+                    <p class="text-dark-500 dark:text-dark-400 text-xs mt-0.5">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <div class="card p-8 bg-white dark:bg-dark-800">
+            <div class="text-center mb-6">
+              <div class="text-5xl mb-4">🎉</div>
+              <h3
+                class="text-xl font-display font-bold text-dark-900 dark:text-white"
+              >
+                Pierwszy trening GRATIS!
+              </h3>
+            </div>
+            <p class="text-dark-600 dark:text-dark-300 text-center mb-6">
+              Nie jesteś pewien, czy <strong>piłka nożna dla 8-9 latka</strong> to
+              dobry wybór? Przyjdź na bezpłatny trening próbny i przekonaj się sam!
+            </p>
+            <a
+              href="/zapisy"
+              class="btn-primary w-full justify-center bg-indigo-500 hover:bg-indigo-600"
+            >
+              Umów trening próbny
+            </a>
+            <p class="text-dark-500 dark:text-dark-400 text-center text-sm mt-4">
+              Bez zobowiązań • Decyzja po treningu
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 text-sm font-semibold mb-4"
+          >
+            FAQ
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Pytania o grupę <span class="text-indigo-500">Żak U-9</span>
+          </h2>
+          <p class="text-dark-600 dark:text-dark-300 text-lg">
+            Odpowiadamy na najczęściej zadawane pytania dotyczące <strong
+              >treningów piłkarskich dla rocznika 2016-2017</strong
+            >.
+          </p>
+        </div>
+
+        <div class="space-y-4 reveal">
+          {
+            faqItems.map((item) => (
+              <details class="group card p-6 cursor-pointer">
+                <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
+                  <span class="pr-4">{item.question}</span>
+                  <svg
+                    class="w-5 h-5 text-indigo-500 transition-transform group-open:rotate-180 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <p class="mt-4 text-dark-600 dark:text-dark-300 border-t border-dark-100 dark:border-dark-700 pt-4">
+                  {item.answer}
+                </p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section
+    class="section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-indigo-950 relative overflow-hidden"
+  >
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div
+      class="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl"
+    >
+    </div>
+
+    <div class="container-custom relative z-10">
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <div class="text-6xl mb-6">🏃</div>
+        <h2 class="text-white mb-6">
+          Dołącz do grupy <span class="text-indigo-400">Żak U-9</span>!
+        </h2>
+        <p class="text-dark-300 text-lg md:text-xl mb-8">
+          <strong class="text-white"
+            >Treningi piłkarskie dla dzieci 8-9 lat</strong
+          > w Unii Toruń – to środek „złotego wieku" nauki techniki. Nie trać czasu, zapisz dziecko już dziś!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/zapisy"
+            class="btn bg-indigo-500 text-white hover:bg-indigo-600 hover:shadow-xl hover:-translate-y-0.5"
+          >
+            Zapisz dziecko teraz
+          </a>
+          <a
+            href="/treningi-pilkarskie-dla-dzieci"
+            class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20"
+          >
+            Zobacz inne grupy
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section
+    class="py-8 bg-dark-50 dark:bg-dark-950 border-t border-dark-100 dark:border-dark-800"
+  >
+    <div class="container-custom">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <a
+          href="/treningi-pilkarskie-dla-dzieci/2018-2019"
+          class="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Poprzednia: Rocznik 2018-2019 (6-7 lat)
+        </a>
+        <a
+          href="/treningi-pilkarskie-dla-dzieci/2014-2015"
+          class="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+        >
+          Następna: Rocznik 2014-2015 (10-11 lat)
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "Unia Toruń - Treningi piłkarskie dla dzieci 8-9 lat",
+      "description": "Treningi piłkarskie dla dzieci w wieku 8-9 lat (rocznik 2016-2017) w Toruniu. Intensywna nauka techniki indywidualnej - dryblingi, zwody, gra 1v1. Pierwsze turnieje.",
+      "url": "https://unia-torun.pl/treningi-pilkarskie-dla-dzieci/2016-2017",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toruń",
+        "addressCountry": "PL"
+      },
+      "sport": "Piłka nożna",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Dzieci 8-9 lat (rocznik 2016-2017)"
+      }
+    }
+  </script>
+</Layout>

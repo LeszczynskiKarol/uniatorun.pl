@@ -3,9 +3,9 @@ import Layout from "@/layouts/Layout.astro";
 
 // SEO Data
 const seoTitle =
-  "Akademia Piłkarska Toruń – Szkolenie dzieci 3-13 lat | Unia Toruń";
+  "Akademia Piłkarska Toruń – Szkolenie dzieci od 3 lat | Unia Toruń";
 const seoDescription =
-  "Akademia Piłkarska Unia Toruń – profesjonalne szkolenie piłkarskie dla dzieci od 3 do 13 lat. Licencjonowani trenerzy UEFA, nowoczesne metody, pierwszy trening gratis!";
+  "Akademia Piłkarska Unia Toruń – profesjonalne szkolenie piłkarskie dla dzieci od 3 lat. Licencjonowani trenerzy UEFA, nowoczesne metody, pierwszy trening gratis!";
 const seoKeywords = [
   "akademia piłkarska Toruń",
   "akademia piłkarska dla dzieci Toruń",
@@ -20,9 +20,9 @@ const seoKeywords = [
 
 // Statystyki akademii
 const stats = [
-  { value: "100+", label: "Zawodników w akademii" },
-  { value: "4", label: "Licencjonowanych trenerów" },
-  { value: "4", label: "Grupy wiekowe" },
+  { value: "150+", label: "Zawodników w akademii" },
+  { value: "3", label: "Licencjonowanych trenerów" },
+  { value: "6", label: "Grup wiekowych" },
   { value: "8+", label: "Lat doświadczenia" },
 ];
 
@@ -57,38 +57,55 @@ const values = [
 // Co oferujemy
 const offerings = [
   {
-    title: "Przedszkole piłkarskie",
-    age: "3-6 lat",
+    title: "Żaczki",
+    age: "3-4 lata",
     description:
-      "Pierwsze kroki w futbolu. Nauka podstaw przez zabawę, rozwój motoryki i koordynacji.",
-    href: "/treningi-pilkarskie-dla-dzieci/3-6-lat",
+      "Najnowsza grupa! Zabawa z piłką, rozwój koordynacji i pierwsze kroki w świecie sportu.",
+    href: "/treningi-pilkarskie-dla-dzieci/2021-2022",
+    color: "lime",
+  },
+  {
+    title: "Przedszkole piłkarskie",
+    age: "4-5 lat",
+    description:
+      "Kontynuacja zabaw ruchowych z wprowadzeniem pierwszych elementów technicznych.",
+    href: "/treningi-pilkarskie-dla-dzieci/2020-2021",
     color: "emerald",
   },
   {
-    title: "Żak U-9",
-    age: "7-9 lat",
+    title: "Żaczek",
+    age: "6-7 lat",
     description:
-      "Rozwój techniki indywidualnej, pierwsze elementy taktyki i gra w małych grupach.",
-    href: "/treningi-pilkarskie-dla-dzieci/7-9-lat",
+      "Systematyczna nauka techniki piłkarskiej. Prowadzenie piłki, podania, strzały.",
+    href: "/treningi-pilkarskie-dla-dzieci/2018-2019",
     color: "blue",
   },
   {
-    title: "Orlik U-11",
-    age: "9-11 lat",
+    title: "Żak U-9",
+    age: "8-9 lat",
     description:
-      "Doskonalenie umiejętności, wprowadzenie do gry zespołowej i udział w turniejach.",
-    href: "/treningi-pilkarskie-dla-dzieci/9-11-lat",
+      "Intensywna praca nad techniką indywidualną. Dryblingi, zwody, gra 1v1. Pierwsze turnieje.",
+    href: "/treningi-pilkarskie-dla-dzieci/2016-2017",
     color: "violet",
   },
   {
-    title: "Młodzik U-13",
-    age: "11-13 lat",
+    title: "Orlik U-11",
+    age: "9-10 lat",
     description:
-      "Zaawansowane szkolenie, taktyka zespołowa i przygotowanie do gry ligowej.",
-    href: "/treningi-pilkarskie-dla-dzieci/11-13-lat",
+      "Doskonalenie techniki, taktyka indywidualna, rozgrywki ligowe KPZPN.",
+    href: "/treningi-pilkarskie-dla-dzieci/2015-2016",
+    color: "amber",
+  },
+  {
+    title: "Młodzik U-13",
+    age: "11-12 lat",
+    description:
+      "Zaawansowana taktyka zespołowa, specjalizacja pozycyjna, rozgrywki ligowe.",
+    href: "/treningi-pilkarskie-dla-dzieci/2013-2014",
     color: "orange",
   },
 ];
+
 
 // Dlaczego my
 const whyUs = [
@@ -96,7 +113,7 @@ const whyUs = [
     icon: "🎓",
     title: "Wykwalifikowana kadra",
     description:
-      "Wszyscy trenerzy posiadają licencje UEFA i wykształcenie kierunkowe z AWF.",
+      "Wszyscy trenerzy posiadają licencje UEFA lub uczęszczają na kursu UEFA",
   },
   {
     icon: "📋",
@@ -126,7 +143,7 @@ const whyUs = [
     icon: "☀️",
     title: "Obozy i półkolonie",
     description:
-      "Letnie i zimowe obozy piłkarskie oraz półkolonie w czasie ferii.",
+      "Obozy piłkarskie oraz półkolonie w czasie ferii.",
   },
 ];
 
@@ -135,39 +152,40 @@ const developmentStages = [
   {
     stage: "1",
     title: "Poznanie piłki",
-    age: "3-6 lat",
+    age: "3-5 lat",
     description:
       "Zabawa z piłką, podstawowe ruchy, koordynacja, oswojenie z boiskiem i grupą.",
   },
   {
     stage: "2",
-    title: "Technika indywidualna",
-    age: "7-9 lat",
+    title: "Podstawy techniki",
+    age: "6-7 lat",
     description:
-      "Prowadzenie piłki, podania, strzały, przyjęcia – budowanie fundamentów technicznych.",
+      "Prowadzenie piłki, podania, strzały – wprowadzenie do systematycznej nauki.",
   },
   {
     stage: "3",
-    title: "Gra zespołowa",
-    age: "9-11 lat",
+    title: "Technika indywidualna",
+    age: "8-9 lat",
     description:
-      "Taktyka w małych grupach, pozycje na boisku, współpraca z kolegami z drużyny.",
+      "Dryblingi, zwody, gra 1v1, pierwsze turnieje i sparingi z innymi klubami.",
   },
   {
     stage: "4",
-    title: "Doskonalenie",
-    age: "11-13 lat",
+    title: "Taktyka i doskonalenie",
+    age: "9-12 lat",
     description:
-      "Zaawansowana taktyka, przygotowanie motoryczne, gra w pełnym wymiarze boiska.",
+      "Gra na pozycjach, taktyka zespołowa, rozgrywki ligowe, przygotowanie do juniorów.",
   },
 ];
+
 
 // FAQ
 const faqItems = [
   {
     question: "Dla kogo jest Akademia Piłkarska Unia Toruń?",
     answer:
-      "Nasza akademia przyjmuje dzieci w wieku od 3 do 13 lat – zarówno początkujących, jak i tych z doświadczeniem piłkarskim. Mamy grupy dostosowane do każdego poziomu umiejętności.",
+      "Nasza akademia przyjmuje dzieci w wieku od 3 lat – zarówno początkujących, jak i tych z doświadczeniem piłkarskim. Mamy grupy dostosowane do każdego poziomu umiejętności.",
   },
   {
     question: "Czy moje dziecko może przyjść na trening próbny?",
@@ -264,8 +282,7 @@ const faqItems = [
         >
           Profesjonalne <strong class="text-white"
             >szkolenie piłkarskie dla dzieci</strong
-          > w wieku 3-13 lat. Rozwijamy talent, uczymy przez zabawę i budujemy miłość
-          do futbolu.
+          > w wieku od 3. roku życia. Stawiamy na rozwój, dobrą zabawę i dobrą atmosferę.
         </p>
 
         <div
@@ -351,7 +368,7 @@ const faqItems = [
               boisku i rozwijają swoje umiejętności pod okiem doświadczonych trenerów.
             </p>
             <p>
-              Działamy od 2018 r., szkoląc dzieci w wieku od 3 do 13 lat. Nasz
+              Działamy od 2018 r., szkoląc dzieci w wieku od 3 lat. Nasz
               program łączy profesjonalne metody szkoleniowe z przyjazną
               atmosferą, w której każde dziecko może rozwinąć swój potencjał.
             </p>
@@ -451,12 +468,12 @@ const faqItems = [
           >
         </h2>
         <p class="text-dark-600 dark:text-dark-300 text-lg">
-          W <strong>Akademii Piłkarskiej Unia Toruń</strong> prowadzimy 4 grupy wiekowe,
+          W <strong>Akademii Piłkarskiej Unia Toruń</strong> prowadzimy 6 grup wiekowych,
           każda z programem dopasowanym do etapu rozwoju.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {
           offerings.map((offer, index) => (
             <a
@@ -473,7 +490,7 @@ const faqItems = [
                 </span>
               </div>
               <div
-                class={`inline-block px-3 py-1 rounded-full bg-${offer.color}-100 dark:bg-${offer.color}-900/30 text-${offer.color}-600 dark:text-${offer.color}-400 text-xs font-semibold mb-3`}
+                class={`inline-block px-3 py-1 rounded-full bg-${offer.color}-100 dark:bg-${offer.color}-900/30 text-gray-600 text-xs font-semibold mb-3`}
               >
                 {offer.age}
               </div>
@@ -512,7 +529,7 @@ const faqItems = [
     </div>
   </section>
 
-  <!-- Etapy rozwoju -->
+  <!-- Etapy rozwoju 
   <section class="section-padding bg-white dark:bg-dark-900">
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-12 reveal">
@@ -528,9 +545,9 @@ const faqItems = [
       </div>
 
       <div class="relative">
-        <!-- Connection Line -->
+         
         <div
-          class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-blue-500 via-violet-500 to-orange-500 -translate-y-1/2 rounded-full"
+          class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-blue-500 to-orange-500 -translate-y-1/2 rounded-full"
         >
         </div>
 
@@ -558,7 +575,7 @@ const faqItems = [
         </div>
       </div>
     </div>
-  </section>
+  </section>-->
 
   <!-- Dlaczego my -->
   <section class="section-padding bg-dark-50 dark:bg-dark-950">
@@ -817,7 +834,7 @@ const faqItems = [
       "@type": "SportsOrganization",
       "name": "Akademia Piłkarska Unia Toruń",
       "alternateName": "KS Unia Toruń",
-      "description": "Profesjonalne szkolenie piłkarskie dla dzieci od 3 do 13 lat w Toruniu. Licencjonowani trenerzy UEFA, nowoczesne metody szkolenia.",
+      "description": "Profesjonalne szkolenie piłkarskie dla dzieci od 3 lat w Toruniu. Licencjonowani trenerzy UEFA, nowoczesne metody szkolenia.",
       "url": "https://uniatorun.pl/akademia-pilkarska-torun",
       "logo": "https://uniatorun.pl/logo.svg",
       "image": "https://uniatorun.pl/og-image.jpg",

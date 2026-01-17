@@ -2,8 +2,8 @@
 import Layout from '@/layouts/Layout.astro';
 
 // SEO Data
-const seoTitle = 'Szkółka piłkarska Toruń – szkolenia dzieci - chłopców z piłki nożnej';
-const seoDescription = 'Unia Toruń – profesjonalna szkółka piłkarska dla dzieci w Toruniu. Treningi piłki nożnej dla grup wiekowych 3-13 lat. Wykwalifikowana kadra, nowoczesne metody szkolenia. Zapisz dziecko na bezpłatny trening próbny!';
+const seoTitle = 'Szkółka piłkarska Toruń – szkolenia dzieci - chłopców i dziewcząt z piłki nożnej';
+const seoDescription = 'Unia Toruń – profesjonalna szkółka piłkarska dla dzieci w Toruniu. Treningi piłki nożnej dla grup wiekowych od 3 lat. Wykwalifikowana kadra, nowoczesne metody szkolenia. Zapisz dziecko na bezpłatny trening próbny!';
 const seoKeywords = [
   'szkółka piłkarska Toruń',
   'treningi piłkarskie dla dzieci Toruń',
@@ -18,42 +18,61 @@ const seoKeywords = [
 // Age groups data
 const ageGroups = [
   {
-    name: 'Przedszkole piłkarskie',
-    ages: '3-6 lat',
-    category: 'Roczniki 2019-2022',
-    description: 'Zabawa z piłką, podstawy koordynacji ruchowej i pierwsze kroki w świecie futbolu dla najmłodszych.',
+    name: 'Żaczki',
+    ages: '3-4 lata',
+    category: 'Rocznik 2021-2022',
+    description: 'Najnowsza grupa w akademii! Treningi dla maluchów to przede wszystkim zabawa z piłką, rozwój koordynacji ruchowej i pierwsze kroki w świecie sportu.',
     icon: '👶',
+    color: 'from-lime-500 to-green-500',
+    href: '/treningi-pilkarskie-dla-dzieci/2021-2022',
+  },
+  {
+    name: 'Przedszkole piłkarskie',
+    ages: '4-5 lat',
+    category: 'Rocznik 2020-2021',
+    description: 'Kontynuacja zabaw ruchowych z wprowadzeniem pierwszych elementów technicznych z piłką w przyjaznej atmosferze.',
+    icon: '🎈',
     color: 'from-emerald-500 to-teal-500',
-    href: '/treningi-pilkarskie-dla-dzieci/3-6-lat',
+    href: '/treningi-pilkarskie-dla-dzieci/2020-2021',
+  },
+  {
+    name: 'Żaczek',
+    ages: '6-7 lat',
+    category: 'Rocznik 2018-2019',
+    description: 'Wprowadzenie do systematycznej nauki techniki piłkarskiej. Prowadzenie piłki, podania, strzały.',
+    icon: '⚽',
+    color: 'from-blue-500 to-cyan-500',
+    href: '/treningi-pilkarskie-dla-dzieci/2018-2019',
   },
   {
     name: 'Żak U-9',
-    ages: '7-9 lat',
-    category: 'Roczniki 2016-2018',
-    description: 'Nauka podstaw techniki piłkarskiej, gry zespołowej i rozwój umiejętności motorycznych.',
-    icon: '⚽',
-    color: 'from-blue-500 to-cyan-500',
-    href: '/treningi-pilkarskie-dla-dzieci/7-9-lat',
+    ages: '8-9 lat',
+    category: 'Rocznik 2016-2017',
+    description: 'Intensywna praca nad techniką indywidualną. Dryblingi, zwody, gra 1v1. Pierwsze turnieje i sparingi.',
+    icon: '🏃',
+    color: 'from-violet-500 to-purple-500',
+    href: '/treningi-pilkarskie-dla-dzieci/2016-2017',
   },
   {
     name: 'Orlik U-11',
-    ages: '9-11 lat',
-    category: 'Roczniki 2014-2016',
-    description: 'Doskonalenie techniki, taktyki indywidualnej i udział w turniejach i rozgrywkach ligowych.',
+    ages: '9-10 lat',
+    category: 'Rocznik 2015-2016',
+    description: 'Doskonalenie techniki i wprowadzenie taktyki. Gra na pozycjach, rozgrywki ligowe KPZPN.',
     icon: '🏆',
-    color: 'from-violet-500 to-purple-500',
-    href: '/treningi-pilkarskie-dla-dzieci/9-11-lat',
+    color: 'from-amber-500 to-orange-500',
+    href: '/treningi-pilkarskie-dla-dzieci/2015-2016',
   },
   {
     name: 'Młodzik U-13',
-    ages: '11-13 lat',
-    category: 'Roczniki 2012-2014',
-    description: 'Zaawansowane szkolenie taktyczne, przygotowanie do gry w seniorskiej piłce nożnej.',
-    icon: '🎯',
+    ages: '11-12 lat',
+    category: 'Rocznik 2013-2014',
+    description: 'Zaawansowana taktyka zespołowa, przygotowanie motoryczne i specjalizacja pozycyjna. Rozgrywki ligowe KPZPN.',
+    icon: '🔥',
     color: 'from-orange-500 to-red-500',
-    href: '/treningi-pilkarskie-dla-dzieci/11-13-lat',
+    href: '/treningi-pilkarskie-dla-dzieci/2013-2014',
   },
 ];
+
 
 // Features/benefits
 const benefits = [
@@ -91,10 +110,10 @@ const benefits = [
 
 // Stats
 const stats = [
-  { value: '100+', label: 'Młodych zawodników' },
+  { value: '150+', label: 'Młodych zawodników' },
   { value: '8+', label: 'Lat doświadczenia' },
   { value: '3', label: 'Wykwalifikowanych trenerów' },
-  { value: '4', label: 'Grupy wiekowe' },
+  { value: '6', label: 'Grup wiekowych' },
 ];
 
 // Testimonials
@@ -150,7 +169,7 @@ const testimonials = [
           </h1>
           
           <p class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200 max-w-xl mx-auto lg:mx-0">
-            <strong class="text-white">Unia Toruń</strong> – profesjonalne <strong class="text-primary-400">szkolenie z piłki nożnej dla dzieci</strong> w wieku od 3 do 13 lat. Rozwijaj talent i pasję swojego malucha z cenioną szkółką piłkarską!
+            <strong class="text-white">Unia Toruń</strong> – profesjonalne <strong class="text-primary-400">szkolenie z piłki nożnej dla dzieci</strong> w wieku od 3 lat. Rozwijaj talent i pasję swojego malucha z cenioną szkółką piłkarską!
           </p>
           
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-300">
@@ -181,13 +200,7 @@ const testimonials = [
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
               Licencjonowani trenerzy PZPN
-            </div>
-            <div class="flex items-center gap-2 text-dark-400 text-sm">
-              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              Ubezpieczenie zawodników
-            </div>
+            </div>            
           </div>
         </div>
 
@@ -263,10 +276,10 @@ const testimonials = [
           </h2>
           <div class="space-y-4 text-dark-600 dark:text-dark-300">
             <p>
-              <strong class="text-dark-900 dark:text-white">Unia Toruń</strong> to <strong>szkółka piłkarska dla dzieci</strong> działająca w Toruniu od ponad 5 lat. Nasza misja to rozwijanie pasji do <strong>piłki nożnej</strong> wśród najmłodszych zawodników poprzez profesjonalne szkolenie połączone z dobrą zabawą.
+              <strong class="text-dark-900 dark:text-white">Unia Toruń</strong> to <strong>szkółka piłkarska dla dzieci</strong> działająca w Toruniu od ponad 8 lat. Nasza misja to rozwijanie pasji do <strong>piłki nożnej</strong> wśród najmłodszych zawodników poprzez profesjonalne szkolenie połączone z dobrą zabawą.
             </p>
             <p>
-              Prowadzimy <strong>szkolenia piłkarskie dla chłopców</strong> w grupach wiekowych od 3 do 13 lat. Nasz program szkoleniowy bazuje na najnowszych metodach treningowych stosowanych w najlepszych europejskich akademiach piłkarskich, dostosowanych do możliwości i potrzeb rozwojowych dzieci.
+              Prowadzimy <strong>szkolenia piłkarskie dla chłopców i dziewcząt</strong> w grupach wiekowych od 3 lat. Nasz program szkoleniowy bazuje na najnowszych metodach treningowych stosowanych w najlepszych europejskich akademiach piłkarskich, dostosowanych do możliwości i potrzeb rozwojowych dzieci.
             </p>
             <p>
               Jako <strong>toruńska szkółka piłkarska</strong> stawiamy na wszechstronny rozwój młodych zawodników – nie tylko ich umiejętności technicznych i taktycznych, ale również kondycji fizycznej, mentalnej oraz wartości takich jak praca zespołowa, dyscyplina i szacunek dla rywali.
@@ -319,14 +332,14 @@ const testimonials = [
           Grupy wiekowe
         </span>
         <h2 class="mb-6 text-dark-900 dark:text-white">
-          Szkółka piłki nożnej dla chłopców w różnym wieku
+          Szkółka piłki nożnej dla dzieci w różnym wieku
         </h2>
         <p class="text-dark-600 dark:text-dark-300 text-lg">
-          Oferujemy <strong>szkolenie piłkarskie dla chłopców w Toruniu</strong> w 4 grupach wiekowych. Każda grupa ma program dostosowany do możliwości rozwojowych i umiejętności zawodników.
+          Oferujemy <strong>szkolenie piłkarskie dla chłopców i dziewczynki w Toruniu</strong> w 6 grupach wiekowych. Każda grupa ma program dostosowany do możliwości rozwojowych i umiejętności zawodników.
         </p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {ageGroups.map((group, index) => (
           <a 
             href={group.href}
@@ -376,7 +389,7 @@ const testimonials = [
           Dlaczego warto wybrać <span class="gradient-text">Unię Toruń</span>?
         </h2>
         <p class="text-dark-600 dark:text-dark-300 text-lg">
-          Nasza <strong>szkółka piłkarska</strong> wyróżnia się profesjonalnym podejściem do szkolenia młodych chłopców. Zapewniamy następujące korzyści:
+          Nasza <strong>szkółka piłkarska</strong> wyróżnia się profesjonalnym podejściem do szkolenia młodych zawodników. Zapewniamy następujące korzyści:
         </p>
       </div>
 
@@ -519,7 +532,7 @@ const testimonials = [
               </svg>
             </summary>
             <p class="mt-4 text-dark-600 dark:text-dark-300">
-              Szczegółowy cennik znajdziesz na stronie <a href="/cennik" class="text-primary-600 dark:text-primary-400 hover:underline">Cennik</a>. Cena zależy od grupy wiekowej i obejmuje m.in. ubezpieczenie zawodnika, strój treningowy oraz udział w turniejach. <strong>Pierwszy trening próbny jest bezpłatny</strong> – zapraszamy do sprawdzenia naszej akademii!
+              Szczegółowy cennik znajdziesz na stronie <a href="/cennik" class="text-primary-600 dark:text-primary-400 hover:underline">Cennik</a>. Cena zależy od grupy wiekowej i obejmuje m.in. strój treningowy oraz udział w turniejach. <strong>Pierwszy trening próbny jest bezpłatny</strong> – zapraszamy do sprawdzenia naszej akademii!
             </p>
           </details>
 
@@ -543,7 +556,7 @@ const testimonials = [
               </svg>
             </summary>
             <p class="mt-4 text-dark-600 dark:text-dark-300">
-              Nie! Nasza <strong>szkółka piłki nożnej dla chłopców</strong> przyjmuje zarówno początkujących, jak i bardziej zaawansowanych młodych piłkarzy. Program szkoleniowy jest dostosowany do poziomu umiejętności każdego dziecka. Nasi wykwalifikowani trenerzy pomogą rozwinąć talent i pasję do <strong>piłki nożnej</strong> niezależnie od punktu startowego.
+              Nie! Nasza <strong>szkółka piłki nożnej dla chłopców i dziewczynek</strong> przyjmuje zarówno początkujących, jak i bardziej zaawansowanych młodych piłkarzy. Program szkoleniowy jest dostosowany do poziomu umiejętności każdego dziecka. Nasi wykwalifikowani trenerzy pomogą rozwinąć talent i pasję do <strong>piłki nożnej</strong> niezależnie od punktu startowego.
             </p>
           </details>
 
@@ -569,7 +582,7 @@ const testimonials = [
       <div class="flex flex-col md:flex-row items-center justify-between gap-8 reveal">
         <div>
           <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-2">
-            Zapisz chłopca do szkółki piłkarskiej!
+            Zapisz dziecko do szkółki piłkarskiej!
           </h3>
           <p class="text-dark-400">
             Wraz ze swoim dzieckiem dołącz do <strong class="text-dark-300">Unii Toruń</strong> – zaufanej szkółki piłkarskiej w regionie!

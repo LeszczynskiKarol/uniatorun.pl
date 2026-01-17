@@ -1,0 +1,825 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+// SEO Data - optymalizacja pod "piłka nożna dla 6-7 latka Toruń"
+const seoTitle =
+  "Piłka nożna dla dzieci 6-7 lat Toruń – Rocznik 2018-2019";
+const seoDescription =
+  "Treningi piłkarskie dla dzieci 6-7 lat w Toruniu. Zajęcia piłki nożnej dla rocznika 2018-2019 – wprowadzenie do systematycznej nauki techniki piłkarskiej. Prowadzenie piłki, podania, strzały. Zapisz dziecko na bezpłatny trening!";
+const seoKeywords = [
+  "piłka nożna dla 6 latka Toruń",
+  "piłka nożna dla 7 latka Toruń",
+  "treningi piłkarskie rocznik 2018",
+  "treningi piłkarskie rocznik 2019",
+  "żaczek Toruń",
+  "szkółka piłkarska 6-7 lat",
+  "nauka piłki nożnej dla dzieci",
+  "akademia piłkarska Toruń",
+  "Unia Toruń dzieci",
+  "treningi piłki nożnej 6 lat",
+];
+
+// Dane grupy
+const groupData = {
+  name: "Żaczek",
+  yearGroup: "2018-2019",
+  ages: "6-7 lat",
+  icon: "⚽",
+  trainingDuration: "60 minut",
+  trainingsPerWeek: "2x w tygodniu",
+  maxGroupSize: 14,
+  description:
+    "Wprowadzenie do systematycznej nauki techniki piłkarskiej. Prowadzenie piłki, podania, strzały – wszystko w przyjaznej atmosferze z elementami rywalizacji sportowej.",
+};
+
+// Program szczegółowy dla 6-7 latków
+const programDetails = [
+  {
+    title: "Prowadzenie piłki",
+    description:
+      "Nauka prowadzenia piłki różnymi częściami stopy – wewnętrzną, zewnętrzną, podbiciem. Slalomy między pachołkami i tory przeszkód.",
+    icon: "👟",
+  },
+  {
+    title: "Podania i przyjęcia",
+    description:
+      "Technika podań na krótkie dystanse. Nauka przyjęcia piłki podeszwą i wewnętrzną częścią stopy. Ćwiczenia w parach.",
+    icon: "🎯",
+  },
+  {
+    title: "Strzały na bramkę",
+    description:
+      "Wprowadzenie do techniki strzału. Uderzenie wewnętrzną częścią stopy – precyzja. Strzały z miejsca i po krótkim prowadzeniu.",
+    icon: "⚽",
+  },
+  {
+    title: "Koordynacja i zwinność",
+    description:
+      "Ćwiczenia koordynacyjne z drabinką, pachołkami i obręczami. Rozwój równowagi, szybkości reakcji i zwinności.",
+    icon: "⚡",
+  },
+  {
+    title: "Gry szkoleniowe",
+    description:
+      "Proste gry taktyczne uczące podejmowania decyzji. Gry w przewagach, „rondo” i inne formy zabawowe z elementami nauki.",
+    icon: "🎮",
+  },
+  {
+    title: "Mini mecze",
+    description:
+      "Gry 4v4 i 5v5 na małych boiskach. Pierwsze doświadczenia meczowe i nauka podstawowych zasad gry zespołowej.",
+    icon: "🏆",
+  },
+];
+
+// Struktura typowego treningu
+const trainingStructure = [
+  {
+    time: "10 min",
+    activity: "Rozgrzewka dynamiczna",
+    description: "Bieg z zadaniami, ćwiczenia koordynacyjne, rozciąganie z piłką",
+    icon: "🏃",
+  },
+  {
+    time: "20 min",
+    activity: "Ćwiczenia techniczne",
+    description: "Prowadzenie, podania lub strzały – w zależności od tematu treningu",
+    icon: "⚽",
+  },
+  {
+    time: "15 min",
+    activity: "Gry szkoleniowe",
+    description: "Małe gry, ćwiczenia w grupach, zadania taktyczne w formie zabaw",
+    icon: "🎯",
+  },
+  {
+    time: "15 min",
+    activity: "Mini mecz",
+    description: "Gra na małe bramki z zastosowaniem nabytych umiejętności",
+    icon: "🥅",
+  },
+];
+
+// Korzyści dla rodziców
+const parentBenefits = [
+  {
+    title: "Nauka prawdziwej techniki",
+    description: "Systematyczne szkolenie podstaw piłkarskich",
+    icon: "⚽",
+  },
+  {
+    title: "Rozwój koordynacji",
+    description: "Ćwiczenia wspierające sprawność ruchową",
+    icon: "🎯",
+  },
+  {
+    title: "Pierwsze doświadczenia meczowe",
+    description: "Mini mecze i elementy rywalizacji sportowej",
+    icon: "🏆",
+  },
+  {
+    title: "Praca zespołowa",
+    description: "Nauka współpracy i komunikacji na boisku",
+    icon: "🤝",
+  },
+  {
+    title: "Dyscyplina sportowa",
+    description: "Uczenie się regularności i systematyczności",
+    icon: "📅",
+  },
+  {
+    title: "Pewność siebie",
+    description: "Budowanie wiary we własne umiejętności",
+    icon: "💪",
+  },
+];
+
+// FAQ
+const faqItems = [
+  {
+    question: "Czym różnią się treningi dla 6-7 latków od młodszych grup?",
+    answer:
+      "W grupie Żaczek (6-7 lat) przechodzimy od zabaw do systematycznej nauki techniki piłkarskiej. Treningi są dłuższe (60 min), bardziej ustrukturyzowane i odbywają się 2 razy w tygodniu. Skupiamy się na konkretnych elementach: prowadzeniu piłki, podaniach i strzałach. Wprowadzamy też pierwsze elementy rywalizacji sportowej.",
+  },
+  {
+    question: "Czy dziecko bez doświadczenia może dołączyć do grupy?",
+    answer:
+      "Tak! Przyjmujemy zarówno dzieci z doświadczeniem piłkarskim, jak i zupełnie początkujące. Trenerzy potrafią dostosować ćwiczenia do poziomu każdego zawodnika. Najważniejsza jest chęć do nauki i regularne uczęszczanie na treningi.",
+  },
+  {
+    question: "Ile razy w tygodniu odbywają się treningi?",
+    answer:
+      "Dla rocznika 2018-2019 treningi odbywają się 2 razy w tygodniu po 60 minut. Taka częstotliwość pozwala na systematyczny rozwój umiejętności i utrwalanie nabytej techniki między zajęciami.",
+  },
+  {
+    question: "Czy dzieci w tym wieku grają już mecze?",
+    answer:
+      "Tak! Na każdym treningu organizujemy mini mecze (4v4 lub 5v5). Dodatkowo staramy się organizować sparingi z innymi klubami. To doskonała okazja do sprawdzenia umiejętności w praktyce i nauki zdrowej rywalizacji sportowej.",
+  },
+  {
+    question: "Co dziecko powinno mieć na trening?",
+    answer:
+      "Strój sportowy, ochraniacze na golenie (obowiązkowo!), buty sportowe z jasną podeszwą (na hali) lub korki/turfy (na boisku zewnętrznym), bidon z wodą. Po zapisaniu dziecko otrzymuje oficjalny strój treningowy Unii Toruń.",
+  },
+  {
+    question: "Czy rodzic może obserwować treningi?",
+    answer:
+      "Tak, rodzice mogą obserwować zajęcia z wyznaczonego miejsca. Prosimy jednak o nieangażowanie się w przebieg treningu – dzieci lepiej się koncentrują, gdy trener jest jedynym źródłem instrukcji na boisku.",
+  },
+  {
+    question: "Jaki jest koszt treningów?",
+    answer:
+      "Szczegółowy cennik znajduje się na stronie /cennik. Oferujemy konkurencyjne ceny z możliwością płatności miesięcznej. Pierwszy trening próbny jest zawsze bezpłatny!",
+  },
+];
+
+// Dlaczego ten wiek jest ważny
+const whyThisAge = [
+  {
+    title: "Początek „złotego wieku” motorycznego",
+    description:
+      "Wiek 6-7 lat to początek okresu, który specjaliści nazywają „złotym wiekiem” nauki motorycznej. Dzieci w tym wieku szybko przyswajają nowe ruchy i techniki.",
+    icon: "🌟",
+  },
+  {
+    title: "Gotowość na systematyczną naukę",
+    description:
+      "Dzieci w tym wieku są już gotowe na bardziej ustrukturyzowane treningi. Potrafią skupić uwagę na dłużej i wykonywać bardziej złożone polecenia trenera.",
+    icon: "📚",
+  },
+  {
+    title: "Idealna pora na budowanie fundamentów",
+    description:
+      "Technika nabyta w wieku 6-7 lat zostaje z dzieckiem na całe życie. To najlepszy moment, by zbudować solidne podstawy przyszłych umiejętności piłkarskich.",
+    icon: "🏗️",
+  },
+];
+
+// Umiejętności do opanowania
+const skillsToLearn = [
+  { skill: "Prowadzenie piłki", level: "Podstawowe" },
+  { skill: "Podania krótkie", level: "Wprowadzenie" },
+  { skill: "Przyjęcia piłki", level: "Wprowadzenie" },
+  { skill: "Strzały z miejsca", level: "Wprowadzenie" },
+  { skill: "Koordynacja z piłką", level: "Rozwój" },
+  { skill: "Gra zespołowa", level: "Podstawy" },
+];
+---
+
+<Layout title={seoTitle} description={seoDescription} keywords={seoKeywords}>
+  <!-- Hero Section -->
+  <section
+    class="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-dark-900 via-dark-950 to-blue-950"
+  >
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div
+      class="absolute top-20 right-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse-glow"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 left-10 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl"
+    >
+    </div>
+
+    <!-- Floating decorative elements -->
+    <div
+      class="absolute top-32 left-[15%] text-6xl opacity-30 animate-float"
+    >
+      ⚽
+    </div>
+    <div
+      class="absolute bottom-24 right-[20%] text-5xl opacity-25 animate-float animation-delay-300"
+    >
+      🎯
+    </div>
+
+    <div class="container-custom relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Breadcrumb -->
+        <nav
+          class="flex items-center justify-center gap-2 text-dark-400 text-sm mb-6 flex-wrap"
+        >
+          <a href="/" class="hover:text-white transition-colors">Strona główna</a>
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+          <a
+            href="/treningi-pilkarskie-dla-dzieci"
+            class="hover:text-white transition-colors">Grupy wiekowe</a
+          >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span class="text-white">Rocznik {groupData.yearGroup}</span>
+        </nav>
+
+        <!-- Badge -->
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6"
+        >
+          <span class="text-2xl">{groupData.icon}</span>
+          {groupData.name} • Rocznik {groupData.yearGroup}
+        </div>
+
+        <h1 class="text-white mb-6 animate-fade-in-up">
+          Piłka nożna dla dzieci <span class="text-blue-400">{groupData.ages}</span>
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-dark-300 mb-8 leading-relaxed animate-fade-in-up animation-delay-200 max-w-3xl mx-auto"
+        >
+          <strong class="text-white">Treningi piłkarskie dla roczników 2018-2019</strong> w Toruniu!
+          Systematyczna nauka techniki piłkarskiej – prowadzenie, podania, strzały.
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300"
+        >
+          <a
+            href="/zapisy"
+            class="btn bg-blue-500 text-white hover:bg-blue-600 hover:shadow-xl hover:-translate-y-0.5"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+              ></path>
+            </svg>
+            Zapisz dziecko
+          </a>
+          <a
+            href="/kontakt"
+            class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            Masz pytania?
+          </a>
+        </div>
+
+        <!-- Quick info -->
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 animate-fade-in-up animation-delay-400"
+        >
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">🎂</div>
+            <div class="text-white font-bold">{groupData.ages}</div>
+            <div class="text-dark-400 text-xs">Wiek uczestników</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">⏱️</div>
+            <div class="text-white font-bold">{groupData.trainingDuration}</div>
+            <div class="text-dark-400 text-xs">Czas treningu</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">📅</div>
+            <div class="text-white font-bold">{groupData.trainingsPerWeek}</div>
+            <div class="text-dark-400 text-xs">Częstotliwość</div>
+          </div>
+          <div class="text-center bg-white/5 backdrop-blur-sm rounded-xl p-4">
+            <div class="text-2xl mb-1">👥</div>
+            <div class="text-white font-bold">Max {groupData.maxGroupSize}</div>
+            <div class="text-dark-400 text-xs">Dzieci w grupie</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-4"
+          >
+            Rocznik 2018-2019
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Czas na <span class="text-blue-500">prawdziwą naukę</span> techniki
+          </h2>
+          <div class="space-y-4 text-dark-600 dark:text-dark-300">
+            <p>
+              <strong class="text-dark-900 dark:text-white"
+                >Grupa Żaczek Unii Toruń</strong
+              > to miejsce, gdzie zabawa z piłką przechodzi w systematyczną naukę
+              <strong>techniki piłkarskiej</strong>. Dzieci w wieku 6-7 lat są gotowe
+              na bardziej ustrukturyzowane treningi i konkretne cele szkoleniowe.
+            </p>
+            <p>
+              W tej grupie wprowadzamy <strong class="text-dark-900 dark:text-white"
+                >podstawy prowadzenia piłki, podań i strzałów</strong
+              >. Treningi odbywają się dwa razy w tygodniu, co pozwala na systematyczny
+              rozwój umiejętności i ich utrwalanie między zajęciami.
+            </p>
+            <p>
+              <strong class="text-dark-900 dark:text-white"
+                >Treningi piłkarskie dla 6-7 latków</strong
+              > to także pierwsze doświadczenia z mini meczami i elementami rywalizacji
+              sportowej. Dzieci uczą się nie tylko techniki, ale też zdrowego podejścia
+              do współzawodnictwa.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <div class="relative">
+            <div
+              class="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/50 dark:to-cyan-900/50 flex items-center justify-center"
+            >
+              <div class="text-center p-8">
+                <div class="text-7xl mb-4">⚽🎯</div>
+              </div>
+            </div>
+
+            <div
+              class="absolute -bottom-6 -right-6 bg-white dark:bg-dark-800 rounded-xl shadow-2xl p-4"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-2xl"
+                >
+                  🌟
+                </div>
+                <div>
+                  <p class="font-bold text-dark-900 dark:text-white text-sm">
+                    Złoty wiek
+                  </p>
+                  <p class="text-xs text-dark-500 dark:text-dark-400">
+                    Najlepszy czas na naukę!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why This Age Section -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-4"
+        >
+          Dlaczego warto?
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          Dlaczego wiek <span class="text-blue-500">6-7 lat</span> jest kluczowy?
+        </h2>
+        <p class="text-dark-600 dark:text-dark-300 text-lg">
+          To początek tzw. „złotego wieku" rozwoju motorycznego. Oto dlaczego warto
+          zapisać dziecko na <strong>treningi piłkarskie</strong> właśnie teraz.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {
+          whyThisAge.map((item, index) => (
+            <div
+              class={`card p-8 reveal animation-delay-${index * 100}`}
+            >
+              <div class="w-16 h-16 rounded-2xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-3xl mb-6">
+                {item.icon}
+              </div>
+              <h3 class="text-xl font-display font-bold text-dark-900 dark:text-white mb-3">
+                {item.title}
+              </h3>
+              <p class="text-dark-600 dark:text-dark-300">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Section -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-4"
+        >
+          Program szkolenia
+        </span>
+        <h2 class="mb-6 text-dark-900 dark:text-white">
+          Czego uczymy na <span class="text-blue-500">treningach piłkarskich</span>?
+        </h2>
+        <p class="text-dark-600 dark:text-dark-300 text-lg">
+          Nasze <strong>treningi piłki nożnej dla 6-7 latków</strong> obejmują
+          wszystkie podstawowe elementy techniki piłkarskiej.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          programDetails.map((item, index) => (
+            <div class={`card p-6 reveal animation-delay-${(index % 3) * 100}`}>
+              <div class="w-14 h-14 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-2xl mb-4">
+                {item.icon}
+              </div>
+              <h3 class="text-lg font-display font-bold text-dark-900 dark:text-white mb-2">
+                {item.title}
+              </h3>
+              <p class="text-dark-600 dark:text-dark-300 text-sm">
+                {item.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Structure -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-4"
+          >
+            Przebieg zajęć
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Jak wygląda <span class="text-blue-500">60 minut</span> treningu?
+          </h2>
+          <p class="text-dark-600 dark:text-dark-300 text-lg max-w-2xl mx-auto">
+            Każdy trening jest starannie zaplanowany, by maksymalnie wykorzystać
+            czas na rozwój umiejętności piłkarskich.
+          </p>
+        </div>
+
+        <div class="space-y-4 reveal">
+          {
+            trainingStructure.map((phase, index) => (
+              <div class="card p-6 flex gap-6 items-center">
+                <div class="flex-shrink-0 w-20 h-20 rounded-2xl bg-blue-100 dark:bg-blue-900/50 flex flex-col items-center justify-center">
+                  <span class="text-2xl">{phase.icon}</span>
+                  <span class="text-sm font-bold text-blue-600 dark:text-blue-400 mt-1">
+                    {phase.time}
+                  </span>
+                </div>
+                <div class="flex-grow">
+                  <h3 class="font-display font-bold text-dark-900 dark:text-white text-lg mb-1">
+                    {phase.activity}
+                  </h3>
+                  <p class="text-dark-600 dark:text-dark-300">
+                    {phase.description}
+                  </p>
+                </div>
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-lg">
+                  {index + 1}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Progress Section -->
+  <section class="section-padding bg-blue-50 dark:bg-blue-950/30">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="card p-8 md:p-12 reveal">
+          <div class="text-center mb-10">
+            <div class="text-5xl mb-4">📊</div>
+            <h2
+              class="text-2xl md:text-3xl font-display font-bold text-dark-900 dark:text-white mb-4"
+            >
+              Umiejętności do opanowania w grupie Żaczek
+            </h2>
+            <p class="text-dark-600 dark:text-dark-300">
+              Oto czego Twoje dziecko nauczy się na <strong>treningach piłkarskich dla 6-7 latków</strong>:
+            </p>
+          </div>
+          
+          <div class="grid sm:grid-cols-2 gap-4">
+            {
+              skillsToLearn.map((item) => (
+                <div class="flex items-center justify-between p-4 bg-white dark:bg-dark-800 rounded-xl border border-blue-100 dark:border-dark-700">
+                  <span class="font-semibold text-dark-900 dark:text-white">{item.skill}</span>
+                  <span class="text-sm px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400">
+                    {item.level}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits for Parents -->
+  <section class="section-padding bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-4"
+          >
+            Dla rodziców
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Co zyskuje Twoje dziecko?
+          </h2>
+          <p class="text-dark-600 dark:text-dark-300 mb-8">
+            <strong class="text-dark-900 dark:text-white"
+              >Treningi piłkarskie dla 6-7 latków</strong
+            > w Unii Toruń to kompleksowy rozwój – nie tylko umiejętności piłkarskie,
+            ale też cechy charakteru ważne w życiu.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            {
+              parentBenefits.map((benefit) => (
+                <div class="flex items-start gap-3 p-4 rounded-xl bg-blue-50 dark:bg-dark-800 border border-blue-100 dark:border-dark-700">
+                  <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-xl flex-shrink-0">
+                    {benefit.icon}
+                  </div>
+                  <div>
+                    <p class="font-semibold text-dark-900 dark:text-white text-sm">
+                      {benefit.title}
+                    </p>
+                    <p class="text-dark-500 dark:text-dark-400 text-xs mt-0.5">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <div class="card p-8 bg-white dark:bg-dark-800">
+            <div class="text-center mb-6">
+              <div class="text-5xl mb-4">🎉</div>
+              <h3
+                class="text-xl font-display font-bold text-dark-900 dark:text-white"
+              >
+                Pierwszy trening GRATIS!
+              </h3>
+            </div>
+            <p class="text-dark-600 dark:text-dark-300 text-center mb-6">
+              Nie jesteś pewien, czy <strong>piłka nożna dla 6-7 latka</strong> to
+              dobry wybór? Przyjdź na bezpłatny trening próbny i przekonaj się sam!
+            </p>
+            <a
+              href="/zapisy"
+              class="btn-primary w-full justify-center bg-blue-500 hover:bg-blue-600"
+            >
+              Umów trening próbny
+            </a>
+            <p class="text-dark-500 dark:text-dark-400 text-center text-sm mt-4">
+              Bez zobowiązań • Decyzja po treningu
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-dark-50 dark:bg-dark-950">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-4"
+          >
+            FAQ
+          </span>
+          <h2 class="mb-6 text-dark-900 dark:text-white">
+            Pytania o grupę <span class="text-blue-500">Żaczek</span>
+          </h2>
+          <p class="text-dark-600 dark:text-dark-300 text-lg">
+            Odpowiadamy na najczęściej zadawane pytania dotyczące <strong
+              >treningów piłkarskich dla rocznika 2018-2019</strong
+            >.
+          </p>
+        </div>
+
+        <div class="space-y-4 reveal">
+          {
+            faqItems.map((item) => (
+              <details class="group card p-6 cursor-pointer">
+                <summary class="flex items-center justify-between font-display font-bold text-dark-900 dark:text-white list-none">
+                  <span class="pr-4">{item.question}</span>
+                  <svg
+                    class="w-5 h-5 text-blue-500 transition-transform group-open:rotate-180 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <p class="mt-4 text-dark-600 dark:text-dark-300 border-t border-dark-100 dark:border-dark-700 pt-4">
+                  {item.answer}
+                </p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section
+    class="section-padding bg-gradient-to-br from-dark-900 via-dark-950 to-blue-950 relative overflow-hidden"
+  >
+    <div class="absolute inset-0 football-pattern opacity-50"></div>
+    <div
+      class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"
+    >
+    </div>
+
+    <div class="container-custom relative z-10">
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <div class="text-6xl mb-6">⚽</div>
+        <h2 class="text-white mb-6">
+          Dołącz do grupy <span class="text-blue-400">Żaczek</span>!
+        </h2>
+        <p class="text-dark-300 text-lg md:text-xl mb-8">
+          <strong class="text-white"
+            >Treningi piłkarskie dla dzieci 6-7 lat</strong
+          > w Unii Toruń – to początek „złotego wieku" nauki. Nie trać czasu, zapisz dziecko już dziś!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/zapisy"
+            class="btn bg-blue-500 text-white hover:bg-blue-600 hover:shadow-xl hover:-translate-y-0.5"
+          >
+            Zapisz dziecko teraz
+          </a>
+          <a
+            href="/treningi-pilkarskie-dla-dzieci"
+            class="btn bg-white/10 text-white border-2 border-white/30 hover:bg-white/20"
+          >
+            Zobacz inne grupy
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section
+    class="py-8 bg-dark-50 dark:bg-dark-950 border-t border-dark-100 dark:border-dark-800"
+  >
+    <div class="container-custom">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <a
+          href="/treningi-pilkarskie-dla-dzieci/2019-2020"
+          class="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Poprzednia: Rocznik 2019-2020 (5-6 lat)
+        </a>
+        <a
+          href="/treningi-pilkarskie-dla-dzieci/2016-2017"
+          class="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+        >
+          Następna: Rocznik 2016-2017 (8-9 lat)
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "Unia Toruń - Treningi piłkarskie dla dzieci 6-7 lat",
+      "description": "Treningi piłkarskie dla dzieci w wieku 6-7 lat (rocznik 2018-2019) w Toruniu. Systematyczna nauka techniki piłkarskiej - prowadzenie, podania, strzały.",
+      "url": "https://unia-torun.pl/treningi-pilkarskie-dla-dzieci/2018-2019",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toruń",
+        "addressCountry": "PL"
+      },
+      "sport": "Piłka nożna",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Dzieci 6-7 lat (rocznik 2018-2019)"
+      }
+    }
+  </script>
+</Layout>
